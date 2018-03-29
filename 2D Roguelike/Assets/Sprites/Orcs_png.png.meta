@@ -1,0 +1,644 @@
+fileFormatVersion: 2
+guid: d3228e86829b5964eb5accd527f36b71
+timeCreated: 1522197509
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Orcs_png_0
+    21300002: Orcs_png_1
+    21300004: Orcs_png_2
+    21300006: Orcs_png_3
+    21300008: Orcs_png_4
+    21300010: Orcs_png_5
+    21300012: Orcs_png_6
+    21300014: Orcs_png_7
+    21300016: Orcs_png_8
+    21300018: Orcs_png_9
+    21300020: Orcs_png_10
+    21300022: Orcs_png_11
+    21300024: Orcs_png_12
+    21300026: Orcs_png_13
+    21300028: Orcs_png_14
+    21300030: Orcs_png_15
+    21300032: Orcs_png_16
+    21300034: Orcs_png_17
+    21300036: Orcs_png_18
+    21300038: Orcs_png_19
+    21300040: Orcs_png_20
+    21300042: Orcs_png_21
+    21300044: Orcs_png_22
+    21300046: Orcs_png_23
+    21300048: Orcs_png_24
+    21300050: Orcs_png_25
+    21300052: Orcs_png_26
+    21300054: Orcs_png_27
+    21300056: Orcs_png_28
+    21300058: Orcs_png_29
+    21300060: Orcs_png_30
+    21300062: Orcs_png_31
+    21300064: Orcs_png_32
+    21300066: Orcs_png_33
+    21300068: Orcs_png_34
+    21300070: Orcs_png_35
+    21300072: Orcs_png_36
+    21300074: Orcs_png_37
+    21300076: Orcs_png_38
+    21300078: Orcs_png_39
+    21300080: Orcs_png_40
+    21300082: Orcs_png_41
+    21300084: Orcs_png_42
+    21300086: Orcs_png_43
+    21300088: Orcs_png_44
+    21300090: Orcs_png_45
+    21300092: Orcs_png_46
+    21300094: Orcs_png_47
+    21300096: Orcs_png_48
+    21300098: Orcs_png_49
+    21300100: Orcs_png_50
+    21300102: Orcs_png_51
+    21300104: Orcs_png_52
+    21300106: Orcs_png_53
+    21300108: Orcs_png_54
+    21300110: Orcs_png_55
+    21300112: Orcs_png_56
+    21300114: Orcs_png_57
+    21300116: Orcs_png_58
+    21300118: Orcs_png_59
+    21300120: Orcs_png_60
+    21300122: Orcs_png_61
+    21300124: Orcs_png_62
+    21300126: Orcs_png_63
+    21300128: Orcs_png_64
+    21300130: Orcs_png_65
+    21300132: Orcs_png_66
+    21300134: Orcs_png_67
+    21300136: Orcs_png_68
+    21300138: Orcs_png_69
+    21300140: Orcs_png_70
+    21300142: Orcs_png_71
+    21300144: Orcs_png_72
+    21300146: Orcs_png_73
+    21300148: Orcs_png_74
+    21300150: Orcs_png_75
+    21300152: Orcs_png_76
+    21300154: Orcs_png_77
+    21300156: Orcs_png_78
+    21300158: Orcs_png_79
+    21300160: Orcs_png_80
+    21300162: Orcs_png_81
+    21300164: Orcs_png_82
+    21300166: Orcs_png_83
+    21300168: Orcs_png_84
+    21300170: Orcs_png_85
+    21300172: Orcs_png_86
+    21300174: Orcs_png_87
+    21300176: Orcs_png_88
+    21300178: Orcs_png_89
+    21300180: Orcs_png_90
+    21300182: Orcs_png_91
+    21300184: Orcs_png_92
+    21300186: Orcs_png_93
+    21300188: Orcs_png_94
+    21300190: Orcs_png_95
+    21300192: Orcs_png_96
+    21300194: Orcs_png_97
+    21300196: Orcs_png_98
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orcs_png_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 451
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 451
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_33
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 375
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_34
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 375
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_35
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 375
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_36
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 375
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_47
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 321
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_48
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 321
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_49
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 321
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_50
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 321
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_51
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 329
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_52
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 329
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_53
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 240
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_60
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 240
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_66
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 240
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_78
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 192
+        width: 33
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_79
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 192
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_80
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 160
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_81
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 160
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_82
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_83
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 160
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_89
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 70
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_90
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 70
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_91
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 70
+        width: 41
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_92
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 70
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_93
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 69
+        width: 53
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_94
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 16
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_95
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 16
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_96
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 16
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_97
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 16
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_png_98
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 15
+        width: 54
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
