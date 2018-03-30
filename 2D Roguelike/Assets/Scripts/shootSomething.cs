@@ -22,6 +22,7 @@ public class shootSomething : MonoBehaviour {
         {
             GameObject go = (GameObject)Instantiate(projectile, (Vector2)transform.position + offset * transform.localScale.x, Quaternion.identity);
             go.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * transform.localScale.x, velocity.y);
+            GetComponent<Animator>().SetTrigger("isAttacking");
         }
 	}
 
