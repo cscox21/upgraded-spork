@@ -12,17 +12,44 @@ public class Player_Move_Prot : MonoBehaviour
     public float accSpeed = 15f;
     public float tempSpeed;
     public float distanceToBottomOfPlayer = 0.9f;
-    public GameObject fireball;
+    //public GameObject fireball;
+    //private List<GameObject> Fireballs = new List<GameObject>();
+    //private float fireballVelocity;
 
     void Start()
     {
         tempSpeed = playerSpeed;
+        //fireballVelocity = 3f;
     }
     // Update is called once per frame
     void Update()
     {
         PlayerMove();
         PlayerRaycast();
+
+        //Range attack
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+            //GameObject newFireball = (GameObject)Instantiate(fireball, transform.position, Quaternion.identity);
+            //Fireballs.Add(newFireball);
+        //}
+
+        //for (int i =0; i < Fireballs.Count; i++)
+        //{
+            //GameObject goFireball = Fireballs[i];
+            //if(goFireball != null)
+            //{
+                //goFireball.transform.Translate(new Vector3(0, 1) * Time.deltaTime * fireballVelocity);
+                //Vector3 fireballScreenPos = Camera.main.WorldToScreenPoint(goFireball.transform.position);
+
+                //if (fireballScreenPos.y >= Screen.height || fireballScreenPos.y <=0)
+                //{
+                    //DestroyObject(goFireball);
+                    //Fireballs.Remove(goFireball);
+                
+                //}
+           //}
+        //}
     }
     void PlayerMove()
     {
@@ -65,10 +92,10 @@ public class Player_Move_Prot : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
 
         //Range attack
-        if(Input.GetButtonDown("Fire1"))
-        {
-            GameObject newFireball = Instantiate(fireball, transform.position, transform.rotation);
-        }
+        //if(Input.GetButtonDown("Fire1"))
+        //{
+            //GameObject newFireball = Instantiate(fireball, transform.position, transform.rotation);
+        //}
     }
 
     void Jump()

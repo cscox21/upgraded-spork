@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 3589597}
   - component: {fileID: 3589596}
   - component: {fileID: 3589595}
+  - component: {fileID: 3589600}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -251,7 +252,6 @@ MonoBehaviour:
   accSpeed: 15
   tempSpeed: 0
   distanceToBottomOfPlayer: 0.9
-  fireball: {fileID: 1677762661206408, guid: 5e7f0da4313e4c148b8a7dc2b002e3a8, type: 2}
 --- !u!50 &3589598
 Rigidbody2D:
   serializedVersion: 4
@@ -297,6 +297,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1227341, y: 1.53125}
   m_EdgeRadius: 0
+--- !u!114 &3589600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3589591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3bd4f56d167004496d06d0e4e2980f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1677762661206408, guid: 5e7f0da4313e4c148b8a7dc2b002e3a8, type: 2}
+  velocity: {x: 5, y: 0}
+  offset: {x: 0.4, y: 0.1}
+  cooldown: 1
 --- !u!1001 &56485903
 Prefab:
   m_ObjectHideFlags: 0
