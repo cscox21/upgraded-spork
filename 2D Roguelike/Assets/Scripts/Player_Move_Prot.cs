@@ -65,10 +65,10 @@ public class Player_Move_Prot : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
 
         //Range attack
-        if(Input.GetButtonDown("Fire1"))
-        {
-            GameObject newFireball = Instantiate(fireball, transform.position, transform.rotation);
-        }
+        //if(Input.GetButtonDown("Fire1"))
+        //{
+            //GameObject newFireball = Instantiate(fireball, transform.position, transform.rotation);
+        //}
     }
 
     void Jump()
