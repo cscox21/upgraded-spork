@@ -204,9 +204,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3589591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.04, y: -3.04, z: 0}
+  m_LocalPosition: {x: -6.04, y: -3.174, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 114197992}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -246,13 +247,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d849938050b6c44acc79d4c9240296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
-  playerJumpPower: 1250
-  isGrounded: 0
-  accSpeed: 15
+  accSpeed: 20
   tempSpeed: 0
   distanceToBottomOfPlayer: 0.9
-  fireball: {fileID: 0}
+  speedForce: 10
+  jumpVector: {x: 0, y: 1350}
+  isGrounded: 1
+  grounder: {fileID: 114197992}
+  radius: 0.08
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &3589598
 Rigidbody2D:
   serializedVersion: 4
@@ -313,6 +318,7 @@ MonoBehaviour:
   velocity: {x: 5, y: 0}
   offset: {x: 0.4, y: 0.1}
   cooldown: 1
+  fireball: {fileID: 0}
 --- !u!1001 &56485903
 Prefab:
   m_ObjectHideFlags: 0
@@ -489,6 +495,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4758919996561464, guid: 303e47c7d391f82499db6171267e229e,
     type: 2}
   m_PrefabInternal: {fileID: 1311100737}
+--- !u!1 &114197991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 114197992}
+  m_Layer: 0
+  m_Name: Grounder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114197992
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114197991}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.131, y: -0.737, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3589594}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &289623893 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4758919996561464, guid: 303e47c7d391f82499db6171267e229e,
@@ -969,7 +1003,7 @@ GameObject:
   - component: {fileID: 798617417}
   - component: {fileID: 798617416}
   - component: {fileID: 798617415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1336,13 +1370,13 @@ GameObject:
   - component: {fileID: 1264102312}
   - component: {fileID: 1264102311}
   - component: {fileID: 1264102310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1264102310
 BoxCollider2D:
   m_ObjectHideFlags: 0
