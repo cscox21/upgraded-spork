@@ -57,16 +57,6 @@ public class Player_Move_Prot : MonoBehaviour
         }
         else
             speedForce = 10f;
-
-
-
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //playerSpeed = (int)accSpeed;
-        //}
-        //if(Input.GetKeyUp(KeyCode.LeftShift))
-        //{
-
         //PlayerMove();
         //PlayerRaycast();
     }
@@ -79,20 +69,6 @@ public class Player_Move_Prot : MonoBehaviour
     //void PlayerMove()
     //{
     //Controls
-    //moveX = Input.GetAxis("Horizontal");
-    //if you press the jump button AND you are grouned, you can jump
-    //if(Input.GetButtonDown("Jump") && isGrounded == true) 
-    //{
-    //Jump();
-    //}
-    //if (Input.GetKey(KeyCode.LeftShift))
-    //{
-    //playerSpeed = (int)accSpeed;
-    //}
-    //if(Input.GetKeyUp(KeyCode.LeftShift))
-    //{
-
-
     //Animation
     //if(moveX != 0)
     //{
@@ -125,12 +101,12 @@ public class Player_Move_Prot : MonoBehaviour
     }
     //void PlayerRaycast()
     //{
-        //TODO fix this ugly code
+        //TODO fix this ugly code, not working after fixing fireball direction and player move on 4/2/18
         //Ray Up
         //RaycastHit2D rayUp = Physics2D.Raycast(transform.position, Vector2.up);
         //if (rayUp != false && rayUp.collider != null && rayUp.distance < distanceToBottomOfPlayer && rayUp.collider.name == "Box_2")
         //{
-            //Destroy(rayUp.collider.gameObject);
+           //Destroy(rayUp.collider.gameObject);
         //}
             
         //Ray Down
