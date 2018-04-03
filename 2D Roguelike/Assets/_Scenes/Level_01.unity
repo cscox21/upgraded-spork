@@ -251,7 +251,7 @@ MonoBehaviour:
   tempSpeed: 0
   distanceToBottomOfPlayer: 0.9
   speedForce: 10
-  jumpVector: {x: 0, y: 1350}
+  jumpVector: {x: 0, y: 1600}
   isGrounded: 1
   grounder: {fileID: 114197992}
   radius: 0.08
