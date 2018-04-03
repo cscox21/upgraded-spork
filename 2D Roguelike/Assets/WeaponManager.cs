@@ -14,13 +14,13 @@ public class WeaponManager : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = wpn.sprite;
 	}
 	
-	// Update is called once per frame
+	//Update is called once per frame
 	void Update ()
     {
 		if(Input.GetButtonDown("Fire1"))
         {
             Vector3 rotation = transform.parent.localScale.x ==1 ? Vector3.zero: Vector3.forward * 180;
-            GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition *transform.parent.localScale.x, Quaternion.Euler(rotation));
+            GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * transform.parent.localScale.x, Quaternion.Euler(rotation));
 
             if(wpn.projectileMode == Weapon.Modes.Straight)
             {
