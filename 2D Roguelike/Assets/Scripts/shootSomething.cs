@@ -21,10 +21,11 @@ public class shootSomething : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
 		if(Input.GetButtonDown("Fire1") && canShoot)
         {
             GameObject go = (GameObject)Instantiate(projectile, (Vector2)transform.position + offset * transform.localScale.x, Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * transform.localScale.x, -velocity.y);
+            go.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * transform.localScale.x, velocity.y);
             GetComponent<Animator>().SetTrigger("isAttacking");
             
         }
