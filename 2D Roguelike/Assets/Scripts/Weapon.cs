@@ -13,10 +13,11 @@ public class Weapon : MonoBehaviour {
     public float coolDown;
     public Modes projectileMode;
 
+
 	// Use this for initialization
 	void Start ()
     {
-		
+
 	}
 
 }

@@ -10,6 +10,7 @@ TagManager:
   - Soda
   - ground
   - enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX

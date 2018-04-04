@@ -19,7 +19,7 @@ public class WeaponManager : MonoBehaviour {
     {
 		if(Input.GetButtonDown("Fire1"))
         {
-            Vector3 rotation = transform.parent.localScale.x ==1 ? Vector3.zero: Vector3.forward * 180;
+            Vector3 rotation = transform.parent.localScale.x ==-1 ? Vector3.zero : Vector3.forward * 180;
             GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * transform.parent.localScale.x, Quaternion.Euler(rotation));
 
             if(wpn.projectileMode == Weapon.Modes.Straight)
