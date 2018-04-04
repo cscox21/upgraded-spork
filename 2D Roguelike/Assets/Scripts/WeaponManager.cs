@@ -23,9 +23,17 @@ public class WeaponManager : MonoBehaviour {
             GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * transform.parent.localScale.x, Quaternion.Euler(rotation));
 
             if(wpn.projectileMode == Weapon.Modes.Straight)
-            {
+            
                 projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.right * wpn.projectileSpeed;
+
+            else if(wpn.projectileMode==Weapon.Modes.Throw)
+            {
+                    projectile.GetComponent<Rigidbody2D>().isKinematic = false;
+
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.localScale.x, 1) * wpn.projectileSpeed;
             }
+
+            
         }
     }
 }
