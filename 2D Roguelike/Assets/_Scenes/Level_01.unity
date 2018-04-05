@@ -1147,7 +1147,7 @@ Prefab:
         type: 2}
       propertyPath: activeWeapon
       value: 
-      objectReference: {fileID: 1687583846920640, guid: d6f9fd253e5a0164ca674f5f0f05f533,
+      objectReference: {fileID: 1040680008177210, guid: 995399d881abe34449e05bcc21caca83,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a7ad031ad4cf804d85c64bd3557fee6, type: 2}
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1687583846920640, guid: d6f9fd253e5a0164ca674f5f0f05f533, type: 2}
-  - {fileID: 1426247918296016, guid: 7071a4042d38c7b448def5679d3b7038, type: 2}
+  - {fileID: 1040680008177210, guid: 995399d881abe34449e05bcc21caca83, type: 2}
   weaponHere: {fileID: 0}
 --- !u!212 &1205110795
 SpriteRenderer:
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070f94cb5ff78354f82d6c0a5d029894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeWeapon: {fileID: 1687583846920640, guid: d6f9fd253e5a0164ca674f5f0f05f533,
+  activeWeapon: {fileID: 1040680008177210, guid: 995399d881abe34449e05bcc21caca83,
     type: 2}
 --- !u!4 &1428765763 stripped
 Transform:

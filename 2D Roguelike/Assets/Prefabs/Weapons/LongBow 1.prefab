@@ -9,60 +9,89 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1426247918296016}
+  m_RootGameObject: {fileID: 1040680008177210}
   m_IsPrefabParent: 1
---- !u!1 &1426247918296016
+--- !u!1 &1040680008177210
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4913069492016070}
-  - component: {fileID: 212178200793770548}
-  - component: {fileID: 114092838693583300}
+  - component: {fileID: 4848797118383916}
+  - component: {fileID: 212366073573008304}
+  - component: {fileID: 114333047817850980}
   m_Layer: 0
-  m_Name: LongBow
+  m_Name: LongBow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4913069492016070
+--- !u!1 &1935175071364824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4150995731514094}
+  m_Layer: 0
+  m_Name: BowTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4150995731514094
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426247918296016}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -10.082802, y: -3.2202566, z: 0}
+  m_GameObject: {fileID: 1935175071364824}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0.09, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 4848797118383916}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4848797118383916
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040680008177210}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: -6.46756, y: -0.731664, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4150995731514094}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
---- !u!114 &114092838693583300
+--- !u!114 &114333047817850980
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426247918296016}
+  m_GameObject: {fileID: 1040680008177210}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad94bb43be864584f8b0c6fec79e248c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300012, guid: 8cf706d421b9fb54ca489d03f7ada52c, type: 3}
-  projectile: {fileID: 0}
-  projectileSpeed: 6
+  projectile: {fileID: 1783768999970272, guid: 2ff304190b8e5304ca8c93a4a348795a, type: 2}
+  projectileSpeed: 15
   coolDown: 2
   projectileMode: 3
---- !u!212 &212178200793770548
+--- !u!212 &212366073573008304
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426247918296016}
+  m_GameObject: {fileID: 1040680008177210}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
