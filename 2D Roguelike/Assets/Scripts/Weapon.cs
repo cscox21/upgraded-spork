@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour {
     public float coolDown;
     public Modes projectileMode;
 
+    public int damagePerShot = 50;
 
 	// Use this for initialization
 	void Start ()
