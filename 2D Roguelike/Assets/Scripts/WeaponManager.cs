@@ -32,7 +32,7 @@ public class WeaponManager : MonoBehaviour {
 
             else if (wpn.projectileMode == Weapon.Modes.Throw)
             {
-                projectile.GetComponent<Rigidbody2D>().isKinematic = false;
+                //projectile.GetComponent<Rigidbody2D>().isKinematic = false;
 
                 projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.localScale.x, 1) * wpn.projectileSpeed;
             }
@@ -45,5 +45,12 @@ public class WeaponManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(wpn.coolDown);
         canShoot=true;
+    }
+
+    public void UpdateWeapon(GameObject newWeapon)
+    {
+        activeWeapon = newWeapon;
+        wpn = activeWeapon.GetComponent<Weapon>();
+        GetComponent<SpriteRenderer>().sprite = wpn.sprite;
     }
 }
