@@ -11,6 +11,7 @@ TagManager:
   - ground
   - enemy
   - Projectile
+  - Deadly
   layers:
   - Default
   - TransparentFX

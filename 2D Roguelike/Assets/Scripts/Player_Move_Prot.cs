@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Move_Prot : MonoBehaviour
 {
@@ -65,6 +66,15 @@ public class Player_Move_Prot : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(grounder.transform.position, radius);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag =="Deadly")
+        {
+            Debug.Log("Dead");
+            SceneManager.LoadScene("Level_01");
+        }
     }
     //void PlayerMove()
     //{
