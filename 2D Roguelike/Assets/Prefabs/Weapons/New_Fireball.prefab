@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58116127137957170}
   - component: {fileID: 50307585459217402}
   - component: {fileID: 114141318007725444}
+  - component: {fileID: 114741557642092754}
   m_Layer: 0
   m_Name: New_Fireball
   m_TagString: Projectile
@@ -90,6 +91,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 2
+--- !u!114 &114741557642092754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427567832648028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80252cb2c3b309a48912023ed64433f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 50
+  damageBurst: {fileID: 1607515771890146, guid: 01ad59d9a83778648a0c495b7d335e7d,
+    type: 2}
 --- !u!212 &212249770426493940
 SpriteRenderer:
   m_ObjectHideFlags: 1
