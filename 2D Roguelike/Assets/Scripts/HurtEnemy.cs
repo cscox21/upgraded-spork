@@ -27,5 +27,9 @@ public class HurtEnemy : MonoBehaviour {
             Instantiate(damageBurst, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+        if(other.gameObject.tag =="ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }
