@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 25
+  damageBurst: {fileID: 1607515771890146, guid: 01ad59d9a83778648a0c495b7d335e7d,
+    type: 2}
 --- !u!114 &114943703757344516
 MonoBehaviour:
   m_ObjectHideFlags: 1

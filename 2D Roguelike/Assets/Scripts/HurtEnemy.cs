@@ -25,6 +25,7 @@ public class HurtEnemy : MonoBehaviour {
         {
             other.gameObject.GetComponent<Enemy_Health>().HurtEnemy(damageToGive);
             Instantiate(damageBurst, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }
