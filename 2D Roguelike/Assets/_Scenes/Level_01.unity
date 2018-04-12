@@ -152,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 151032087}
   - component: {fileID: 151032086}
+  - component: {fileID: 151032088}
   m_Layer: 0
   m_Name: Clouds_1 (1)
   m_TagString: Untagged
@@ -216,6 +217,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151032088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151032085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &443180119
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +266,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4435236108226536, guid: 715176602daf2b047aaca1a82b29bbfb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.67
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 4435236108226536, guid: 715176602daf2b047aaca1a82b29bbfb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -315,7 +328,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4021544673305316, guid: b8a69f9d0b05d1342b8da0e50898f547, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4021544673305316, guid: b8a69f9d0b05d1342b8da0e50898f547, type: 2}
       propertyPath: m_LocalPosition.y
@@ -739,6 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947045737}
   - component: {fileID: 947045736}
+  - component: {fileID: 947045738}
   m_Layer: 0
   m_Name: Clouds_1 (3)
   m_TagString: Untagged
@@ -803,6 +817,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &947045738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947045735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
 --- !u!1 &1047729016
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1050226036}
   - component: {fileID: 1050226035}
+  - component: {fileID: 1050226037}
   m_Layer: 0
   m_Name: Clouds_1
   m_TagString: Untagged
@@ -949,6 +976,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1050226037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050226034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &1077423505
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077423507}
   - component: {fileID: 1077423506}
+  - component: {fileID: 1077423508}
   m_Layer: 0
   m_Name: Clouds_0
   m_TagString: Untagged
@@ -1022,6 +1062,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1077423508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1077423505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &1232491929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731004524}
   - component: {fileID: 1731004523}
+  - component: {fileID: 1731004525}
   m_Layer: 0
   m_Name: Clouds_2
   m_TagString: Untagged
@@ -1571,6 +1624,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731004525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731004522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &1734137530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734137532}
   - component: {fileID: 1734137531}
+  - component: {fileID: 1734137533}
   m_Layer: 0
   m_Name: Clouds_1 (2)
   m_TagString: Untagged
@@ -1644,6 +1710,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734137533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734137530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
 --- !u!1 &1818828360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114648548}
   - component: {fileID: 2114648547}
+  - component: {fileID: 2114648549}
   m_Layer: 0
   m_Name: Clouds_0 (1)
   m_TagString: Untagged
@@ -1791,3 +1870,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2114648549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114648546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268977f446c8094dac23962ee71339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2

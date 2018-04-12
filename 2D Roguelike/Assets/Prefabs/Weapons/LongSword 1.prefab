@@ -83,9 +83,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300006, guid: 8cf706d421b9fb54ca489d03f7ada52c, type: 3}
   projectile: {fileID: 1427567832648028, guid: ae4ddbe67ccd8f843b45e668f9ee337f, type: 2}
-  projectileSpeed: 15
+  projectileSpeed: 21
   coolDown: 1
   projectileMode: 1
+  damagePerShot: 50
 --- !u!212 &212896306908594336
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,7 +8,7 @@ public class Player_Move_Prot : MonoBehaviour
 
     //public int playerSpeed = 10; //how fast the player moves     
     //public int playerJumpPower = 1250; //how high player jumps
-    //private float moveX; //movement on the X plane
+    //public float moveX; //movement on the X plane
     
     public float accSpeed = 18f;
     public float tempSpeed;
@@ -27,6 +27,7 @@ public class Player_Move_Prot : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+       
         //tempSpeed = playerSpeed;
     }
     // Update is called once per frame
@@ -36,14 +37,17 @@ public class Player_Move_Prot : MonoBehaviour
         {
             rb.velocity = new Vector3(speedForce, rb.velocity.y);
             transform.localScale = new Vector3(1, 1, 1);
+            
         }
         else if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector3(-speedForce, rb.velocity.y);
             transform.localScale = new Vector3(-1, 1, 1);
+            
         }
         else
             rb.velocity = new Vector2(0, rb.velocity.y);
+        GetComponent<Animator>().SetBool("IsRunning", false); 
 
         isGrounded = Physics2D.OverlapCircle(grounder.transform.position, radius, ground);
 
@@ -59,8 +63,17 @@ public class Player_Move_Prot : MonoBehaviour
         else
             speedForce = 10f;
         //PlayerMove();
+        //if (!= 0)
+        //{
+            //GetComponent<Animator>().SetBool("IsRunning", true);
+        //}
+        //else
+        //{
+            //GetComponent<Animator>().SetBool("IsRunning", false);
+        //}
         //PlayerRaycast();
     }
+
 
     private void OnDrawGizmos()
     {
@@ -76,18 +89,11 @@ public class Player_Move_Prot : MonoBehaviour
             SceneManager.LoadScene("Level_01");
         }
     }
-    //void PlayerMove()
-    //{
-    //Controls
+    
+    
+    
     //Animation
-    //if(moveX != 0)
-    //{
-    //GetComponent<Animator>().SetBool("IsRunning", true);
-    //}
-    //else
-    //{
-    //GetComponent<Animator>().SetBool("IsRunning", false);
-    //}
+
 
     //Player Direction
     //if (moveX < 0.0f)
