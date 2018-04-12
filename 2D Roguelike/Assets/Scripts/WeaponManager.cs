@@ -33,8 +33,8 @@ public class WeaponManager : MonoBehaviour {
             else if (wpn.projectileMode == Weapon.Modes.Throw)
             {
                 //projectile.GetComponent<Rigidbody2D>().isKinematic = false;
-
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.localScale.x, 1) * wpn.projectileSpeed;
+                
+                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.localScale.x, -1) * wpn.projectileSpeed;
             }
 
 
