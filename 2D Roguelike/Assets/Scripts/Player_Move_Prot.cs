@@ -115,31 +115,31 @@ public class Player_Move_Prot : MonoBehaviour
     //GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
     //isGrounded = false;
     }
-    //void PlayerRaycast()
-    //{
-        //TODO fix this ugly code, not working after fixing fireball direction and player move on 4/2/18
+    void PlayerRaycast()
+    {
+        //TODO fix this ugly code
         //Ray Up
-        //RaycastHit2D rayUp = Physics2D.Raycast(transform.position, Vector2.up);
-        //if (rayUp != false && rayUp.collider != null && rayUp.distance < distanceToBottomOfPlayer && rayUp.collider.name == "Box_2")
-        //{
-           //Destroy(rayUp.collider.gameObject);
-        //}
+        RaycastHit2D rayUp = Physics2D.Raycast(transform.position, Vector2.up);
+        if (rayUp != false && rayUp.collider != null && rayUp.distance < distanceToBottomOfPlayer && rayUp.collider.tag == "Block")
+        {
+           Destroy(rayUp.collider.gameObject);
+        }
             
         //Ray Down
-        //RaycastHit2D rayDown = Physics2D.Raycast(transform.position, Vector2.down);
-        //if (rayDown != false && rayDown.collider != null && rayDown.distance < distanceToBottomOfPlayer && rayDown.collider.tag == "enemy")
-        //{
-            //GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000);
-            //rayDown.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 200);
-            //rayDown.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 8;
-            //rayDown.collider.gameObject.GetComponent<Rigidbody2D>().freezeRotation = false;
-            //rayDown.collider.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            //rayDown.collider.gameObject.GetComponent<EnemyMove>().enabled = false;
-            //Destroy(hit.collider.gameObject);
-        //}
-        //if (rayDown != false && rayDown.collider != null && rayDown.distance < distanceToBottomOfPlayer && rayDown.collider.tag != "enemy")
-        //{
-            //isGrounded = true;
-        //}
-    //}
+        RaycastHit2D rayDown = Physics2D.Raycast(transform.position, Vector2.down);
+        if (rayDown != false && rayDown.collider != null && rayDown.distance < distanceToBottomOfPlayer && rayDown.collider.tag == "Enemy")
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000);
+            rayDown.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 200);
+            rayDown.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 8;
+            rayDown.collider.gameObject.GetComponent<Rigidbody2D>().freezeRotation = false;
+            rayDown.collider.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            rayDown.collider.gameObject.GetComponent<EnemyMove>().enabled = false;
+            Destroy(rayDown.collider.gameObject);
+        }
+        if (rayDown != false && rayDown.collider != null && rayDown.distance < distanceToBottomOfPlayer && rayDown.collider.tag != "Enemy")
+        {
+            isGrounded = true;
+        }
+    }
 }

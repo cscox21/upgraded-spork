@@ -12,6 +12,7 @@ TagManager:
   - enemy
   - Projectile
   - Deadly
+  - Block
   layers:
   - Default
   - TransparentFX
