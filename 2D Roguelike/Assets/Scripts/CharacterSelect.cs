@@ -7,13 +7,13 @@ public class CharacterSelect : MonoBehaviour
 {
     public void ChooseCharacter(int characterIndex)
     {
-
+        PlayerPrefs.SetInt("SelectedCharacter", characterIndex);
+        print("The player index that is selected is " + characterIndex);
     }
 
     public void LoadScene()
     {
         SceneManager.LoadScene("Level_01");
     }
-
 
 }
