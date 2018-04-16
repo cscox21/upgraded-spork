@@ -18,6 +18,8 @@ public class Player_Move_Prot : MonoBehaviour
     public Vector2 jumpVector;
     public bool isGrounded;
     private Animator anim;
+    private bool playerMoving;
+    private Vector2 lastMove;
 
     public Transform grounder;
     public float radius;
@@ -36,12 +38,18 @@ public class Player_Move_Prot : MonoBehaviour
     void Update()
     {
 
+        playerMoving = false;
+
         if(Input.GetAxisRaw("Horizontal")> 0.5f || Input.GetAxisRaw("Horizontal") <-0.5f)
         {
             transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * speedForce * Time.deltaTime, 0f, 0f));
+            playerMoving = true;
+            lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
         }
 
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetBool("PlayerMoving", playerMoving);
+        anim.SetFloat("LastMoveX", lastMove.x);
         //if (Input.GetKey(KeyCode.D))
         //{
             //rb.velocity = new Vector3(speedForce, rb.velocity.y);
