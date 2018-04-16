@@ -17,6 +17,7 @@ public class Player_Move_Prot : MonoBehaviour
     public float speedForce = 20f;
     public Vector2 jumpVector;
     public bool isGrounded;
+    private Animator anim;
 
     public Transform grounder;
     public float radius;
@@ -26,6 +27,7 @@ public class Player_Move_Prot : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
        
         //tempSpeed = playerSpeed;
@@ -33,21 +35,28 @@ public class Player_Move_Prot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+
+        if(Input.GetAxisRaw("Horizontal")> 0.5f || Input.GetAxisRaw("Horizontal") <-0.5f)
         {
-            rb.velocity = new Vector3(speedForce, rb.velocity.y);
-            transform.localScale = new Vector3(1, 1, 1);
-            
+            transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * speedForce * Time.deltaTime, 0f, 0f));
         }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector3(-speedForce, rb.velocity.y);
-            transform.localScale = new Vector3(-1, 1, 1);
+
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        //if (Input.GetKey(KeyCode.D))
+        //{
+            //rb.velocity = new Vector3(speedForce, rb.velocity.y);
+            //transform.localScale = new Vector3(1, 1, 1);
             
-        }
-        else
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        GetComponent<Animator>().SetBool("IsRunning", false); 
+        //}
+        //else if (Input.GetKey(KeyCode.A))
+        //{
+            //rb.velocity = new Vector3(-speedForce, rb.velocity.y);
+            //transform.localScale = new Vector3(-1, 1, 1);
+            
+        //}
+        //else
+           // rb.velocity = new Vector2(0, rb.velocity.y);
+       // GetComponent<Animator>().SetBool("IsRunning", false); 
 
         isGrounded = Physics2D.OverlapCircle(grounder.transform.position, radius, ground);
 
