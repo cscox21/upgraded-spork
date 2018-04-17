@@ -17,6 +17,7 @@ public class Player_Move_Prot : MonoBehaviour
     public float speedForce = 20f;
     public Vector2 jumpVector;
     public bool isGrounded;
+
     private Animator anim;
     private bool playerMoving;
     private Vector2 lastMove;
@@ -50,21 +51,22 @@ public class Player_Move_Prot : MonoBehaviour
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetBool("PlayerMoving", playerMoving);
         anim.SetFloat("LastMoveX", lastMove.x);
+
         //if (Input.GetKey(KeyCode.D))
         //{
-            //rb.velocity = new Vector3(speedForce, rb.velocity.y);
-            //transform.localScale = new Vector3(1, 1, 1);
-            
+        //rb.velocity = new Vector3(speedForce, rb.velocity.y);
+        //transform.localScale = new Vector3(1, 1, 1);
+
         //}
         //else if (Input.GetKey(KeyCode.A))
         //{
-            //rb.velocity = new Vector3(-speedForce, rb.velocity.y);
-            //transform.localScale = new Vector3(-1, 1, 1);
-            
+        //rb.velocity = new Vector3(-speedForce, rb.velocity.y);
+        //transform.localScale = new Vector3(-1, 1, 1);
+
         //}
         //else
-           // rb.velocity = new Vector2(0, rb.velocity.y);
-       // GetComponent<Animator>().SetBool("IsRunning", false); 
+        // rb.velocity = new Vector2(0, rb.velocity.y);
+        // GetComponent<Animator>().SetBool("IsRunning", false); 
 
         isGrounded = Physics2D.OverlapCircle(grounder.transform.position, radius, ground);
 
@@ -79,16 +81,7 @@ public class Player_Move_Prot : MonoBehaviour
         }
         else
             speedForce = 10f;
-        //PlayerMove();
-        //if (!= 0)
-        //{
-            //GetComponent<Animator>().SetBool("IsRunning", true);
-        //}
-        //else
-        //{
-            //GetComponent<Animator>().SetBool("IsRunning", false);
-        //}
-        //PlayerRaycast();
+
     }
 
 
