@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour {
     //Use this for initialization
     void Start()
     {
+
         wpn = activeWeapon.GetComponent<Weapon>();
         GetComponent<SpriteRenderer>().sprite = wpn.sprite;
     }
@@ -28,12 +29,11 @@ public class WeaponManager : MonoBehaviour {
 
             if (wpn.projectileMode == Weapon.Modes.Straight)
 
-                projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.right * wpn.projectileSpeed;
+            projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.right * wpn.projectileSpeed;
 
             else if (wpn.projectileMode == Weapon.Modes.Throw)
             {
-                //projectile.GetComponent<Rigidbody2D>().isKinematic = false;
-                
+
                 projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.localScale.x, -1) * wpn.projectileSpeed;
             }
 
