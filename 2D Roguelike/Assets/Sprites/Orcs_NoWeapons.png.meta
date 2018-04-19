@@ -1,0 +1,714 @@
+fileFormatVersion: 2
+guid: 52cdb891f8d638143af7a71ce76ca031
+timeCreated: 1524102336
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Orcs_NoWeapons_IdleRight
+    21300002: Orcs_NoWeapons_IdleLeft
+    21300004: Orcs_NoWeapons_2
+    21300006: Orcs_NoWeapons_3
+    21300008: Orcs_NoWeapons_4
+    21300010: Orcs_NoWeapons_5
+    21300012: Orcs_NoWeapons_8
+    21300014: Orcs_NoWeapons_9
+    21300016: Orcs_NoWeapons_10
+    21300018: Orcs_NoWeapons_11
+    21300020: Orcs_NoWeapons_16
+    21300022: Orcs_NoWeapons_17
+    21300024: Orcs_NoWeapons_18
+    21300026: Orcs_NoWeapons_19
+    21300028: Orcs_NoWeapons_22
+    21300030: Orcs_NoWeapons_23
+    21300032: Orcs_NoWeapons_25
+    21300034: Orcs_NoWeapons_26
+    21300036: Orcs_NoWeapons_27
+    21300038: Orcs_NoWeapons_28
+    21300040: Orcs_NoWeapons_30
+    21300042: Orcs_NoWeapons_31
+    21300044: Orcs_NoWeapons_32
+    21300046: Orcs_NoWeapons_33
+    21300048: Orcs_NoWeapons_34
+    21300050: Orcs_NoWeapons_35
+    21300052: Orcs_NoWeapons_36
+    21300054: Orcs_NoWeapons_37
+    21300056: Orcs_NoWeapons_38
+    21300058: Orcs_NoWeapons_39
+    21300060: Orcs_NoWeapons_40
+    21300062: Orcs_NoWeapons_0
+    21300064: Orcs_NoWeapons_1
+    21300066: Orcs_NoWeapons_6
+    21300068: Orcs_NoWeapons_7
+    21300070: Orcs_NoWeapons_12
+    21300072: Orcs_NoWeapons_13
+    21300074: Orcs_NoWeapons_14
+    21300076: Orcs_NoWeapons_15
+    21300078: Orcs_NoWeapons_20
+    21300080: Orcs_NoWeapons_21
+    21300082: Orcs_NoWeapons_24
+    21300084: Orcs_NoWeapons_29
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 451
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 451
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 375
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 375
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_4
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 375
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_5
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 375
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_6
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 329
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_7
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 329
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 321
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 321
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 321
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_11
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 321
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_12
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 271
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_13
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 271
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 298
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_15
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 271
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 240
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 240
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_19
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 240
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_20
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 287
+        width: 23
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_21
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 274
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_22
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 261
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_23
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 261
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_24
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 263
+        width: 23
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 160
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_26
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 160
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_27
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_28
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 160
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_29
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 192
+        width: 33
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_30
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 192
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_31
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 70
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_32
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 70
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 70
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_34
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 70
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_35
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 70
+        width: 50
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_36
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 16
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_37
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 16
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_38
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 16
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_39
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 16
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Orcs_NoWeapons_40
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 16
+        width: 50
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
