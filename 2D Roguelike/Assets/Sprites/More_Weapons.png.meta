@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -73,7 +73,7 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -83,7 +83,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -93,7 +93,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -112,8 +112,8 @@ TextureImporter:
         y: 153
         width: 38
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.62224084, y: 0.31935462}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,12 +122,12 @@ TextureImporter:
       name: More_Weapons_1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 153
+        x: 88
+        y: 154
         width: 39
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.24855237, y: 0.22903213}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,8 +140,8 @@ TextureImporter:
         y: 152
         width: 42
         height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5737327, y: 0.37711224}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,8 +154,8 @@ TextureImporter:
         y: 150
         width: 42
         height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.16820309, y: 0.18583447}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,12 +164,12 @@ TextureImporter:
       name: More_Weapons_4
       rect:
         serializedVersion: 2
-        x: 268
+        x: 267
         y: 152
         width: 37
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.19311276, y: 0.2032257}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,7 +179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 94
+        y: 93
         width: 39
         height: 38
       alignment: 0
@@ -210,8 +210,8 @@ TextureImporter:
         y: 92
         width: 43
         height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.2839462, y: 0.21735781}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,8 +224,8 @@ TextureImporter:
         y: 92
         width: 36
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.22759883, y: 0.25483856}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,8 +238,8 @@ TextureImporter:
         y: 92
         width: 41
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.1601101, y: 0.15161285}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,8 +266,8 @@ TextureImporter:
         y: 32
         width: 36
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.2275984, y: 0.24193545}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,8 +280,8 @@ TextureImporter:
         y: 34
         width: 37
         height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.17916293, y: 0.17402378}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,8 +294,8 @@ TextureImporter:
         y: 35
         width: 35
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.19032288, y: 0.2132616}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
