@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 61640464276280042}
   - component: {fileID: 50875812916250110}
   - component: {fileID: 212037047706876006}
-  - component: {fileID: 114478152724471740}
   m_Layer: 0
   m_Name: BossFireball
   m_TagString: Deadly
@@ -118,18 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7558384, y: 0.4658966}
   m_EdgeRadius: 0
---- !u!114 &114478152724471740
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1980860982051532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f70db96c2a5d5946826043d6f41eb87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyTime: 20
 --- !u!212 &212037047706876006
 SpriteRenderer:
   m_ObjectHideFlags: 1
