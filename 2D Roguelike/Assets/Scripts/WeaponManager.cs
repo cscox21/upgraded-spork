@@ -5,9 +5,9 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour {
 
     public GameObject activeWeapon;
-    Weapon wpn;
-    bool canShoot = true;
-    public float moveX;
+    Weapon wpn; //reference to our Weapon component and renames as wpn
+    bool canShoot = true; //determines whether we can shoot or not
+    public float moveX; //variable to hold our x facing direction
 
     //Use this for initialization
     void Start()
