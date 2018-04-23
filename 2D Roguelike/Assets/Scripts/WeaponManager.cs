@@ -12,7 +12,7 @@ public class WeaponManager : MonoBehaviour {
     //Use this for initialization
     void Start()
     {
-        moveX = transform.position.x;
+        moveX = transform.localPosition.x;
         wpn = activeWeapon.GetComponent<Weapon>();
         GetComponent<SpriteRenderer>().sprite = wpn.sprite;
         
@@ -21,16 +21,19 @@ public class WeaponManager : MonoBehaviour {
     //Update is called once per frame
     void Update()
     {
+        moveX = transform.localPosition.x;
+
         if (Input.GetButtonDown("Fire1") && canShoot)
         {
             canShoot = false;
             StartCoroutine("CoolDown");
 
 
-            if (moveX > transform.localPosition.x)
+            if (moveX <.5)
             {
                 Vector3 rotation = transform.parent.localScale.x == -1 ? Vector3.zero : Vector3.forward * 180;
                 GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * transform.parent.localScale.x, Quaternion.Euler(rotation));
+                
                 if (wpn.projectileMode == Weapon.Modes.Straight)
 
                     projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.right * wpn.projectileSpeed;
@@ -42,7 +45,7 @@ public class WeaponManager : MonoBehaviour {
                 }
             }
 
-            else if (moveX < transform.localPosition.x)
+            else if (moveX > -.5)
             {
                 Vector3 rotation = transform.parent.localScale.x == 1 ? Vector3.zero : Vector3.forward * 180;
                 GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * transform.parent.localScale.x, Quaternion.Euler(rotation));

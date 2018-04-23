@@ -997,6 +997,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1371376181474096, guid: 715176602daf2b047aaca1a82b29bbfb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 715176602daf2b047aaca1a82b29bbfb, type: 2}
   m_IsPrefabParent: 0
@@ -1508,7 +1512,8 @@ Prefab:
         type: 2}
       propertyPath: activeWeapon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1687583846920640, guid: d6f9fd253e5a0164ca674f5f0f05f533,
+        type: 2}
     - target: {fileID: 114276417479739282, guid: b8a69f9d0b05d1342b8da0e50898f547,
         type: 2}
       propertyPath: m_Enabled
