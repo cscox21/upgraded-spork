@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour {
 
@@ -21,6 +22,7 @@ public class EnemyMove : MonoBehaviour {
             if(hit.collider.tag == "Player")
             {
                 Destroy(hit.collider.gameObject);
+                SceneManager.LoadScene("Level_01");
             }
         }
 	}
