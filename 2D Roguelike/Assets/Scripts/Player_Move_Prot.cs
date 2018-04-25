@@ -6,14 +6,11 @@ using UnityEngine.SceneManagement;
 public class Player_Move_Prot : MonoBehaviour
 {
 
-    //public int playerSpeed = 10; //how fast the player moves     
-    //public int playerJumpPower = 1250; //how high player jumps
-    //public float moveX; //movement on the X plane
     
     public float accSpeed = 18f;
     public float tempSpeed;
     public float distanceToBottomOfPlayer = 0.9f;
-    //public GameObject fireball;
+
     public float speedForce = 20f;
     public Vector2 jumpVector;
     public bool isGrounded;
@@ -33,7 +30,6 @@ public class Player_Move_Prot : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
        
-        //tempSpeed = playerSpeed;
     }
     // Update is called once per frame
     void Update()
@@ -51,22 +47,6 @@ public class Player_Move_Prot : MonoBehaviour
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetBool("PlayerMoving", playerMoving);
         anim.SetFloat("LastMoveX", lastMove.x);
-
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //rb.velocity = new Vector3(speedForce, rb.velocity.y);
-        //transform.localScale = new Vector3(1, 1, 1);
-
-        //}
-        //else if (Input.GetKey(KeyCode.A))
-        //{
-        //rb.velocity = new Vector3(-speedForce, rb.velocity.y);
-        //transform.localScale = new Vector3(-1, 1, 1);
-
-        //}
-        //else
-        // rb.velocity = new Vector2(0, rb.velocity.y);
-        // GetComponent<Animator>().SetBool("IsRunning", false); 
 
         isGrounded = Physics2D.OverlapCircle(grounder.transform.position, radius, ground);
 
@@ -99,31 +79,11 @@ public class Player_Move_Prot : MonoBehaviour
             SceneManager.LoadScene("Level_01");
         }
     }
-    
-    
-    
-    //Animation
 
-
-    //Player Direction
-    //if (moveX < 0.0f)
-    //{
-    //GetComponent<SpriteRenderer>().flipX = true;
-    //}
-    //else if (moveX > 0.0f)
-    //{
-    //GetComponent<SpriteRenderer>().flipX = false;
-    //}
-    //Physics
-    //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-
-    //}
 
     void Jump()
     {
-    //Jumping Code
-    //GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
-    //isGrounded = false;
+
     }
     void PlayerRaycast()
     {
