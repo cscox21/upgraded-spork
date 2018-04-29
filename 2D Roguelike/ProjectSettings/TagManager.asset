@@ -13,6 +13,8 @@ TagManager:
   - Projectile
   - Deadly
   - Block
+  - Dangerous
+  - Bomb
   layers:
   - Default
   - TransparentFX

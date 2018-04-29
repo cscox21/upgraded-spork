@@ -5,7 +5,11 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - timeLeftUI: {fileID: 1080485019973684, guid: ab51ee8751f39be40932a59f655cd524,
+      type: 2}
+  - playerScoreUI: {fileID: 1744835806659126, guid: 0b0d9cf2ee1e7144eaf99b745144d6b3,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
