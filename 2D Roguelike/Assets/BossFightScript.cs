@@ -23,20 +23,19 @@ public class BossFightScript : MonoBehaviour {
         Attacking
     }
 
-
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.tag == "Player")
+        if (gameObject.tag == "Player")
         {
             eCurState = BossActionType.Moving;
 
         }
-        if (other.tag == "Bomb")
+        if (gameObject.tag == "Bomb")
         {
             jump = true;
             eCurState = BossActionType.AvoidingObstacle;
         }
-        if (other.tag == "Dangerous")
+        if (gameObject.tag == "Dangerous")
         {
             Debug.Log("HSK");
 
@@ -44,6 +43,7 @@ public class BossFightScript : MonoBehaviour {
             Debug.Log("Dead");
         }
     }
+
 
     IEnumerator MoveLeft()
     {
@@ -77,16 +77,17 @@ public class BossFightScript : MonoBehaviour {
                     transform.Translate(Vector2.right * speed * Time.deltaTime);
                 turning = true;
                 StartCoroutine(MoveLeft());
+                
 
                 //HandleIdleState();
                 break;
 
-            case BossActionType.Moving:
-                if (dirRight == false && transform.position.x >= 4.0f)
-                    transform.Translate(Vector2.right * speed * Time.deltaTime);
-                Debug.Log("Sweet Sweet");
+            //case BossActionType.Moving:
+                //if (dirRight == false && transform.position.x >= 4.0f)
+                    //transform.Translate(Vector2.right * speed * Time.deltaTime);
+                //Debug.Log("Sweet Sweet");
                 //HandleMovingState();
-                break;
+                //break;
 
             case BossActionType.AvoidingObstacle:
                 if (jump == true)
@@ -94,6 +95,7 @@ public class BossFightScript : MonoBehaviour {
                     transform.Translate(-Vector2.right * speed * Time.deltaTime);
                     GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
                     jump = false;
+                    Debug.Log("avoided object");
                 }
                 //HandleAvoidingObstacleState();
                 break;
@@ -105,11 +107,9 @@ public class BossFightScript : MonoBehaviour {
             case BossActionType.Attacking:
                 //HandleAttackingState();
                 break;
-        }
-    }
 
-    void FixedUpdate()
-    {
+                
+        }
 
         float move = Input.GetAxis("Horizontal");
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * speed, GetComponent<Rigidbody2D>().velocity.y);
@@ -119,6 +119,12 @@ public class BossFightScript : MonoBehaviour {
         else if (turning == false && facingRight)
             Flip();
     }
+
+    //void FixedUpdate()
+    //{
+
+        
+    //}
 
     void Flip()
     {
