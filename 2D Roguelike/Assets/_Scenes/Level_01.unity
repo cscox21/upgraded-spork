@@ -2091,6 +2091,7 @@ GameObject:
   - component: {fileID: 1258871342}
   - component: {fileID: 1258871341}
   - component: {fileID: 1258871345}
+  - component: {fileID: 1258871346}
   m_Layer: 0
   m_Name: Orcs_NoWeapons_25
   m_TagString: Untagged
@@ -2110,14 +2111,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1258871342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,10 +2215,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2087399795}
   updateRate: 2
-  speed: 300
+  speed: 1000
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 3
+--- !u!61 &1258871346
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258871340}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03686495, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.40625, y: 1.5}
+    newSize: {x: 1.40625, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8901435, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &1287144116 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1175793271807434, guid: d0114245ddea9c44f813e266fbfe4d63,
@@ -3479,7 +3505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+tonwE4OwIAAMoEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1v2zAM/SuBzitgO9+7bUma7ZC2aDbs4osq0bEQWTIkuWla5L+PkuXYzbCbxPdIvkfR/iBC2RqY02ZrBN9pDuTriPgz+TIiNGDP1AmN4RQjwuoKnBHsmzpIz00w2ChRaFNt+AFW2jqL4YJKCwgZ7Xy2wtDHiLz5KgufcsZTNvendzwtk9EFjwyUA9NTO2JHa1mNYpJWNfC9eIeePO3Y05am0EtkeOFMSylsVELcuQ5Gn+nZ++SCoqvQOsNrCeJQuni5Jj4WhQUX5Rh6XguDw2krku/alb5SRe2x1fRKZROaJ9kkCGqr7v4h3KUBLoyufnSN08Q3caVgR5TIqHWDmQ7D6155GmZzovJIXyT8KUE96K3RjeIIOtP41MZCtu6vV2+rEtixj7dSb4JN/f+X8R4uwf7bSorqJUJ43UsdRr30dzD4KD9RbtgJG1kY9Rp+W/hFD8PlicC9MNYhFD0qL+5FN8ZTySZMzHtp3EobBSEcJdegqHTnJyzjbl/wBhu0vUHuqf88YvOIddt/kxLCPT9JbqAnfbo+lS31aQe2fGycFAp60R54wDmttFLtgg1n0qXtG1NQNkg7NIJ/XizC0+kkW7AkhXk2Y9P53XiWpTO+mC2LBVuOJ2MSNk8o9EnlUys0jgdfbTgThWvW/RlGW0PrsO3c0NNWvFd6qFCoQu+ZAVCPn2tYMNgGP0m+4QJHtAfnhAovTj5yIjU7As+vjvLgdfPmDM37Kjmpxat2PpKTVfhh5ORCLn8BUEsDBBQAAAgIAACQn+vLJ8vUbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz1DM001FQSi9KLMgoBooYgjilmSkgdrRSiqGpiZFFsoFhqrmRWbKpua6xmZGhWYqFmWWaRbKlsYmxUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACQn+tonwE4OwIAAMoEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+vLJ8vUbQAAAHgAAAAJACQAAAAAAAAAAAAAAIgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAQAMAAAAA
+    dataString: UEsDBBQAAAgIAACQn+s2QVCXSgIAANgEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2yAU/RUP6yYjyY/Y3bW243aRx8TpdKMNhiuLMQINoDhOxv/eC0KW4u7g3Nc5hyt9EqFsDcxpszGCP2gO5PuI+DP5NiI0xF6oExrhFBFhdQXOCPZD7aXPTRBslCi0qdZ8D0ttnUW4oNIChox2vloh9Dki777L3Jec8JTd+dMHnhbJ6IxHBsqBGaSm09s0jdnJ7TxNknQ8jTVtSaOYpFUNfCs+oK+cdjPGSZunUFlM8Q2ZllLYyIu4Ux1kv9CTV80FRY2BSIbXEsS+dPFyKXwqCgsuGmDoaSUMWtV2JD+1K32nitpDS+qNyiYMT7JJINR2ffgv4SYN4cLo6lc3GHUj5ErBDkiRUesGDg/hVc88DeYcqTzQnYS/JahHvTG6URyDzjS+tLGQrfrrRduyBHbo8ZbqFdjUvdud2d1zeg3nIP99KUW1iyG8bqUOVi/8HQw+ym+kGzbExixEPYc/Fl7pfrhKMXAvjHUYihqVJ7fTjfGpZB0c81oat9RGQYAj5RoUle70jG3c9QtexQZjryL31H8scXiMdd/CVUmA+/wkuQo96+PlqWypjw9gy6fGSaGgJ+0Dj+jTUivVLtjQk65s25iCskHZvhH862IRnk4n2ZwlKdxlMza9uxnPsnTG57NFMWeL8WRMwuYJhTqpfG6JRnvw1YaeKFyz7j8x2hhah23nhh434qPSQ4ZCFXrLDIB6+trDgsEx+EnyNRdo0RacEyq8OPnMidTsADy/KMqD1vW7MzTvu+SkFm/aeSQny/D7yMmZnP8BUEsDBBQAAAgIAACQn+vLJ8vUbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz1DM001FQSi9KLMgoBooYgjilmSkgdrRSiqGpiZFFsoFhqrmRWbKpua6xmZGhWYqFmWWaRbKlsYmxUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACQn+s2QVCXSgIAANgEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+vLJ8vUbQAAAHgAAAAJACQAAAAAAAAAAAAAAJcCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
