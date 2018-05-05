@@ -8,8 +8,10 @@ public class ZombiePatrol : MonoBehaviour {
     int currentPoint;
     public float speed = 0.5f;
     public float timeStill = 1.2f;
+    public float sight = 3f;
 
     Animator anim;
+    public float force;
 
 	// Use this for initialization
 	void Start ()
@@ -23,8 +25,11 @@ public class ZombiePatrol : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+        if (hit.collider != null && hit.collider.tag == "Player")
+            GetComponent<Rigidbody2D>().AddForce(Vector3.up * force + (hit.collider.transform.position - transform.position)*force);
+
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -63,6 +68,12 @@ public class ZombiePatrol : MonoBehaviour {
 
 
         
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * -sight);
     }
 
 }
