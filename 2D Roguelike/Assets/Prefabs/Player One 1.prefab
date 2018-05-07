@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 61452061316754558}
   - component: {fileID: 50741723853402508}
   - component: {fileID: 114435121767250504}
+  - component: {fileID: 114138835340854674}
   - component: {fileID: 114581729440067662}
   - component: {fileID: 114947483139762322}
   - component: {fileID: 114478809990194850}
@@ -86,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397208298344166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.18, y: -3.174, z: 0}
+  m_LocalPosition: {x: -12.9, y: -2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4221491558877856}
@@ -169,6 +170,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114138835340854674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397208298344166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60bc32486c94b4a8744c0e05ea4399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &114435121767250504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,10 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accSpeed: 20
-  tempSpeed: 0
   distanceToBottomOfPlayer: 0.9
+  jumpVelocity: 8
   speedForce: 10
-  jumpVector: {x: 0, y: 1600}
   isGrounded: 1
   grounder: {fileID: 4221491558877856}
   radius: 0.08

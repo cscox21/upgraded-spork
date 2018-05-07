@@ -1550,24 +1550,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4586759213759348, guid: 9707a38c2eb690f4398276472b50fac3,
     type: 2}
   m_PrefabInternal: {fileID: 1804061361}
---- !u!1 &1225148374 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1397208298344166, guid: 2c215e48e4b5df5418baa318dc34c030,
-    type: 2}
-  m_PrefabInternal: {fileID: 2087399794}
---- !u!114 &1225148383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1225148374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec60bc32486c94b4a8744c0e05ea4399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
 --- !u!4 &1268498760 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4586759213759348, guid: 9707a38c2eb690f4398276472b50fac3,
@@ -2882,11 +2864,6 @@ Prefab:
     - target: {fileID: 1397208298344166, guid: 2c215e48e4b5df5418baa318dc34c030, type: 2}
       propertyPath: m_Name
       value: Player One
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435121767250504, guid: 2c215e48e4b5df5418baa318dc34c030,
-        type: 2}
-      propertyPath: jumpVelocity
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c215e48e4b5df5418baa318dc34c030, type: 2}

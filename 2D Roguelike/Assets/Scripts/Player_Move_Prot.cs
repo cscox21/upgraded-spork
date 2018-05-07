@@ -8,7 +8,6 @@ public class Player_Move_Prot : MonoBehaviour
 
     
     public float accSpeed = 18f;
-    public float tempSpeed;
     public float distanceToBottomOfPlayer = 0.9f;
 
     [Range(1,10)]
@@ -16,7 +15,6 @@ public class Player_Move_Prot : MonoBehaviour
     bool jumpRequest;
 
     public float speedForce = 20f;
-    public Vector2 jumpVector;
     public bool isGrounded;
 
     private Animator anim;
