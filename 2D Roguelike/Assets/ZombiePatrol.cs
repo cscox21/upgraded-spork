@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ZombiePatrol : MonoBehaviour {
 
@@ -36,6 +37,7 @@ public class ZombiePatrol : MonoBehaviour {
         if (other.tag == "Player")
         { 
             Destroy(other.gameObject);
+            SceneManager.LoadScene("Level_01");
         }
     }
 
