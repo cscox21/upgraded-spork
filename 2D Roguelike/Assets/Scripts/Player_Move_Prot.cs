@@ -11,6 +11,10 @@ public class Player_Move_Prot : MonoBehaviour
     public float tempSpeed;
     public float distanceToBottomOfPlayer = 0.9f;
 
+    [Range(1,10)]
+    public float jumpVelocity;
+    bool jumpRequest;
+
     public float speedForce = 20f;
     public Vector2 jumpVector;
     public bool isGrounded;
@@ -52,7 +56,8 @@ public class Player_Move_Prot : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded ==true)
         {
-            rb.AddForce(jumpVector, ForceMode2D.Force);
+            jumpRequest = true;
+            //rb.AddForce(jumpVector, ForceMode2D.Force);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -62,6 +67,17 @@ public class Player_Move_Prot : MonoBehaviour
         else
             speedForce = 10f;
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (jumpRequest)
+        {
+            //GetComponent<Rigidbody2D>().velocity += Vector2.up * jumpVelocity;
+            rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+
+            jumpRequest = false;
+        }
     }
 
 

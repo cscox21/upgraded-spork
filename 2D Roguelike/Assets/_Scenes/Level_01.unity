@@ -2883,6 +2883,11 @@ Prefab:
       propertyPath: m_Name
       value: Player One
       objectReference: {fileID: 0}
+    - target: {fileID: 114435121767250504, guid: 2c215e48e4b5df5418baa318dc34c030,
+        type: 2}
+      propertyPath: jumpVelocity
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c215e48e4b5df5418baa318dc34c030, type: 2}
   m_IsPrefabParent: 0
