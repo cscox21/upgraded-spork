@@ -5,14 +5,18 @@ using UnityEngine;
 public class BossFight : MonoBehaviour {
 
     public Transform[] spots;
+    public Transform[] fireLocation;
     public float speed;
     public GameObject projectile;
+    public float fireballSpeed;
+
+
 
 	// Use this for initialization
 	void Start ()
     {
         StartCoroutine("Boss");
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -35,7 +39,8 @@ public class BossFight : MonoBehaviour {
         int i = 0;
         while(i<6)
         {
-
+            GameObject bossFireball = (GameObject)Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+            bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
 
             i++;
             yield return new WaitForSeconds(.7f);
