@@ -29,18 +29,24 @@ public class FlyingBat : MonoBehaviour {
         transform.position = tempPosition;
 
         if (tempPosition.x < patrolpoints[currentPoint].position.x)
+        {
+            currentPoint++;
             transform.localScale = Vector3.one;
+            Debug.Log("Going to point1");
             //horizontalSpeed = -horizontalSpeed;
             //tempPosition.y = Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude;
             //transform.position = tempPosition;
+        }
 
-        
 
         else if (tempPosition.x > patrolpoints[currentPoint].position.x)
-        transform.localScale = new Vector3(-1, 1, 1);
+        {
+            currentPoint = 0;
+            transform.localScale = new Vector3(-1, 1, 1);
+            Debug.Log("Going to point2");
         //tempPosition.y = Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude;
         //transform.position = tempPosition;
-
+        }
 
     }
 
