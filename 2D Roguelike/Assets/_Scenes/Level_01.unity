@@ -727,10 +727,11 @@ MonoBehaviour:
   - {fileID: 67153684}
   - {fileID: 1969404975}
   - {fileID: 1637360802}
-  fireLocation: []
+  fireLocation:
+  - {fileID: 470991553}
   speed: 0.2
   projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
-  fireballSpeed: 0
+  fireballSpeed: 5
 --- !u!1 &470991552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3578,11 +3579,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4779579015875698, guid: 2c215e48e4b5df5418baa318dc34c030, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.9
+      value: -15.34
       objectReference: {fileID: 0}
     - target: {fileID: 4779579015875698, guid: 2c215e48e4b5df5418baa318dc34c030, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.47
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4779579015875698, guid: 2c215e48e4b5df5418baa318dc34c030, type: 2}
       propertyPath: m_LocalPosition.z

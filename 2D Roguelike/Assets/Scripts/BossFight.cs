@@ -9,12 +9,15 @@ public class BossFight : MonoBehaviour {
     public float speed;
     public GameObject projectile;
     public float fireballSpeed;
+    GameObject player;
+    Vector3 playerPos;
 
 
 
 	// Use this for initialization
 	void Start ()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine("Boss");
     }
 	
@@ -26,26 +29,75 @@ public class BossFight : MonoBehaviour {
 
     IEnumerator Boss()
     {
-        //First attack
-        while (transform.position.x != spots[0].position.x)
+
+        while (true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(spots[0].position.x, transform.position.y), speed);
-            yield return null;
+            //First attack
+            while (transform.position.x != spots[0].position.x)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(spots[0].position.x, transform.position.y), speed);
+                yield return null;
+            }
+
+            transform.localScale = new Vector2(-1, 1);
+            yield return new WaitForSeconds(1f);
+
+            int i = 0;
+            while (i < 3)
+            {
+                GameObject bossFireball = (GameObject)Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+
+                i++;
+                yield return new WaitForSeconds(1f);
+            }
+
+            //Second Attack
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            while (transform.position != spots[2].position)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, spots[2].position, speed);
+
+                yield return null;
+            }
+
+            playerPos = player.transform.position;
+
+            yield return new WaitForSeconds(1f);
+            GetComponent<Rigidbody2D>().isKinematic = false;
+
+            while (transform.position.x != playerPos.x)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(playerPos.x, transform.position.y), speed);
+                yield return null;
+            }
+
+            //Third Attack
+            Transform temp;
+            if (transform.position.x > player.transform.position.x)
+
+                temp = spots[1];
+            else
+                temp = spots[0];
+
+            while (transform.position.x != temp.position.x)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(temp.position.x, transform.position.y), speed);
+                if (temp.position.x > transform.position.x)
+                {
+                    //face right
+                    transform.localScale = new Vector2(-1, 1);
+                }
+                else if (temp.position.x < transform.position.x)
+                {
+                    //face left
+                    transform.localScale = new Vector2(1, 1);
+                }
+
+                yield return null;
+            }
+
         }
 
-        transform.localScale= new Vector2(-1, 1);
-        yield return new WaitForSeconds(1f);
-
-        int i = 0;
-        while(i<6)
-        {
-            GameObject bossFireball = (GameObject)Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-            bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-
-            i++;
-            yield return new WaitForSeconds(.7f);
-        }
-
-        yield return null;
     }
 }
