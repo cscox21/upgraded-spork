@@ -8,9 +8,13 @@ public class BossFight : MonoBehaviour {
     public Transform[] fireLocation;
     public float speed;
     public GameObject projectile;
+    public GameObject trackingProjectile;
+    public float trackerSpeed;
     public float fireballSpeed;
     GameObject player;
     Vector3 playerPos;
+
+    
 
 
 
@@ -57,13 +61,27 @@ public class BossFight : MonoBehaviour {
             while (transform.position != spots[2].position)
             {
                 transform.position = Vector2.MoveTowards(transform.position, spots[2].position, speed);
-
+                i = 0;
                 yield return null;
             }
 
+            yield return new WaitForSeconds(1f);
+
+            while (i < 3)
+            {
+                GameObject bossFireball = (GameObject)Instantiate(trackingProjectile, fireLocation[1].position, Quaternion.identity);
+                bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.up * trackerSpeed;
+
+                i++;
+                yield return new WaitForSeconds(1f);
+            }
+
+
+
+
             playerPos = player.transform.position;
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
             GetComponent<Rigidbody2D>().isKinematic = false;
 
             while (transform.position.x != playerPos.x)
@@ -76,7 +94,7 @@ public class BossFight : MonoBehaviour {
             Transform temp;
             if (transform.position.x > player.transform.position.x)
 
-                temp = spots[1];
+                temp = spots[2];
             else
                 temp = spots[0];
 
