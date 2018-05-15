@@ -81,7 +81,7 @@ public class BossFight : MonoBehaviour {
 
             playerPos = player.transform.position;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             GetComponent<Rigidbody2D>().isKinematic = false;
 
             while (transform.position.x != playerPos.x)

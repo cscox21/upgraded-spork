@@ -13,10 +13,10 @@ public class Weapon_FirePoint : MonoBehaviour
 
     private void Awake()
     {
-        firePoint = transform.Find("FirePoint");
+        firePoint = transform.Find("SwordTip");
         if(firePoint ==null)
         {
-            Debug.LogError("No firePoint?");
+            Debug.LogError("No SwordTip?");
         }
     }
 
