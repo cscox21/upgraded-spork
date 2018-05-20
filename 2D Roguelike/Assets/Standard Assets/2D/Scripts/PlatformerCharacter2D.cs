@@ -22,7 +22,9 @@ namespace UnitySampleAssets._2D
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
-        Rigidbody2D rb; 
+        Rigidbody2D rb;
+
+        Transform playerGraphics;   // Reference to the graphics so we can change direction
 
         private void Awake()
         {
@@ -31,6 +33,11 @@ namespace UnitySampleAssets._2D
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
+            playerGraphics = transform.Find("Graphics");
+            if(playerGraphics == null)
+            {
+                Debug.LogError("There are no graphics object as a child of the player!");
+            }
         }
 
 
@@ -98,9 +105,9 @@ namespace UnitySampleAssets._2D
             facingRight = !facingRight;
 
             // Multiply the player's x local scale by -1.
-            Vector3 theScale = transform.localScale;
+            Vector3 theScale = playerGraphics.localScale;
             theScale.x *= -1;
-            transform.localScale = theScale;
+            playerGraphics.localScale = theScale;
         }
     }
 }
