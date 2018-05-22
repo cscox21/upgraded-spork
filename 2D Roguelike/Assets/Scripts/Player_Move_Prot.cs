@@ -94,11 +94,6 @@ public class Player_Move_Prot : MonoBehaviour
         }
     }
 
-
-    void Jump()
-    {
-
-    }
     void PlayerRaycast()
     {
         //TODO fix this ugly code
