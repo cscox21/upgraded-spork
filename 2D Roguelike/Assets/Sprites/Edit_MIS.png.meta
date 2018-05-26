@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: ba29aa8336a14b84cacc89c04221c7b3
-timeCreated: 1526953588
+guid: de17550f0746a374788435e5feb5612a
+timeCreated: 1527375809
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ManInSuit 2_0
-    21300002: ManInSuit 2_1
-    21300004: ManInSuit 2_2
-    21300006: ManInSuit 2_3
-    21300008: ManInSuit 2_4
-    21300010: ManInSuit 2_5
-    21300012: ManInSuit 2_6
-    21300014: ManInSuit 2_11
+    21300000: Edit_MIS_0
+    21300002: Edit_MIS_1
+    21300004: Edit_MIS_2
+    21300006: Edit_MIS_3
+    21300008: Edit_MIS_4
+    21300010: Edit_MIS_5
+    21300012: Edit_MIS_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -98,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ManInSuit 2_0
+      name: Edit_MIS_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 480
-        width: 12
-        height: 44
+        x: 0
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,13 +111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ManInSuit 2_1
+      name: Edit_MIS_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 480
-        width: 12
-        height: 44
+        x: 34
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,13 +125,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ManInSuit 2_2
+      name: Edit_MIS_2
       rect:
         serializedVersion: 2
-        x: 59
-        y: 480
-        width: 16
-        height: 44
+        x: 68
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,13 +139,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ManInSuit 2_3
+      name: Edit_MIS_3
       rect:
         serializedVersion: 2
-        x: 76
-        y: 480
-        width: 18
-        height: 44
+        x: 102
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,13 +153,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ManInSuit 2_4
+      name: Edit_MIS_4
       rect:
         serializedVersion: 2
-        x: 97
-        y: 480
-        width: 17
-        height: 44
+        x: 136
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,13 +167,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ManInSuit 2_5
+      name: Edit_MIS_5
       rect:
         serializedVersion: 2
-        x: 116
-        y: 480
-        width: 17
-        height: 44
+        x: 170
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,27 +181,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ManInSuit 2_6
+      name: Edit_MIS_6
       rect:
         serializedVersion: 2
-        x: 135
-        y: 480
-        width: 12
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ManInSuit 2_11
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 437
-        width: 37
-        height: 41
+        x: 204
+        y: 482
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
