@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +13,10 @@ public class Weapon_FirePoint : MonoBehaviour
 
     private void Awake()
     {
-        firePoint = transform.Find("SwordTip");
+        firePoint = transform.Find("FirePoint");
         if(firePoint ==null)
         {
-            Debug.LogError("No SwordTip?");
+            Debug.LogError("No FirePoint?");
         }
     }
 
