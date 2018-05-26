@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ea92f8db39661744ea3d675d3d5a8739
-timeCreated: 1522808883
+guid: c1885b39bf11cbb4784777ac2f234ce7
+timeCreated: 1527376745
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SurvivalPack_Art_0
+    21300000: ManInSuit_Jump_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -32,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -91,16 +91,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SurvivalPack_Art_0
+      name: ManInSuit_Jump_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 374
-        width: 58
-        height: 41
+        x: 0
+        y: 434
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 9}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
