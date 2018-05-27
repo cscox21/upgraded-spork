@@ -152,6 +152,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114355023444296394, guid: eb42c5db214110c4ba06e21849e1217b,
+        type: 2}
+      propertyPath: whatToHit.m_Bits
+      value: 4294965243
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355023444296394, guid: eb42c5db214110c4ba06e21849e1217b,
+        type: 2}
+      propertyPath: bulletTrailPrefab
+      value: 
+      objectReference: {fileID: 4789666104616434, guid: 08f6e3b848ff5554f9b9cb83440713aa,
+        type: 2}
+    - target: {fileID: 114355023444296394, guid: eb42c5db214110c4ba06e21849e1217b,
+        type: 2}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb42c5db214110c4ba06e21849e1217b, type: 2}
   m_IsPrefabParent: 0
@@ -298,7 +314,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c1885b39bf11cbb4784777ac2f234ce7,
+      objectReference: {fileID: 21300000, guid: de17550f0746a374788435e5feb5612a,
         type: 3}
     - target: {fileID: 212813093260058328, guid: 82d8784186626f641989c6ea9ad89a95,
         type: 2}
