@@ -152,15 +152,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114355023444296394, guid: eb42c5db214110c4ba06e21849e1217b,
-        type: 2}
-      propertyPath: muzzleFlashPrefab
-      value: 
-      objectReference: {fileID: 4399553238456392, guid: a7ab1d1e6410fe54491be46c5b3874d7,
-        type: 2}
     - target: {fileID: 4244965089225920, guid: eb42c5db214110c4ba06e21849e1217b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.117
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb42c5db214110c4ba06e21849e1217b, type: 2}
