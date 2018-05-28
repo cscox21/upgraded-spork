@@ -69,6 +69,6 @@ public class Weapon_FirePoint : MonoBehaviour
         clone.parent = firePoint;
         float size = Random.Range(0.6f, 0.9f);
         clone.localScale = new Vector3(size, size, size);
-        Destroy(clone, .02f);
+        Destroy(clone.gameObject, .02f);
     }
 }
