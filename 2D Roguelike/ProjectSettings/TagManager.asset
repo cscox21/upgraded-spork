@@ -15,6 +15,7 @@ TagManager:
   - Block
   - Dangerous
   - Bomb
+  - GC
   layers:
   - Default
   - TransparentFX
