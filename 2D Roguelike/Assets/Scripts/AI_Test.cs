@@ -27,8 +27,8 @@ public class AI_Test : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         dirRight = true;
         if (dirRight)
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-        turning = true;
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            turning = true;
             StartCoroutine(MoveLeft());
     }
 
