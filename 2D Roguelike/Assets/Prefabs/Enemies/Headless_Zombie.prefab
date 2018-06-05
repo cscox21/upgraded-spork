@@ -22,10 +22,8 @@ GameObject:
   - component: {fileID: 212914921162493538}
   - component: {fileID: 61463109883943642}
   - component: {fileID: 50548815062659494}
-  - component: {fileID: 114195369425814754}
   - component: {fileID: 114768880233138484}
   - component: {fileID: 95874120124699330}
-  - component: {fileID: 114481439919345988}
   - component: {fileID: 114714096566657356}
   m_Layer: 9
   m_Name: Headless_Zombie
@@ -254,30 +252,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114195369425814754
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071354634555326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60536f0cb45abba4c85ffee94a70f3aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemySpeed: 3
-  XMoveDirection: 1
---- !u!114 &114481439919345988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071354634555326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33eb55320b685584880d2f568f757fe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114714096566657356
 MonoBehaviour:
   m_ObjectHideFlags: 1

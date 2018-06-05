@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ZombiePatrol : MonoBehaviour {
 
+
     public Transform[] patrolpoints;
     int currentPoint;
     public float speed = 0.5f;
@@ -28,8 +29,9 @@ public class ZombiePatrol : MonoBehaviour {
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
         //if (hit.collider != null && hit.collider.tag == "Player")
-            //Place code to have enemy attack or react when raycast hits
-              
+
+        //Place code to have enemy attack or react when raycast hits
+
 
     }
 
