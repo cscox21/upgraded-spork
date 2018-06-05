@@ -19,7 +19,7 @@ public class AI_Test : MonoBehaviour {
         if (dirRight == false)
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         turning = false;
-        StartCoroutine(MoveRight());
+            StartCoroutine(MoveRight());
     }
 
     IEnumerator MoveRight()
@@ -28,8 +28,8 @@ public class AI_Test : MonoBehaviour {
         dirRight = true;
         if (dirRight)
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-            turning = true;
-            StartCoroutine(MoveLeft());
+        turning = true;
+        StartCoroutine(MoveLeft());
     }
 
 	void Update ()

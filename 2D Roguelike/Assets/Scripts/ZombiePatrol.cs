@@ -27,8 +27,9 @@ public class ZombiePatrol : MonoBehaviour {
 	void Update ()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-        if (hit.collider != null && hit.collider.tag == "Player")
-            GetComponent<Rigidbody2D>().AddForce(Vector3.up * force + (hit.collider.transform.position - transform.position)*force);
+        //if (hit.collider != null && hit.collider.tag == "Player")
+            //Place code to have enemy attack or react when raycast hits
+              
 
     }
 
