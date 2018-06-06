@@ -16,21 +16,19 @@ public class AI_Test : MonoBehaviour {
 
     IEnumerator MoveLeft()
     {
-        yield return new WaitForSeconds(1.0f);
         dirRight = false;
         if (dirRight == false)
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         turning = true;
         Debug.Log("Moving Left");
         yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
-
+        
         StartCoroutine(MoveRight());
         
     }
 
     IEnumerator MoveRight()
     {
-        yield return new WaitForSeconds(1.0f);
         dirRight = true;
         if (dirRight)
         transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -55,7 +53,7 @@ public class AI_Test : MonoBehaviour {
                 break;
 
             case EnemyActionType.Moving:
-                if (dirRight == false && transform.position.x >= 1.0f)
+                if (dirRight == false && transform.position.x >= 1.0f) //Took out the 2nd half of the argument and nothing happened, not sure what the 2nd part does 
                     transform.Translate(Vector2.right * speed * Time.deltaTime);
 
                 //HandleMovingState(); <---No idea what should be in this function
