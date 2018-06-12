@@ -1,13 +1,12 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using StateMachine;
 
 
-public class SecondState : State<AI_FSM>
+public class ThirdState : State<AI_FSM>
 {
-    private static SecondState _instance;
+    private static ThirdState _instance;
 
-    private SecondState()
+    private ThirdState()
     {
         if (_instance != null)
         {
@@ -17,13 +16,13 @@ public class SecondState : State<AI_FSM>
         _instance = this;
     }
 
-    public static SecondState Instance
+    public static ThirdState Instance
     {
         get
         {
             if (_instance == null)
             {
-                new SecondState();
+                new ThirdState();
             }
 
             return _instance;
@@ -32,19 +31,20 @@ public class SecondState : State<AI_FSM>
 
     public override void EnterState(AI_FSM _object)
     {
-        Debug.Log("Entering Second State");
+        Debug.Log("Entering Third State");
     }
 
     public override void ExitState(AI_FSM _owner)
     {
-        Debug.Log("Exiting Second State");
+        Debug.Log("Exiting Third State");
     }
 
     public override void UpdateState(AI_FSM _owner)
     {
-        if (!_owner.switchState)
+        if (_owner.switchState)
         {
-            _owner.stateMachine.ChangeState(ThirdState.Instance);
+            _owner.stateMachine.ChangeState(FourthState.Instance);
         }
+
     }
 }

@@ -27,7 +27,7 @@ public class AI_FSM : MonoBehaviour
             Debug.Log(seconds);
         }
 
-        if(seconds == 5)
+        if(seconds == 3)
         {
             seconds = 0;
             switchState = !switchState;
