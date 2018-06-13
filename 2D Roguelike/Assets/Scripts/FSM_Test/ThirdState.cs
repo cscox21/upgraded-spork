@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using StateMachine;
+using System.Collections;
 
 
 public class ThirdState : State<AI_FSM>
@@ -32,6 +33,8 @@ public class ThirdState : State<AI_FSM>
     public override void EnterState(AI_FSM _object)
     {
         Debug.Log("Entering Third State");
+
+
     }
 
     public override void ExitState(AI_FSM _owner)
@@ -41,10 +44,12 @@ public class ThirdState : State<AI_FSM>
 
     public override void UpdateState(AI_FSM _owner)
     {
+
         if (_owner.switchState)
         {
             _owner.stateMachine.ChangeState(FourthState.Instance);
         }
 
     }
+
 }

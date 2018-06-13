@@ -8,6 +8,7 @@ public class AI_FSM : MonoBehaviour
     public bool switchState = false;
     public float gameTimer;
     public int seconds = 0;
+    public float sight = 3f;
 
     public StateMachine<AI_FSM> stateMachine { get; set; }
 
@@ -20,19 +21,41 @@ public class AI_FSM : MonoBehaviour
 
     private void Update()
     {
-        if(Time.time > gameTimer +1)
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+
+        if (hit.collider != null && hit.collider.tag == "Player")
         {
-            gameTimer = Time.time;
-            seconds++;
-            Debug.Log(seconds);
+            Debug.Log("Hit the Player with raycast");
+            stateMachine.ChangeState(ThirdState.Instance);
+            return;
         }
 
-        if(seconds == 3)
-        {
-            seconds = 0;
-            switchState = !switchState;
-        }
+
+
+        //if (Time.time > gameTimer +1)
+        //{
+            //gameTimer = Time.time;
+            //seconds++;
+            //Debug.Log(seconds);
+        //}
+
+
+        //if (seconds == 9)
+        //{
+            //seconds = 0;
+            //switchState = !switchState;
+        //}
+
+
 
         stateMachine.Update();
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * -sight);
+    }
+
 }
