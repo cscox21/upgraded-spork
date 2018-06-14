@@ -31,6 +31,23 @@ public class AI_FSM : MonoBehaviour
             return;
         }
 
+        if(hit.collider ==null)
+        {
+            if(Time.time > gameTimer +1)
+            {
+                gameTimer = Time.time;
+                seconds++;
+                Debug.Log(seconds);
+            }
+
+            if(seconds == 5)
+            {
+                seconds = 0;
+                stateMachine.ChangeState(SecondState.Instance);
+            }
+            return;
+        }
+
 
 
         //if (Time.time > gameTimer +1)
