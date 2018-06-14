@@ -9,6 +9,7 @@ public class AI_Test : MonoBehaviour {
     public float speed = 2.0f;
     bool turning = false;
     bool facingRight = true;
+    public float sight = 3f;
 
 
     public enum EnemyActionType{ Idle, Moving, AvoidingObstacle, Attacking}
@@ -22,10 +23,10 @@ public class AI_Test : MonoBehaviour {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
             turning = true;
             Debug.Log("Moving Left");
-            yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
+            //yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
         }
+        yield return new WaitForSeconds(3f);
         StartCoroutine(MoveRight());
-        
     }
 
     IEnumerator MoveRight()
@@ -36,14 +37,25 @@ public class AI_Test : MonoBehaviour {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             turning = false;
             Debug.Log("Moving Right");
-            yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
+            //yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
         }
+        yield return new WaitForSeconds(3f);
         StartCoroutine(MoveLeft());
+
+    }
+
+    IEnumerator Attacking()
+    {
+        Debug.Log("Attacking the player");
+        yield return null;
+
     }
 
 	void Update ()
     {
-		switch(eCurState)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+
+        switch (eCurState)
         {
             case EnemyActionType.Idle:
                 if (dirRight)
@@ -61,6 +73,11 @@ public class AI_Test : MonoBehaviour {
                 break;
 
             case EnemyActionType.Attacking: //Eventually going to add this, trying to get moving left and right correct first.
+                if (hit.collider != null && hit.collider.tag == "Player")
+                {
+                    Debug.Log("Hit the Player with raycast");
+                    //StartCoroutine(Attacking());
+                }
                 break;
         }
 	}
@@ -79,5 +96,10 @@ public class AI_Test : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * -sight);
     }
 }
