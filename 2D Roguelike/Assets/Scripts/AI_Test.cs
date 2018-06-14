@@ -18,11 +18,12 @@ public class AI_Test : MonoBehaviour {
     {
         dirRight = false;
         if (dirRight == false)
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
-        turning = true;
-        Debug.Log("Moving Left");
-        yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
-        
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            turning = true;
+            Debug.Log("Moving Left");
+            yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
+        }
         StartCoroutine(MoveRight());
         
     }
@@ -31,13 +32,13 @@ public class AI_Test : MonoBehaviour {
     {
         dirRight = true;
         if (dirRight)
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
-        turning = false;
-        Debug.Log("Moving Right");
-        yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
-        
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            turning = false;
+            Debug.Log("Moving Right");
+            yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
+        }
         StartCoroutine(MoveLeft());
-        
     }
 
 	void Update ()
@@ -46,16 +47,16 @@ public class AI_Test : MonoBehaviour {
         {
             case EnemyActionType.Idle:
                 if (dirRight)
-                    transform.Translate(Vector2.right * speed * Time.deltaTime);
-                turning = true;
-                StartCoroutine(MoveLeft());
+                    //transform.Translate(Vector2.right * speed * Time.deltaTime);
+                //turning = true;
+                StartCoroutine(MoveRight());
                 //HandleIdleState();  <---No idea what should be in this function
                 break;
 
             case EnemyActionType.Moving:
                 if (dirRight == false && transform.position.x >= 1.0f) //Took out the 2nd half of the argument and nothing happened, not sure what the 2nd part does 
-                    transform.Translate(Vector2.right * speed * Time.deltaTime);
-
+                    //transform.Translate(Vector2.right * speed * Time.deltaTime);
+                    StartCoroutine(MoveLeft());
                 //HandleMovingState(); <---No idea what should be in this function
                 break;
 

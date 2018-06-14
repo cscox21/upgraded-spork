@@ -33,8 +33,6 @@ public class ThirdState : State<AI_FSM>
     public override void EnterState(AI_FSM _object)
     {
         Debug.Log("Entering Third State");
-
-
     }
 
     public override void ExitState(AI_FSM _owner)

@@ -24,13 +24,14 @@ public class AI_FSM : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
 
+        //If the player hits the racast, switch to the ThirdState (attack state eventually)
         if (hit.collider != null && hit.collider.tag == "Player")
         {
             Debug.Log("Hit the Player with raycast");
             stateMachine.ChangeState(ThirdState.Instance);
             return;
         }
-
+        //If nothing hits the raycast, switch to SecondState after 5 seconds. (Patrol state eventually)
         if(hit.collider ==null)
         {
             if(Time.time > gameTimer +1)
@@ -47,6 +48,8 @@ public class AI_FSM : MonoBehaviour
             }
             return;
         }
+
+        //TODO: need a jump or avoiding state for FourthState
 
 
 
