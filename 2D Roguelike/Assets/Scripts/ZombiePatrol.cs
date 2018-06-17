@@ -11,10 +11,8 @@ public class ZombiePatrol : MonoBehaviour {
     public float speed = 0.5f;
     public float timeStill = 1.2f;
     public float sight = 3f;
-
     Animator anim;
     public float force;
-
 	// Use this for initialization
 	void Start ()
     {
@@ -23,13 +21,11 @@ public class ZombiePatrol : MonoBehaviour {
         anim.SetBool("Walking", true);
 
     }
-	
 	// Update is called once per frame
 	void Update ()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
         //if (hit.collider != null && hit.collider.tag == "Player")
-
         //Place code to have enemy attack or react when raycast hits
 
 
@@ -68,11 +64,7 @@ public class ZombiePatrol : MonoBehaviour {
             else if (transform.position.x > patrolpoints[currentPoint].position.x)
                 transform.localScale = Vector3.one;
             yield return null;
-
-        }
-
-
-        
+        }  
     }
 
     void OnDrawGizmos()

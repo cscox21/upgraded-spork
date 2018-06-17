@@ -6,7 +6,7 @@ public class AI_Test : MonoBehaviour {
 
     private EnemyActionType eCurState = EnemyActionType.Idle;
     private bool dirRight = true;
-    public float speed = 2.0f;
+    public float speed = 0.5f;
     bool turning = false;
     bool facingRight = true;
     public float sight = 3f;
@@ -14,9 +14,9 @@ public class AI_Test : MonoBehaviour {
 
     public enum EnemyActionType{ Idle, Moving, AvoidingObstacle, Attacking}
 
-
     IEnumerator MoveLeft()
     {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
         dirRight = false;
         if (dirRight == false)
         {
@@ -25,12 +25,19 @@ public class AI_Test : MonoBehaviour {
             Debug.Log("Moving Left");
             //yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
         }
-        yield return new WaitForSeconds(3f);
+        if(hit.collider != null && hit.collider.tag == "Player")
+        {
+            //StopCoroutine(MoveLeft());
+            StartCoroutine(Attacking());
+        }
+
+        yield return new WaitForSeconds(5f);
         StartCoroutine(MoveRight());
     }
 
     IEnumerator MoveRight()
     {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
         dirRight = true;
         if (dirRight)
         {
@@ -39,9 +46,13 @@ public class AI_Test : MonoBehaviour {
             Debug.Log("Moving Right");
             //yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
         }
-        yield return new WaitForSeconds(3f);
+        if (hit.collider != null && hit.collider.tag == "Player")
+        {
+            //StopCoroutine(MoveRight());
+            StartCoroutine(Attacking());
+        }
+        yield return new WaitForSeconds(5f);
         StartCoroutine(MoveLeft());
-
     }
 
     IEnumerator Attacking()
@@ -51,7 +62,8 @@ public class AI_Test : MonoBehaviour {
 
     }
 
-	void Update ()
+
+    void Update ()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
 
@@ -59,17 +71,13 @@ public class AI_Test : MonoBehaviour {
         {
             case EnemyActionType.Idle:
                 if (dirRight)
-                    //transform.Translate(Vector2.right * speed * Time.deltaTime);
                 //turning = true;
                 StartCoroutine(MoveRight());
-                //HandleIdleState();  <---No idea what should be in this function
                 break;
 
             case EnemyActionType.Moving:
                 if (dirRight == false && transform.position.x >= 1.0f) //Took out the 2nd half of the argument and nothing happened, not sure what the 2nd part does 
-                    //transform.Translate(Vector2.right * speed * Time.deltaTime);
                     StartCoroutine(MoveLeft());
-                //HandleMovingState(); <---No idea what should be in this function
                 break;
 
             case EnemyActionType.Attacking: //Eventually going to add this, trying to get moving left and right correct first.
