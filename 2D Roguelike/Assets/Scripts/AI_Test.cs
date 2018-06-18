@@ -9,7 +9,13 @@ public class AI_Test : MonoBehaviour {
     public float speed = 0.5f;
     bool turning = false;
     bool facingRight = true;
-    public float sight = 3f;
+    public float sight = 7f;
+    public float dodgingSight =2f;
+
+    //BossFight script variables
+    public Transform[] fireLocation;
+    public GameObject projectile;
+    public float fireballSpeed;
 
 
     public enum EnemyActionType{ Idle, Moving, AvoidingObstacle, Attacking}
@@ -17,18 +23,22 @@ public class AI_Test : MonoBehaviour {
     IEnumerator MoveLeft()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+        RaycastHit2D dodgingHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, dodgingSight);
         dirRight = false;
         if (dirRight == false)
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
             turning = true;
             Debug.Log("Moving Left");
-            //yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
         }
         if(hit.collider != null && hit.collider.tag == "Player")
         {
             //StopCoroutine(MoveLeft());
             StartCoroutine(Attacking());
+        }
+        if (dodgingHit.collider != null && dodgingHit.collider.tag == "ground")
+        {
+            StartCoroutine(Dodging());
         }
 
         yield return new WaitForSeconds(5f);
@@ -38,18 +48,22 @@ public class AI_Test : MonoBehaviour {
     IEnumerator MoveRight()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+        RaycastHit2D dodgingHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, dodgingSight);
         dirRight = true;
         if (dirRight)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             turning = false;
             Debug.Log("Moving Right");
-            //yield return new WaitForSeconds(1.5f); //The longer I make this the further the enemy goes, but doesnt stop him from 'twitching'
         }
         if (hit.collider != null && hit.collider.tag == "Player")
         {
             //StopCoroutine(MoveRight());
             StartCoroutine(Attacking());
+        }
+        if(dodgingHit.collider !=null && dodgingHit.collider.tag == "ground")
+        {
+            StartCoroutine(Dodging());
         }
         yield return new WaitForSeconds(5f);
         StartCoroutine(MoveLeft());
@@ -57,34 +71,62 @@ public class AI_Test : MonoBehaviour {
 
     IEnumerator Attacking()
     {
+        GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+
+        if (!facingRight)
+        {
+            bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+        }
+        if (facingRight)
+        {
+            bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+        }
+
         Debug.Log("Attacking the player");
         yield return null;
 
     }
 
+    IEnumerator Dodging()
+    {
+        RaycastHit2D dodgingHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, dodgingSight);
+        if (dodgingHit.collider != null && dodgingHit.collider.tag == "ground")
+        {
+            Debug.Log("Dodge!!!");
+        }
+        yield return null;
+    }
 
     void Update ()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+        RaycastHit2D dodgingHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, dodgingSight);
 
         switch (eCurState)
         {
             case EnemyActionType.Idle:
                 if (dirRight)
-                //turning = true;
-                StartCoroutine(MoveRight());
+                {
+                    StartCoroutine(MoveRight());
+                }
                 break;
 
             case EnemyActionType.Moving:
-                if (dirRight == false && transform.position.x >= 1.0f) //Took out the 2nd half of the argument and nothing happened, not sure what the 2nd part does 
+                if (dirRight == false && transform.position.x >= 1.0f) 
                     StartCoroutine(MoveLeft());
                 break;
 
-            case EnemyActionType.Attacking: //Eventually going to add this, trying to get moving left and right correct first.
+            case EnemyActionType.Attacking: 
                 if (hit.collider != null && hit.collider.tag == "Player")
                 {
-                    Debug.Log("Hit the Player with raycast");
-                    //StartCoroutine(Attacking());
+                    StartCoroutine(Attacking());
+                }
+                break;
+
+            case EnemyActionType.AvoidingObstacle:
+                if(dodgingHit.collider !=null && dodgingHit.collider.tag == "ground")
+                {
+                    StartCoroutine(Dodging());
                 }
                 break;
         }
@@ -108,6 +150,6 @@ public class AI_Test : MonoBehaviour {
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * -sight);
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.left * sight);
     }
 }

@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 61944449994838898}
   - component: {fileID: 114466012142559572}
   - component: {fileID: 114248840978282738}
-  - component: {fileID: 50703827295335212}
+  - component: {fileID: 50830952855985968}
   m_Layer: 9
   m_Name: TestGuard
   m_TagString: Enemy
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406927285213930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: 0, z: 0}
+  m_LocalPosition: {x: -0.52, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4095931254705006}
@@ -132,7 +132,7 @@ Transform:
   m_Father: {fileID: 4095931254705006}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50703827295335212
+--- !u!50 &50830952855985968
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -151,7 +151,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &61944449994838898
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -189,11 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.8
-  sight: 3
-  patrolpoints:
-  - {fileID: 4762863206366522}
-  - {fileID: 4243496995454566}
-  timeStill: 1.2
+  sight: 7
+  fireLocation:
+  - {fileID: 4128052832295490}
+  projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
+  fireballSpeed: 3
 --- !u!114 &114337935110859364
 MonoBehaviour:
   m_ObjectHideFlags: 1
