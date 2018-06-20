@@ -17,8 +17,21 @@ public class AI_Test : MonoBehaviour {
     public GameObject projectile;
     public float fireballSpeed;
 
+    //Jumping Variables
+    public float jumpForce = 800f;
+    public Rigidbody2D rb;
 
     public enum EnemyActionType{ Idle, Moving, AvoidingObstacle, Attacking}
+    //public EnemyActionType CurrentState = EnemyActionType.Idle;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        //StartCoroutine(Idle());
+    }
+
+    //TODO: Create an actual Idle coroutine
+
 
     IEnumerator MoveLeft()
     {
@@ -71,27 +84,32 @@ public class AI_Test : MonoBehaviour {
 
     IEnumerator Attacking()
     {
-        GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-
-        if (!facingRight)
+        int i = 0;
+        while (i < 3)
         {
-            bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
-        }
-        if (facingRight)
-        {
-            bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-        }
+            GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
 
-        Debug.Log("Attacking the player");
-        yield return null;
-
+            if (!facingRight)
+            {
+                bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+            }
+            if (facingRight)
+            {
+                bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+            }
+            i++;
+            Debug.Log("Attacking the player");
+            yield return null;
+        }
     }
 
     IEnumerator Dodging()
     {
+
         RaycastHit2D dodgingHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, dodgingSight);
         if (dodgingHit.collider != null && dodgingHit.collider.tag == "ground")
         {
+            rb.AddForce(transform.up * jumpForce);
             Debug.Log("Dodge!!!");
         }
         yield return null;

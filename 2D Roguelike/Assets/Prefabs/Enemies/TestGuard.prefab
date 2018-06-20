@@ -50,9 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4095931254705006}
   - component: {fileID: 212289359619478460}
-  - component: {fileID: 114337935110859364}
   - component: {fileID: 61944449994838898}
-  - component: {fileID: 114466012142559572}
   - component: {fileID: 114248840978282738}
   - component: {fileID: 50830952855985968}
   m_Layer: 9
@@ -151,7 +149,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61944449994838898
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -189,40 +187,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.8
-  sight: 7
+  sight: 5
+  dodgingSight: 2
   fireLocation:
   - {fileID: 4128052832295490}
   projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
   fireballSpeed: 3
---- !u!114 &114337935110859364
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1657138755413878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385560c6c0d862c429eceedc4ca8d230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchState: 0
-  gameTimer: 0
-  seconds: 0
-  sight: 3
---- !u!114 &114466012142559572
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1657138755413878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df895994abb211a4c8d2cb5317e144b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  waitTime: 0.3
-  pathHolder: {fileID: 0}
+  jumpForce: 30
+  rb: {fileID: 50830952855985968}
 --- !u!212 &212289359619478460
 SpriteRenderer:
   m_ObjectHideFlags: 1

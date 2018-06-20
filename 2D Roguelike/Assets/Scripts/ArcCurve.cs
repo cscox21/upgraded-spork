@@ -28,7 +28,7 @@ public class ArcCurve : MonoBehaviour {
 
     IEnumerator Curve()
     {
-        float duration = 5f;
+        float duration = 2f;
         float time = 0f;
 
         Vector3 end = target.position - (target.forward * 0.55f); // lead the target a bit to account for travel time, your math will vary
