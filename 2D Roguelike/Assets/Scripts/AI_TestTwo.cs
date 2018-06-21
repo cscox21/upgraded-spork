@@ -38,7 +38,7 @@ public class AI_TestTwo : MonoBehaviour
         while (CurrentState == EnemyActionType.Idle)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             Debug.Log("We are in the Idle state");
             ElapsedTime += Time.deltaTime;
             if (ElapsedTime >= WaitTime)
@@ -56,24 +56,19 @@ public class AI_TestTwo : MonoBehaviour
     }
     public IEnumerator Move()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.left, sight);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
         while (CurrentState == EnemyActionType.Move)
         {
             Debug.Log("Moving the enemy");
             //ThisAgent.SetDestination(PlayerObject.position);
             //if you cannot see the player, go back to idle state
-            if (hit.collider != null && hit.collider.tag != "Player")
+            if (hit.collider == null)
             {
                 yield return new WaitForSeconds(2f);
-                if (hit.collider != null && hit.collider.tag != "Player")
-                {
-                    Debug.Log("Did not see player after 2 seconds, going back to idle");
-                    ChangeState(EnemyActionType.Idle);
-                    yield break;
-                }
+                ChangeState(EnemyActionType.Idle);
             }
             //if the player is in the attack range of the enemy, start the attack state
-            if (Vector3.Distance(ThisTransform.position, PlayerObject.position) <= AttackDistance)
+            if (hit.collider !=null && hit.collider.tag =="Player")
             {
                 ChangeState(EnemyActionType.Attack);
                 yield break;
@@ -86,11 +81,12 @@ public class AI_TestTwo : MonoBehaviour
     {
         while (CurrentState == EnemyActionType.Attack)
         {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             //Deal Damage here
             Debug.Log("Attacking the player");
 
             //If cannot see player or player out of range, change state to Move
-            if (!CanSeePlayer || Vector3.Distance(ThisTransform.position, PlayerObject.position) > AttackDistance)
+            if (hit.collider ==null)
             {
                 ChangeState(EnemyActionType.Move);
             }
@@ -151,6 +147,6 @@ public class AI_TestTwo : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.left * sight);
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * sight);
     }
 }
