@@ -15,6 +15,10 @@ public class AI_TestTwo : MonoBehaviour
     public float ViewAngle = 90f;
     public float AttackDistance = 1f;
     public float sight = 5f;
+    public float obstacleSight = 1.2f;
+    public float jumpForce = 800f;
+    public Rigidbody2D rb;
+    public float speed;
 
     void Awake()
     {
@@ -24,13 +28,14 @@ public class AI_TestTwo : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         //Set starting state
         ChangeState(CurrentState);
     }
 
     public IEnumerator Idle()
     {
-        //Get Random point
+
         float WaitTime = 2f;
         float ElapsedTime = 0f;
 
@@ -44,7 +49,9 @@ public class AI_TestTwo : MonoBehaviour
             if (ElapsedTime >= WaitTime)
             {
                 //Once ElapsedTime hits 2 seconds, resets to 0. TODO:Have player Move once WaitTime is released
-                ElapsedTime = 0f;
+                Debug.Log("Enemy has not seen the player, switching to Move state");
+                ChangeState(EnemyActionType.Move);
+                yield break;
             }
             if (hit.collider != null && hit.collider.tag == "Player")
             {
@@ -57,13 +64,15 @@ public class AI_TestTwo : MonoBehaviour
     public IEnumerator Move()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+        RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
         while (CurrentState == EnemyActionType.Move)
         {
             Debug.Log("Moving the enemy");
-            //ThisAgent.SetDestination(PlayerObject.position);
+            
             //if you cannot see the player, go back to idle state
-            if (hit.collider == null)
+            if (hit.collider == null || obstacleHit.collider ==null)
             {
+                Debug.Log("Cannot see the player, back to idle state");
                 yield return new WaitForSeconds(2f);
                 ChangeState(EnemyActionType.Idle);
             }
@@ -73,6 +82,13 @@ public class AI_TestTwo : MonoBehaviour
                 ChangeState(EnemyActionType.Attack);
                 yield break;
             }
+            //if the enemy is in range of an obstacle, start the dodge state
+            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+            {
+                ChangeState(EnemyActionType.Dodge);
+                yield break;
+            }
+
             yield return null;
         }
     }
@@ -88,7 +104,24 @@ public class AI_TestTwo : MonoBehaviour
             //If cannot see player or player out of range, change state to Move
             if (hit.collider ==null)
             {
+                Debug.Log("Player is out of range");
                 ChangeState(EnemyActionType.Move);
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    public IEnumerator Dodge()
+    {
+        while (CurrentState == EnemyActionType.Dodge)
+        {
+            RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
+
+            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+            {
+                Debug.Log("Dodge the obstacle!!!");
+                rb.AddForce(transform.up * jumpForce);
             }
             yield return null;
         }
@@ -113,40 +146,17 @@ public class AI_TestTwo : MonoBehaviour
             case EnemyActionType.Attack:
                 StartCoroutine(Attack());
                 break;
+
+            case EnemyActionType.Dodge:
+                StartCoroutine(Dodge());
+                break;
         }
-    }
-
-    void OnTriggerStay(Collider Col)
-    {
-        if (!Col.CompareTag("Player"))
-            return;
-        CanSeePlayer = false;
-
-        //Player transform
-        Transform PlayerTransform = Col.GetComponent<Transform>();
-
-        //Is player in sight
-        Vector3 DirToPlayer = PlayerTransform.position - ThisTransform.position;
-
-        //Get viewing Angle
-        float ViewingAngle = Mathf.Abs(Vector3.Angle(ThisTransform.forward, DirToPlayer));
-
-        if (ViewingAngle > ViewAngle)
-            return;
-
-        //Is there a direct line of signt?
-        if (!Physics.Linecast(ThisTransform.position, PlayerTransform.position))
-            CanSeePlayer = true;
-    }
-    void OnTriggerExit(Collider Col)
-    {
-        if (!Col.CompareTag("Player"))
-            return;
-        CanSeePlayer = false;
     }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * sight);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * obstacleSight);
     }
 }
