@@ -111,9 +111,10 @@ public class AI_TestTwo : MonoBehaviour
             //Deal Damage here
             Debug.Log("Attacking the player");
             
-            GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+
             if(hit.collider !=null && hit.collider.tag == "Player")
             {
+                GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
                 if (!facingRight)
                 {
                     bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
@@ -122,6 +123,7 @@ public class AI_TestTwo : MonoBehaviour
                 {
                     bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
                 }
+                yield return new WaitForSeconds(.8f);
             }
             //If cannot see player or player out of range, change state to Move
             if (hit.collider ==null)

@@ -313,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534064344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.36, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1273672043}
@@ -566,7 +566,7 @@ MonoBehaviour:
   jumpForce: 35
   rb: {fileID: 1273672041}
   speed: 0.3
-  fireballSpeed: 0.4
+  fireballSpeed: 4
   projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
   fireLocation:
   - {fileID: 534064345}
