@@ -35,14 +35,14 @@ public class AI_TestTwo : MonoBehaviour
 
     public IEnumerator Idle()
     {
-
+        
         float WaitTime = 2f;
         float ElapsedTime = 0f;
 
         //Loop while idling
         while (CurrentState == EnemyActionType.Idle)
         {
-
+            RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             Debug.Log("We are in the Idle state");
             ElapsedTime += Time.deltaTime;
@@ -58,6 +58,13 @@ public class AI_TestTwo : MonoBehaviour
                 ChangeState(EnemyActionType.Attack);
                 yield break;
             }
+            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+            {
+                ChangeState(EnemyActionType.Dodge);
+                yield break;
+            }
+
+
             yield return null;
         }
     }
