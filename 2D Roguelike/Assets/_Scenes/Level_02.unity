@@ -291,6 +291,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &534064344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 534064345}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &534064345
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534064344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1273672043}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &671563656
 Prefab:
   m_ObjectHideFlags: 0
@@ -532,14 +560,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
-  CanSeePlayer: 0
-  ViewAngle: 90
   AttackDistance: 1
   sight: 5
   obstacleSight: 1.5
   jumpForce: 35
   rb: {fileID: 1273672041}
   speed: 0.3
+  fireballSpeed: 0.4
+  projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
+  fireLocation:
+  - {fileID: 534064345}
 --- !u!61 &1273672040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -638,7 +668,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.665753, y: 1.6, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 534064345}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

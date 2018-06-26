@@ -11,14 +11,19 @@ public class AI_TestTwo : MonoBehaviour
     private Transform ThisTransform = null;
     private Transform PlayerObject = null;
 
-    public bool CanSeePlayer = false;
-    public float ViewAngle = 90f;
     public float AttackDistance = 1f;
     public float sight = 5f;
     public float obstacleSight = 1.2f;
     public float jumpForce = 800f;
     public Rigidbody2D rb;
     public float speed;
+
+    bool facingRight = false;
+    bool turning = false;
+    public float fireballSpeed;
+    public GameObject projectile;
+    public Transform[] fireLocation;
+
 
     void Awake()
     {
@@ -63,8 +68,6 @@ public class AI_TestTwo : MonoBehaviour
                 ChangeState(EnemyActionType.Dodge);
                 yield break;
             }
-
-
             yield return null;
         }
     }
@@ -107,7 +110,19 @@ public class AI_TestTwo : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             //Deal Damage here
             Debug.Log("Attacking the player");
-
+            
+            GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+            if(hit.collider !=null && hit.collider.tag == "Player")
+            {
+                if (!facingRight)
+                {
+                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+                }
+                if (facingRight)
+                {
+                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+                }
+            }
             //If cannot see player or player out of range, change state to Move
             if (hit.collider ==null)
             {
@@ -159,6 +174,23 @@ public class AI_TestTwo : MonoBehaviour
                 break;
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (turning == true && !facingRight)
+            Flip();
+        else if (turning == false && facingRight)
+            Flip();
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
