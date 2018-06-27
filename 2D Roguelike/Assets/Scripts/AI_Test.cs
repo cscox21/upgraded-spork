@@ -69,11 +69,13 @@ public class AI_Test : MonoBehaviour {
             turning = false;
             Debug.Log("Moving Right");
         }
+
         if (hit.collider != null && hit.collider.tag == "Player")
         {
             //StopCoroutine(MoveRight());
             StartCoroutine(Attacking());
         }
+
         if(dodgingHit.collider !=null && dodgingHit.collider.tag == "ground")
         {
             StartCoroutine(Dodging());

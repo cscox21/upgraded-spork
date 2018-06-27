@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AI_TestTwo : MonoBehaviour
 
 {
-    public enum EnemyActionType { Idle = 0, Move = 1, Attack = 2, Dodge = 3 }; //Declares the states
+    public enum EnemyActionType {Idle = 0, Move = 1, Attack = 2, Dodge = 3}; //Declares the states
     public EnemyActionType CurrentState = EnemyActionType.Idle; //Default state is Idle
     private Transform ThisTransform = null; //not sure if this is needed
     private Transform PlayerObject = null; //reference to the player's transform
@@ -23,7 +23,6 @@ public class AI_TestTwo : MonoBehaviour
     public float fireballSpeed; //speed of the projectile
     public GameObject projectile; //reference to the GameObject projectile
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
-
 
     void Awake()
     {
@@ -111,7 +110,6 @@ public class AI_TestTwo : MonoBehaviour
             //Deal Damage here
             Debug.Log("Attacking the player");
             
-
             if(hit.collider !=null && hit.collider.tag == "Player")
             {
                 GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);

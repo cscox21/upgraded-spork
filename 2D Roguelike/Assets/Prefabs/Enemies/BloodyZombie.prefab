@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
-  AttackDistance: 1
   sight: 5
   obstacleSight: 1.5
   jumpForce: 35
