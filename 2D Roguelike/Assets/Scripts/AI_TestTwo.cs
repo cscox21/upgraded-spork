@@ -77,27 +77,34 @@ public class AI_TestTwo : MonoBehaviour
         while (CurrentState == EnemyActionType.Move)
         {
             Debug.Log("Moving the enemy");
-            
-            //if you cannot see the player, go back to idle state
-            if (hit.collider == null || obstacleHit.collider ==null)
-            {
-                Debug.Log("Cannot see the player, back to idle state");
-                yield return new WaitForSeconds(2f);
-                ChangeState(EnemyActionType.Idle);
-            }
-            //if the player is in the attack range of the enemy, start the attack state
-            if (hit.collider !=null && hit.collider.tag =="Player")
-            {
-                ChangeState(EnemyActionType.Attack);
-                yield break;
-            }
-            //if the enemy is in range of an obstacle, start the dodge state
-            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
-            {
-                ChangeState(EnemyActionType.Dodge);
-                yield break;
-            }
 
+            //if you cannot see the player, go back to idle state
+            //while (hit.collider.tag != "Player" || hit.collider.tag != "ground" ) //while the raycast isnt hitting the player, move
+            //{
+                
+
+                //if AI cannot see the player or the obstacle...
+                if(hit.collider == null && obstacleHit.collider == null) //need to change to a while loop im pretty sure
+                {
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
+                    Debug.Log("Cannot see the player, back to idle state");
+                    yield return new WaitForSeconds(4f);
+                    ChangeState(EnemyActionType.Idle);
+                }
+                //if the player is in the attack range of the enemy, start the attack state
+                if (hit.collider != null && hit.collider.tag == "Player")
+                {
+                    ChangeState(EnemyActionType.Attack);
+                    yield break;
+                }
+                //if the enemy is in range of an obstacle, start the dodge state
+                if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+                {
+                    ChangeState(EnemyActionType.Dodge);
+                    yield break;
+                }
+            //}
+            
             yield return null;
         }
     }
