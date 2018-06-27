@@ -8,21 +8,21 @@ public class AI_TestTwo : MonoBehaviour
 {
     public enum EnemyActionType { Idle = 0, Move = 1, Attack = 2, Dodge = 3 }; //Declares the states
     public EnemyActionType CurrentState = EnemyActionType.Idle; //Default state is Idle
-    private Transform ThisTransform = null;
-    private Transform PlayerObject = null;
+    private Transform ThisTransform = null; //not sure if this is needed
+    private Transform PlayerObject = null; //reference to the player's transform
 
-    public float AttackDistance = 1f;
-    public float sight = 5f;
-    public float obstacleSight = 1.2f;
-    public float jumpForce = 800f;
-    public Rigidbody2D rb;
-    public float speed;
+    public float sight = 5f; //range of attack
+    public float obstacleSight = 1.2f; //distance enemy is from obstacle where it will jump
+    public float jumpForce = 800f; //force of enemies jump height
+    public Rigidbody2D rb; //referebce to the enemy's rigidbody
+    public float speed; //speed of the enemy
 
-    bool facingRight = false;
-    bool turning = false;
-    public float fireballSpeed;
-    public GameObject projectile;
-    public Transform[] fireLocation;
+    //variables for AI shooting projectiles
+    bool facingRight = false; //wether enemy is facing right or now
+    bool turning = false; //whether the enemy is turning
+    public float fireballSpeed; //speed of the projectile
+    public GameObject projectile; //reference to the GameObject projectile
+    public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
 
 
     void Awake()
