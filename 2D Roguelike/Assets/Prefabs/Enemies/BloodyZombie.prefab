@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1847740469874844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.665753, y: 1.6, z: 0}
+  m_LocalPosition: {x: 32.11, y: 1.6, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4331691731594574}
@@ -130,10 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: 0
   sight: 5
-  obstacleSight: 1.5
-  jumpForce: 35
+  obstacleSight: 0.85
+  jumpForce: 6750
+  sideJumpForce: 700
   rb: {fileID: 50911424661015740}
-  speed: 0.3
+  speed: 2.5
   fireballSpeed: 4
   projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
   fireLocation:

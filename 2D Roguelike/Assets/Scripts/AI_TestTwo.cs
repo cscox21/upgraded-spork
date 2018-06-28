@@ -80,8 +80,9 @@ public class AI_TestTwo : MonoBehaviour
             RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
 
             Debug.Log("Moving the enemy");
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * speed * Time.deltaTime); //Actual movement of the enemy
 
+            //if the enemy is in attack range of the player, start the attack state
             if (hit.collider != null && hit.collider.tag == "Player")
             {
                 ChangeState(EnemyActionType.Attack);
@@ -106,6 +107,7 @@ public class AI_TestTwo : MonoBehaviour
             //Deal Damage here
             Debug.Log("Attacking the player");
             
+            //if the raycast hits the player, shoot projectiles
             if(hit.collider !=null && hit.collider.tag == "Player")
             {
                 GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
@@ -136,12 +138,14 @@ public class AI_TestTwo : MonoBehaviour
         {
             RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
 
+            //if the obstacleHit raycast hits an object, jump over TODO: Probably need to turn this into a flip around function 
             if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
             {
                 Debug.Log("Dodge the obstacle!!!");
                 rb.AddForce(transform.up * jumpForce);
                 rb.AddForce(transform.right * -sideJumpForce);
             }
+            ChangeState(EnemyActionType.Move);
             yield return null;
         }
     }
