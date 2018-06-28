@@ -14,6 +14,7 @@ public class AI_TestTwo : MonoBehaviour
     public float sight = 5f; //range of attack
     public float obstacleSight = 1.2f; //distance enemy is from obstacle where it will jump
     public float jumpForce = 800f; //force of enemies jump height
+    public float sideJumpForce = 500f;
     public Rigidbody2D rb; //referebce to the enemy's rigidbody
     public float speed; //speed of the enemy
 
@@ -52,7 +53,7 @@ public class AI_TestTwo : MonoBehaviour
             ElapsedTime += Time.deltaTime;
             if (ElapsedTime >= WaitTime)
             {
-                //Once ElapsedTime hits 2 seconds, resets to 0. TODO:Have player Move once WaitTime is released
+                //Once ElapsedTime hits 2 seconds, resets to 0. 
                 Debug.Log("Enemy has not seen the player, switching to Move state");
                 ChangeState(EnemyActionType.Move);
                 yield break;
@@ -139,6 +140,7 @@ public class AI_TestTwo : MonoBehaviour
             {
                 Debug.Log("Dodge the obstacle!!!");
                 rb.AddForce(transform.up * jumpForce);
+                rb.AddForce(transform.right * -sideJumpForce);
             }
             yield return null;
         }
