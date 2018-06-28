@@ -72,39 +72,27 @@ public class AI_TestTwo : MonoBehaviour
     }
     public IEnumerator Move()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-        RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
+        
         while (CurrentState == EnemyActionType.Move)
         {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+            RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
+
             Debug.Log("Moving the enemy");
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-            //if you cannot see the player, go back to idle state
-            //while (hit.collider.tag != "Player" || hit.collider.tag != "ground" ) //while the raycast isnt hitting the player, move
-            //{
-                
+            if (hit.collider != null && hit.collider.tag == "Player")
+            {
+                ChangeState(EnemyActionType.Attack);
+                yield break;
+            }
+            //if the enemy is in range of an obstacle, start the dodge state
+            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+            {
+                ChangeState(EnemyActionType.Dodge);
+                yield break;
+            }
 
-                //if AI cannot see the player or the obstacle...
-                if(hit.collider == null && obstacleHit.collider == null) //need to change to a while loop im pretty sure
-                {
-                    transform.Translate(Vector2.left * speed * Time.deltaTime);
-                    Debug.Log("Cannot see the player, back to idle state");
-                    yield return new WaitForSeconds(4f);
-                    ChangeState(EnemyActionType.Idle);
-                }
-                //if the player is in the attack range of the enemy, start the attack state
-                if (hit.collider != null && hit.collider.tag == "Player")
-                {
-                    ChangeState(EnemyActionType.Attack);
-                    yield break;
-                }
-                //if the enemy is in range of an obstacle, start the dodge state
-                if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
-                {
-                    ChangeState(EnemyActionType.Dodge);
-                    yield break;
-                }
-            //}
-            
             yield return null;
         }
     }
