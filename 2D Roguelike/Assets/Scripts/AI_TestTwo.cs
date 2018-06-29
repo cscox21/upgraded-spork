@@ -22,8 +22,13 @@ public class AI_TestTwo : MonoBehaviour
     bool facingRight = false; //wether enemy is facing right or now
     bool turning = false; //whether the enemy is turning
     public float fireballSpeed; //speed of the projectile
+    [SerializeField]
     public GameObject projectile; //reference to the GameObject projectile
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
+
+    float fireRate;
+    float nextFire;
+
 
     void Awake()
     {
@@ -36,6 +41,8 @@ public class AI_TestTwo : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //Set starting state
         ChangeState(CurrentState);
+        fireRate = 1f;
+        nextFire = Time.time;
     }
 
     public IEnumerator Idle()
@@ -73,15 +80,23 @@ public class AI_TestTwo : MonoBehaviour
     }
     public IEnumerator Move()
     {
-        
         while (CurrentState == EnemyActionType.Move)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
-
+            //turning = false;
             Debug.Log("Moving the enemy");
-            transform.Translate(Vector2.left * speed * Time.deltaTime); //Actual movement of the enemy
 
+            //Actual movement of the enemy
+            if (facingRight)
+            {
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+            }
+            if (!facingRight)
+            {
+                transform.Translate(Vector2.left * speed * Time.deltaTime); 
+            }
+                          
             //if the enemy is in attack range of the player, start the attack state
             if (hit.collider != null && hit.collider.tag == "Player")
             {
@@ -89,12 +104,15 @@ public class AI_TestTwo : MonoBehaviour
                 yield break;
             }
             //if the enemy is in range of an obstacle, start the dodge state
-            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+            if(obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
             {
-                ChangeState(EnemyActionType.Dodge);
-                yield break;
+                
+                Debug.Log("We are turning the enemy's direction around");
+                yield return new WaitForSeconds(.5f);
+                turning = true;
+                //ChangeState(EnemyActionType.Move);
+                //yield break;
             }
-
             yield return null;
         }
     }
@@ -103,6 +121,7 @@ public class AI_TestTwo : MonoBehaviour
     {
         while (CurrentState == EnemyActionType.Attack)
         {
+            
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             //Deal Damage here
             Debug.Log("Attacking the player");
@@ -110,16 +129,18 @@ public class AI_TestTwo : MonoBehaviour
             //if the raycast hits the player, shoot projectiles
             if(hit.collider !=null && hit.collider.tag == "Player")
             {
-                GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                if (!facingRight)
-                {
-                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-                }
-                if (facingRight)
-                {
-                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
-                }
-                yield return new WaitForSeconds(.8f);
+                Shoot();
+
+                //GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                //if (!facingRight)
+                //{
+                    //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+                //}
+                //if (facingRight)
+                //{
+                    //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+                //}
+                //yield return new WaitForSeconds(.8f);
             }
             //If cannot see player or player out of range, change state to Move
             if (hit.collider ==null)
@@ -173,6 +194,15 @@ public class AI_TestTwo : MonoBehaviour
             case EnemyActionType.Dodge:
                 StartCoroutine(Dodge());
                 break;
+        }
+    }
+
+    void Shoot()
+    {
+        if(Time.time >nextFire)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            nextFire = Time.time + fireRate;
         }
     }
 
