@@ -8,7 +8,7 @@ public class AI_TestTwo : MonoBehaviour
 {
     public enum EnemyActionType {Idle = 0, Move = 1, Attack = 2, Dodge = 3}; //Declares the states
     public EnemyActionType CurrentState = EnemyActionType.Idle; //Default state is Idle
-    private Transform ThisTransform = null; //not sure if this is needed
+    private Transform ThisTransform = null; //not sure if this is needed, could be useful later
     private Transform PlayerObject = null; //reference to the player's transform
 
     public float sight = 5f; //range of attack
@@ -40,6 +40,7 @@ public class AI_TestTwo : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         //Set starting state
+        turning = false;
         ChangeState(CurrentState);
         fireRate = 1f;
         nextFire = Time.time;
@@ -84,7 +85,7 @@ public class AI_TestTwo : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
-            //turning = false;
+            //turning = false;   <----enabling this makes zombie turn around too quickly and gets stuck at first obstacle in sight. 
             Debug.Log("Moving the enemy");
 
             //Actual movement of the enemy
@@ -104,13 +105,14 @@ public class AI_TestTwo : MonoBehaviour
                 yield break;
             }
             //if the enemy is in range of an obstacle, start the dodge state
-            if(obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
+            if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
             {
-                
+
                 Debug.Log("We are turning the enemy's direction around");
                 yield return new WaitForSeconds(.5f);
                 turning = true;
-                //ChangeState(EnemyActionType.Move);
+
+                //ChangeState(EnemyActionType.Move); <---unsure if needed, appears to do nothing
                 //yield break;
             }
             yield return null;
@@ -131,16 +133,16 @@ public class AI_TestTwo : MonoBehaviour
             {
                 Shoot();
 
-                //GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                //if (!facingRight)
-                //{
-                    //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-                //}
-                //if (facingRight)
-                //{
-                    //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
-                //}
-                //yield return new WaitForSeconds(.8f);
+                GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                if (!facingRight)
+                {
+                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+                }
+                if (facingRight)
+                {
+                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+                }
+                yield return new WaitForSeconds(.8f);
             }
             //If cannot see player or player out of range, change state to Move
             if (hit.collider ==null)

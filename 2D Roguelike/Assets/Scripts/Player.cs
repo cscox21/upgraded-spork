@@ -12,8 +12,6 @@ public class Player : MonoBehaviour
 
     public PlayerStats playerStats = new PlayerStats();
 
-    public int fallBoundary = -30;
-
     void Update()
     {
         if(transform.position.y <= -30)

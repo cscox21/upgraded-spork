@@ -24,7 +24,7 @@ public class ZombiePatrol : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
         //if (hit.collider != null && hit.collider.tag == "Player")
         //Place code to have enemy attack or react when raycast hits
 
@@ -67,10 +67,10 @@ public class ZombiePatrol : MonoBehaviour {
         }  
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * -sight);
-    }
+    //void OnDrawGizmos()
+    //{
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * -sight);
+    //}
 
 }
