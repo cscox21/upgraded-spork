@@ -642,6 +642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1781849927934770, guid: 05071b91fd1e5464482e536e9abc08fe, type: 2}
+  fireRange: 5
+  target: {fileID: 1071921040}
 --- !u!212 &874459141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -812,6 +814,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dd49b735c0baad468678422c4b05485, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1071921040 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4155814484187214, guid: 82d8784186626f641989c6ea9ad89a95,
+    type: 2}
+  m_PrefabInternal: {fileID: 475127604}
 --- !u!1 &1433960632
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +918,24 @@ MonoBehaviour:
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
   yPosRestriction: -1
+--- !u!1 &1638497731 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1418202426326052, guid: 82d8784186626f641989c6ea9ad89a95,
+    type: 2}
+  m_PrefabInternal: {fileID: 475127604}
+--- !u!114 &1638497740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638497731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21132ce67dd923479b6e3c8e7365f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats:
+    Health: 100
 --- !u!1001 &1684822220
 Prefab:
   m_ObjectHideFlags: 0

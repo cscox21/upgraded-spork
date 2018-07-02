@@ -9,6 +9,7 @@ public class EnemyFireBall : MonoBehaviour {
     Rigidbody2D rb;
     Player target;
     Vector2 moveDirection;
+    public float fireBallSpeed = 2f;
 
 
     // Use this for initialization
@@ -16,15 +17,11 @@ public class EnemyFireBall : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
-
-    }
-
-    private void Update()
-    {
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+        rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * fireBallSpeed;
         Destroy(gameObject, 3f);
     }
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {
