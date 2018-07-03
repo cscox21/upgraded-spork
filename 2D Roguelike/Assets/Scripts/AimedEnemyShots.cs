@@ -36,9 +36,9 @@ public class AimedEnemyShots : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.DrawRay(transform.position + Vector3.left * headHeight, transform.forward * sight, Color.green);
-        Debug.DrawRay(transform.position + Vector3.left * headHeight, (transform.forward + transform.right).normalized * sight, Color.blue);
-        Debug.DrawRay(transform.position + Vector3.left * headHeight, (transform.forward - transform.right).normalized * sight, Color.blue);
+        Debug.DrawRay(transform.position + Vector3.left * headHeight, transform.right * -sight, Color.green);
+        Debug.DrawRay(transform.position + Vector3.left * headHeight, (transform.right + transform.up).normalized * -sight, Color.blue);
+        Debug.DrawRay(transform.position + Vector3.left * headHeight, (transform.right - transform.up).normalized * -sight, Color.blue);
         CheckIFTimeToFire();
 	}
 
