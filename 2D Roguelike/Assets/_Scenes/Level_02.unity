@@ -644,6 +644,9 @@ MonoBehaviour:
   projectile: {fileID: 1781849927934770, guid: 05071b91fd1e5464482e536e9abc08fe, type: 2}
   fireRange: 5
   target: {fileID: 1071921040}
+  headHeight: 0.75
+  sight: 3
+  topSight: 4.2
 --- !u!212 &874459141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -695,7 +698,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 874459139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.97, y: 3.84, z: 0}
+  m_LocalPosition: {x: 7.62, y: 3.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
