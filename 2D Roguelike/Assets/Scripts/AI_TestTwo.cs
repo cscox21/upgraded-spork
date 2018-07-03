@@ -85,7 +85,7 @@ public class AI_TestTwo : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
-            //turning = false;   <----enabling this makes zombie turn around too quickly and gets stuck at first obstacle in sight. 
+            //turning = false;   //<----enabling this makes zombie turn around too quickly and gets stuck at first obstacle in sight. 
             Debug.Log("Moving the enemy");
 
             //Actual movement of the enemy
@@ -107,15 +107,16 @@ public class AI_TestTwo : MonoBehaviour
             //if the enemy is in range of an obstacle, start the dodge state
             if (obstacleHit.collider != null && obstacleHit.collider.tag == "ground")
             {
-
+                
                 Debug.Log("We are turning the enemy's direction around");
                 yield return new WaitForSeconds(.5f);
                 turning = true;
-
-                //ChangeState(EnemyActionType.Move); <---unsure if needed, appears to do nothing
-                //yield break;
+                //ChangeState(EnemyActionType.Move);  // <---unsure if needed, appears to do nothing
+                yield break;
             }
             yield return null;
+            turning = false;
+            ChangeState(EnemyActionType.Move);
         }
     }
 
