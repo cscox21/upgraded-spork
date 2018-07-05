@@ -14,7 +14,7 @@ public class AI_TestTwo : MonoBehaviour
     public float sight = 5f; //range of attack
     public float obstacleSight = 1.2f; //distance enemy is from obstacle where it will jump
     public float jumpForce = 800f; //force of enemies jump height
-    public float sideJumpForce = 500f;
+    public float sideJumpForce = 500f; //force that moves horizontally in air
     public Rigidbody2D rb; //referebce to the enemy's rigidbody
     public float speed; //speed of the enemy
 

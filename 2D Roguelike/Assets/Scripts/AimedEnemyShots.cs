@@ -36,7 +36,8 @@ public class AimedEnemyShots : MonoBehaviour {
     void CheckIFTimeToFire()
     {
         //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * headHeight, -transform.right * sight);
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * headHeight, -transform.right.normalized * sight);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * -Vector2.right, sight);
         RaycastHit2D topHit = Physics2D.Raycast(transform.position + Vector3.left * headHeight, (transform.right - transform.up).normalized * -topSight);
 
         if (hit.collider != null && hit.collider.tag == "Player") 
@@ -44,6 +45,15 @@ public class AimedEnemyShots : MonoBehaviour {
             Debug.Log("Attack the Player");
             if (Time.time > nextFire)
             { 
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                nextFire = Time.time + fireRate;
+            }
+        }
+        if (topHit.collider != null && topHit.collider.tag == "Player")
+        {
+            Debug.Log("Attack the Player with the angled raycast");
+            if (Time.time > nextFire)
+            {
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 nextFire = Time.time + fireRate;
             }
