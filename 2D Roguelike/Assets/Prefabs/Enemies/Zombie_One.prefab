@@ -64,12 +64,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561817238885992}
+  - component: {fileID: 95521610316075300}
   - component: {fileID: 212955685095284642}
   - component: {fileID: 61472851116143614}
   - component: {fileID: 50194868790691272}
-  - component: {fileID: 114342213107201500}
   - component: {fileID: 114933534509837152}
-  - component: {fileID: 95521610316075300}
   - component: {fileID: 114526372598341804}
   m_Layer: 9
   m_Name: Basic_Enemy
@@ -195,19 +194,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114342213107201500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1632003742053206}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60536f0cb45abba4c85ffee94a70f3aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemySpeed: 3
-  XMoveDirection: 1
 --- !u!114 &114526372598341804
 MonoBehaviour:
   m_ObjectHideFlags: 1

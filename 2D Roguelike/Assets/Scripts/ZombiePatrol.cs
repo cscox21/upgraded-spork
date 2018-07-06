@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ZombiePatrol : MonoBehaviour {
 
-
     public Transform[] patrolpoints;
     int currentPoint;
     public float speed = 0.5f;
