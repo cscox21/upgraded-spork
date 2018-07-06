@@ -37,9 +37,39 @@ public class StrongEnemy : MonoBehaviour {
         anim = GetComponent<Animator>();
         turning = false;
         ChangeState(CurrentState);
-        anim.SetBool("Walking", true);
+        anim.SetBool("Walking", false);
         fireRate = 1f;
         nextFire = Time.time;
+    }
+
+    public IEnumerator Idle()
+    {
+
+        float WaitTime = 4f;
+        float ElapsedTime = 0f;
+
+        //Loop while idling
+        while (CurrentState == EnemyActionType.Idle)
+        {
+            RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+            Debug.Log("We are in the Idle state");
+            ElapsedTime += Time.deltaTime;
+
+            if (ElapsedTime >= WaitTime)
+            {
+                //Once ElapsedTime hits 2 seconds, resets to 0. 
+                Debug.Log("Enemy has not seen the player, switching to Move state");
+                ChangeState(EnemyActionType.Patrol);
+                yield break;
+            }
+            if (hit.collider != null && hit.collider.tag == "Player")
+            {
+                ChangeState(EnemyActionType.Attack);
+                yield break;
+            }
+            yield return null;
+        }
     }
 
     public IEnumerator Patrol()
@@ -48,6 +78,7 @@ public class StrongEnemy : MonoBehaviour {
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             Debug.Log("Patrolling");
+            anim.SetBool("Walking", true);
 
             if (transform.position.x == patrolpoints[currentPoint].position.x)
             {
@@ -59,24 +90,28 @@ public class StrongEnemy : MonoBehaviour {
 
             if (currentPoint >= patrolpoints.Length)
             {
+                //anim.SetBool("Walking", false);
                 currentPoint = 0;
             }
 
             if (hit.collider != null && hit.collider.tag == "Player")
             {
+                anim.SetBool("Attacking", true);
                 ChangeState(EnemyActionType.Attack);
                 yield break;
             }
 
+            
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(patrolpoints[currentPoint].position.x, transform.position.y), speed);
 
-            if (transform.position.x < patrolpoints[currentPoint].position.x)
+            if (transform.position.x >= patrolpoints[currentPoint].position.x)
                 transform.localScale = new Vector3(-1, 1, 1);
-            else if (transform.position.x > patrolpoints[currentPoint].position.x)
+            else if (transform.position.x <= patrolpoints[currentPoint].position.x)
                 transform.localScale = Vector3.one;
             yield return null;
         }
     }
+    
 
     public IEnumerator Attack()
     {
@@ -107,7 +142,7 @@ public class StrongEnemy : MonoBehaviour {
             if (hit.collider == null)
             {
                 Debug.Log("Player is out of range");
-                ChangeState(EnemyActionType.Patrol);
+                //ChangeState(EnemyActionType.Patrol);
                 yield break;
             }
             yield return null;
@@ -121,9 +156,9 @@ public class StrongEnemy : MonoBehaviour {
 
         switch (NewState)
         {
-            //case EnemyActionType.Idle:
-                //StartCoroutine(Idle());
-                //break;
+            case EnemyActionType.Idle:
+                StartCoroutine(Idle());
+                break;
 
             case EnemyActionType.Patrol:
                 StartCoroutine(Patrol());

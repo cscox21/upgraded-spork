@@ -20,15 +20,6 @@ public class ZombiePatrol : MonoBehaviour {
         anim.SetBool("Walking", true);
 
     }
-	// Update is called once per frame
-	void Update ()
-    {
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-        //if (hit.collider != null && hit.collider.tag == "Player")
-        //Place code to have enemy attack or react when raycast hits
-
-
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
