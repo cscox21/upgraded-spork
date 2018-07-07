@@ -77,13 +77,15 @@ public class StrongEnemy : MonoBehaviour {
     {
         while (true)
         {
+            Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
             //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
-            Debug.Log("Patrolling");
+            //Debug.Log("Patrolling");
             anim.SetBool("Walking", true);
 
             if (transform.position.x == patrolpoints[currentPoint].position.x)
             {
+                Debug.Log("The X's transform position is equal to the patrol points's current point");
                 currentPoint++;
                 anim.SetBool("Walking", false);
                 yield return new WaitForSeconds(timeStill);
@@ -92,6 +94,7 @@ public class StrongEnemy : MonoBehaviour {
 
             if (currentPoint >= patrolpoints.Length)
             {
+                Debug.Log("The current point is greater than the patrol points length, setting current point to 0");
                 //anim.SetBool("Walking", false);
                 currentPoint = 0;
             }
@@ -120,7 +123,7 @@ public class StrongEnemy : MonoBehaviour {
     {
         while (CurrentState == EnemyActionType.Attack)
         {
-
+            Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
             //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
             Debug.Log("Attacking the player");
@@ -184,8 +187,9 @@ public class StrongEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
-        Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
+        //Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.green);
+        //Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.blue);
+        //Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
     }
 
     void Shoot()
