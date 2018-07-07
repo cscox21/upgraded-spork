@@ -25,6 +25,7 @@ public class StrongEnemy : MonoBehaviour {
     [SerializeField]
     public GameObject projectile; //reference to the GameObject projectile
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
+    public float headHeight;
 
     float fireRate;
     float nextFire;
@@ -76,7 +77,8 @@ public class StrongEnemy : MonoBehaviour {
     {
         while (true)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+            //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
             Debug.Log("Patrolling");
             anim.SetBool("Walking", true);
 
@@ -97,6 +99,7 @@ public class StrongEnemy : MonoBehaviour {
             if (hit.collider != null && hit.collider.tag == "Player")
             {
                 anim.SetBool("Attacking", true);
+                anim.SetBool("Walking", false);
                 ChangeState(EnemyActionType.Attack);
                 yield break;
             }
@@ -118,31 +121,35 @@ public class StrongEnemy : MonoBehaviour {
         while (CurrentState == EnemyActionType.Attack)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-            //Deal Damage here
+            //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
             Debug.Log("Attacking the player");
 
             //if the raycast hits the player, shoot projectiles
             if (hit.collider != null && hit.collider.tag == "Player")
             {
+                anim.SetBool("Attacking", true);
+                yield return new WaitForSeconds(1f);
                 Shoot();
 
-                GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                if (!facingRight)
-                {
-                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-                }
-                if (facingRight)
-                {
-                    bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
-                }
-                yield return new WaitForSeconds(.8f);
+                //GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                //if (!facingRight)
+                //{
+                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+                //}
+                //if (facingRight)
+                //{
+                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+                //}
+                //yield return new WaitForSeconds(1f);
+                anim.SetBool("Attacking", false);
             }
             //If cannot see player or player out of range, change state to Move
             if (hit.collider == null)
             {
                 Debug.Log("Player is out of range");
-                //ChangeState(EnemyActionType.Patrol);
+                anim.SetBool("Attacking", false);
+                ChangeState(EnemyActionType.Patrol);
                 yield break;
             }
             yield return null;
@@ -177,14 +184,15 @@ public class StrongEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-		
-	}
+        Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
+        Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
+    }
 
     void Shoot()
     {
         if (Time.time > nextFire)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
     }
@@ -205,11 +213,11 @@ public class StrongEnemy : MonoBehaviour {
         transform.localScale = theScale;
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * sight);
+    //void OnDrawGizmos()
+    //{
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * sight);
         //Gizmos.color = Color.blue;
         //Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * obstacleSight);
-    }
+    //}
 }

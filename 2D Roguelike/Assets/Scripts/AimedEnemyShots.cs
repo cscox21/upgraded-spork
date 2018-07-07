@@ -17,6 +17,7 @@ public class AimedEnemyShots : MonoBehaviour {
     public float sight = 3f;
     public float topSight = 5f;
 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -27,18 +28,15 @@ public class AimedEnemyShots : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.DrawRay(transform.position + Vector3.left * headHeight, transform.right * -sight, Color.green);
-        //Debug.DrawRay(transform.position + Vector3.left * headHeight, (transform.right + transform.up).normalized * -sight, Color.blue);
-        Debug.DrawRay(transform.position + Vector3.left * headHeight, (transform.right - transform.up).normalized * -topSight, Color.blue);
+        Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
+        Debug.DrawRay(transform.position + Vector3.up * headHeight, (transform.right - transform.up).normalized * -topSight, Color.blue);
         CheckIFTimeToFire();
 	}
 
     void CheckIFTimeToFire()
     {
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * headHeight, -transform.right.normalized * sight);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * -Vector2.right, sight);
-        RaycastHit2D topHit = Physics2D.Raycast(transform.position + Vector3.left * headHeight, (transform.right - transform.up).normalized * -topSight);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
+        RaycastHit2D topHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, (transform.right - transform.up).normalized, -topSight);
 
         if (hit.collider != null && hit.collider.tag == "Player") 
         {
