@@ -78,14 +78,18 @@ public class StrongEnemy : MonoBehaviour {
         while (true)
         {
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
+            Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
             //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
+            RaycastHit2D rightHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, sight);
+
             //Debug.Log("Patrolling");
             anim.SetBool("Walking", true);
 
             if (transform.position.x == patrolpoints[currentPoint].position.x)
             {
-                Debug.Log("The X's transform position is equal to the patrol points's current point");
+                //RaycastHit2D rightHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, sight);
+                //Debug.Log("The X's transform position is equal to the patrol points's current point");
                 currentPoint++;
                 anim.SetBool("Walking", false);
                 yield return new WaitForSeconds(timeStill);
@@ -107,7 +111,15 @@ public class StrongEnemy : MonoBehaviour {
                 yield break;
             }
 
-            
+            if (rightHit.collider != null && rightHit.collider.tag == "Player")
+            {
+                anim.SetBool("Attacking", true);
+                anim.SetBool("Walking", false);
+                ChangeState(EnemyActionType.Attack);
+                yield break;
+            }
+
+
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(patrolpoints[currentPoint].position.x, transform.position.y), speed);
 
             if (transform.position.x >= patrolpoints[currentPoint].position.x)
@@ -124,8 +136,9 @@ public class StrongEnemy : MonoBehaviour {
         while (CurrentState == EnemyActionType.Attack)
         {
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
-            //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
+            Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.blue);
             RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
+            RaycastHit2D rightHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, sight);
             Debug.Log("Attacking the player");
 
             //if the raycast hits the player, shoot projectiles
@@ -147,11 +160,31 @@ public class StrongEnemy : MonoBehaviour {
                 //yield return new WaitForSeconds(1f);
                 anim.SetBool("Attacking", false);
             }
+
+            if (rightHit.collider != null && rightHit.collider.tag == "Player")
+            {
+                anim.SetBool("Attacking", true);
+                yield return new WaitForSeconds(1f);
+                Shoot();
+
+                //GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                //if (!facingRight)
+                //{
+                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
+                //}
+                //if (facingRight)
+                //{
+                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+                //}
+                //yield return new WaitForSeconds(1f);
+                anim.SetBool("Attacking", false);
+            }
             //If cannot see player or player out of range, change state to Move
-            if (hit.collider == null)
+            if (hit.collider == null || rightHit.collider ==null)
             {
                 Debug.Log("Player is out of range");
                 anim.SetBool("Attacking", false);
+                anim.SetBool("Walking", true);
                 ChangeState(EnemyActionType.Patrol);
                 yield break;
             }
