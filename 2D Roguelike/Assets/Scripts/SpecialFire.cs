@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class SpecialFire : MonoBehaviour {
 
-    public GameObject specialFire;
     Rigidbody2D rb;
-    public float firePower;
-
 
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(-3f,3.5f);
     }
-	
-	// Update is called once per frame
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "ground")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Update is called once per frame
 }

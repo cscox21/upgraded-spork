@@ -21,7 +21,6 @@ public class StrongEnemy : MonoBehaviour {
     public Rigidbody2D rb; //referebce to the enemy's rigidbody
     bool facingRight = false; //wether enemy is facing right or now
     bool turning = false; //whether the enemy is turning
-    public float fireballSpeed; //speed of the projectile
     [SerializeField]
     public GameObject projectile; //reference to the GameObject projectile
     public GameObject powerProjectile; //reference to the GameObject powerProjectile (the enemy's 2nd type of attack)
