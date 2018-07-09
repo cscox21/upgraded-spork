@@ -530,6 +530,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &817117866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 817117867}
+  m_Layer: 0
+  m_Name: FirePos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &817117867
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817117866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.71, y: 0.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 950619109}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839191651
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +846,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0114245ddea9c44f813e266fbfe4d63, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &950619109 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4968375639928024, guid: 8595f29dc35b6884a8530e74b067d513,
+    type: 2}
+  m_PrefabInternal: {fileID: 1678613372}
 --- !u!1001 &1015887344
 Prefab:
   m_ObjectHideFlags: 0
@@ -989,6 +1022,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114024384100814278, guid: 8595f29dc35b6884a8530e74b067d513,
+        type: 2}
+      propertyPath: fireLocation.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4012332125191636, guid: 8595f29dc35b6884a8530e74b067d513, type: 2}
       propertyPath: m_LocalPosition.x
       value: 19.92
@@ -1026,6 +1064,17 @@ Prefab:
       propertyPath: headHeight
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 114024384100814278, guid: 8595f29dc35b6884a8530e74b067d513,
+        type: 2}
+      propertyPath: fireLocation.Array.data[1]
+      value: 
+      objectReference: {fileID: 817117867}
+    - target: {fileID: 114024384100814278, guid: 8595f29dc35b6884a8530e74b067d513,
+        type: 2}
+      propertyPath: powerProjectile
+      value: 
+      objectReference: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8595f29dc35b6884a8530e74b067d513, type: 2}
   m_IsPrefabParent: 0

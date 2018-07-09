@@ -24,11 +24,14 @@ public class StrongEnemy : MonoBehaviour {
     public float fireballSpeed; //speed of the projectile
     [SerializeField]
     public GameObject projectile; //reference to the GameObject projectile
+    public GameObject powerProjectile; //reference to the GameObject powerProjectile (the enemy's 2nd type of attack)
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
     public float headHeight;
 
     float fireRate;
+    float specialFireRate;
     float nextFire;
+    float nextSpecialFire;
 
 
     // Use this for initialization
@@ -40,7 +43,9 @@ public class StrongEnemy : MonoBehaviour {
         ChangeState(CurrentState);
         anim.SetBool("Walking", false);
         fireRate = 1f;
+        specialFireRate = 4f;
         nextFire = Time.time;
+        nextSpecialFire = Time.time;
     }
 
     public IEnumerator Idle()
@@ -79,7 +84,6 @@ public class StrongEnemy : MonoBehaviour {
         {
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
-            //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
             RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
             RaycastHit2D rightHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, sight);
 
@@ -88,7 +92,6 @@ public class StrongEnemy : MonoBehaviour {
 
             if (transform.position.x == patrolpoints[currentPoint].position.x)
             {
-                //RaycastHit2D rightHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, sight);
                 //Debug.Log("The X's transform position is equal to the patrol points's current point");
                 currentPoint++;
                 anim.SetBool("Walking", false);
@@ -147,17 +150,6 @@ public class StrongEnemy : MonoBehaviour {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
                 Shoot();
-
-                //GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                //if (!facingRight)
-                //{
-                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-                //}
-                //if (facingRight)
-                //{
-                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
-                //}
-                //yield return new WaitForSeconds(1f);
                 anim.SetBool("Attacking", false);
             }
 
@@ -166,17 +158,6 @@ public class StrongEnemy : MonoBehaviour {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
                 Shoot();
-
-                //GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                //if (!facingRight)
-                //{
-                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
-                //}
-                //if (facingRight)
-                //{
-                //bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
-                //}
-                //yield return new WaitForSeconds(1f);
                 anim.SetBool("Attacking", false);
             }
             //If cannot see player or player out of range, change state to Move
@@ -217,14 +198,6 @@ public class StrongEnemy : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-        //Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.green);
-        //Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.blue);
-        //Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
-    }
-
     void Shoot()
     {
         if (Time.time > nextFire)
@@ -232,6 +205,13 @@ public class StrongEnemy : MonoBehaviour {
             Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
+
+        if (Time.time > nextSpecialFire)
+        {
+            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+            nextSpecialFire = Time.time + specialFireRate;
+        }
+
     }
 
     private void FixedUpdate()
