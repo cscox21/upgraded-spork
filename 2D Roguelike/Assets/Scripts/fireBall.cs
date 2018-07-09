@@ -9,6 +9,7 @@ public class fireBall : MonoBehaviour {
     Rigidbody2D rb;
     Player target;
     Vector2 moveDirection;
+    bool facingRight = false;
 
 
 	// Use this for initialization
@@ -19,7 +20,12 @@ public class fireBall : MonoBehaviour {
         moveDirection = (target.transform.position - transform.position).normalized* moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 3f);
-	}
+
+        if (target.transform.position.x > transform.position.x)
+        {
+            Flip();
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +34,13 @@ public class fireBall : MonoBehaviour {
             Debug.Log("Hit");
             Destroy(gameObject);
         }
+    }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
 }
