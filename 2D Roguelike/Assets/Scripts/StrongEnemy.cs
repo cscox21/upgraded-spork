@@ -26,11 +26,12 @@ public class StrongEnemy : MonoBehaviour {
     public GameObject powerProjectile; //reference to the GameObject powerProjectile (the enemy's 2nd type of attack)
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
     public float headHeight;
-
+    public float fireballSpeed;
     float fireRate;
     float specialFireRate;
     float nextFire;
     float nextSpecialFire;
+    
 
 
     // Use this for initialization
@@ -148,7 +149,22 @@ public class StrongEnemy : MonoBehaviour {
             {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
-                Shoot();
+                int i = 0;
+                while (i <= 4)
+                {
+                    Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                    if(i==4)
+                    {
+                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+                        yield return new WaitForSeconds(.3f);
+                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+                        yield return new WaitForSeconds(.3f);
+                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+                    }
+                    i++;
+                    yield return new WaitForSeconds(1f);
+                }
+                //Shoot();
                 anim.SetBool("Attacking", false);
             }
 
@@ -156,7 +172,23 @@ public class StrongEnemy : MonoBehaviour {
             {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
-                Shoot();
+
+                int i = 0;
+                while (i <= 4)
+                {
+                    Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+                    if (i == 4)
+                    {
+                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+                        yield return new WaitForSeconds(.3f);
+                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+                        yield return new WaitForSeconds(.3f);
+                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+                    }
+                    i++;
+                    yield return new WaitForSeconds(1f);
+                }
+                //Shoot();
                 anim.SetBool("Attacking", false);
             }
             //If cannot see player or player out of range, change state to Move
@@ -199,18 +231,17 @@ public class StrongEnemy : MonoBehaviour {
 
     void Shoot()
     {
-        if (Time.time > nextFire)
-        {
-            Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-            nextFire = Time.time + fireRate;
-        }
+        //if (Time.time > nextFire)
+        //{
+        //Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+        //nextFire = Time.time + fireRate;
+        //}
 
-        if (Time.time > nextSpecialFire)
-        {
-            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-            nextSpecialFire = Time.time + specialFireRate;
-        }
-
+        //if (Time.time > nextSpecialFire)
+        //{
+        //Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+        //nextSpecialFire = Time.time + specialFireRate;
+        //}
     }
 
     private void FixedUpdate()

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114024384100814278}
   m_Layer: 0
   m_Name: Fighter
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,7 +315,6 @@ MonoBehaviour:
   jumpForce: 800
   sideJumpForce: 500
   rb: {fileID: 50245834268835550}
-  fireballSpeed: 2
   projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
   powerProjectile: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d,
     type: 2}
@@ -323,6 +322,7 @@ MonoBehaviour:
   - {fileID: 4804324132182210}
   - {fileID: 4841586298428442}
   headHeight: -1
+  fireballSpeed: 2
 --- !u!212 &212026445871441216
 SpriteRenderer:
   m_ObjectHideFlags: 1

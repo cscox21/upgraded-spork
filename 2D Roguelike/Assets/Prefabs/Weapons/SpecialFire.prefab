@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50224972361229138}
   - component: {fileID: 114546386401419990}
   m_Layer: 0
-  m_Name: SpecialFire
+  m_Name: specialFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1683732182089400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.18451, y: 4.6729016, z: 0}
+  m_LocalPosition: {x: 3.6401262, y: 8.266231, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72217e0ca4eeb5d47a45e6a2bb57e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePower: 700
+  enemyShooting: {fileID: 0}
 --- !u!212 &212132541685266118
 SpriteRenderer:
   m_ObjectHideFlags: 1

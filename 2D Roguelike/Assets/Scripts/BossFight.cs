@@ -37,12 +37,14 @@ public class BossFight : MonoBehaviour {
         while (true)
         {
             //First attack
+            //While the boss's x position isnt at the 1st spot, move 
             while (transform.position.x != spots[0].position.x)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(spots[0].position.x, transform.position.y), speed);
                 yield return null;
             }
 
+            //flip the boss on the x axis
             transform.localScale = new Vector2(-1, 1);
             yield return new WaitForSeconds(1f);
 
