@@ -31,6 +31,7 @@ public class StrongEnemy : MonoBehaviour {
     float specialFireRate;
     float nextFire;
     float nextSpecialFire;
+    public float stalledAttack;
     
 
 
@@ -43,9 +44,10 @@ public class StrongEnemy : MonoBehaviour {
         ChangeState(CurrentState);
         anim.SetBool("Walking", false);
         fireRate = 1f;
-        specialFireRate = 4f;
+        specialFireRate = 2.5f;
         nextFire = Time.time;
         nextSpecialFire = Time.time;
+        stalledAttack = 2.5f;
     }
 
     public IEnumerator Idle()
@@ -149,22 +151,8 @@ public class StrongEnemy : MonoBehaviour {
             {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
-                int i = 0;
-                while (i <= 4)
-                {
-                    Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                    if(i==4)
-                    {
-                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-                        yield return new WaitForSeconds(.3f);
-                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-                        yield return new WaitForSeconds(.3f);
-                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-                    }
-                    i++;
-                    yield return new WaitForSeconds(1f);
-                }
-                //Shoot();
+                Shoot();
+                SpecialShoot();
                 anim.SetBool("Attacking", false);
             }
 
@@ -172,23 +160,8 @@ public class StrongEnemy : MonoBehaviour {
             {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
-
-                int i = 0;
-                while (i <= 4)
-                {
-                    Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-                    if (i == 4)
-                    {
-                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-                        yield return new WaitForSeconds(.3f);
-                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-                        yield return new WaitForSeconds(.3f);
-                        Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-                    }
-                    i++;
-                    yield return new WaitForSeconds(1f);
-                }
-                //Shoot();
+                Shoot();
+                SpecialShoot();
                 anim.SetBool("Attacking", false);
             }
             //If cannot see player or player out of range, change state to Move
@@ -229,20 +202,27 @@ public class StrongEnemy : MonoBehaviour {
         }
     }
 
-    //void Shoot()
-    //{
-        //if (Time.time > nextFire)
-        //{
-        //Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-        //nextFire = Time.time + fireRate;
-        //}
+    void Shoot()
+    {
+        if (Time.time > nextFire)
+        {
+            Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
+            nextFire = Time.time + fireRate;
+        }
+      
+    }
+    void SpecialShoot()
+    {
+        stalledAttack--;
+        if (Time.time > nextSpecialFire && stalledAttack == 0f)
+        {
+            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+            nextSpecialFire = Time.time + specialFireRate; 
+        }
 
-        //if (Time.time > nextSpecialFire)
-        //{
-        //Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-        //nextSpecialFire = Time.time + specialFireRate;
-        //}
-    //}
+    }
 
     private void FixedUpdate()
     {
@@ -259,12 +239,4 @@ public class StrongEnemy : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-    //void OnDrawGizmos()
-    //{
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * sight);
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.right * obstacleSight);
-    //}
 }
