@@ -29,7 +29,7 @@ public class fireBall : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name.Equals ("Player"))
+        if(collision.gameObject.tag =="Player")
         {
             Debug.Log("Hit");
             Destroy(gameObject);

@@ -89,7 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72217e0ca4eeb5d47a45e6a2bb57e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyShooting: {fileID: 0}
+  boss: {fileID: 0}
+  yPower: 225
+  xPower: 175
 --- !u!212 &212132541685266118
 SpriteRenderer:
   m_ObjectHideFlags: 1

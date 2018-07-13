@@ -229,8 +229,8 @@ public class StrongEnemy : MonoBehaviour {
         }
     }
 
-    void Shoot()
-    {
+    //void Shoot()
+    //{
         //if (Time.time > nextFire)
         //{
         //Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
@@ -242,7 +242,7 @@ public class StrongEnemy : MonoBehaviour {
         //Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
         //nextSpecialFire = Time.time + specialFireRate;
         //}
-    }
+    //}
 
     private void FixedUpdate()
     {
