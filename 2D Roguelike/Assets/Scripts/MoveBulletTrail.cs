@@ -10,6 +10,6 @@ public class MoveBulletTrail : MonoBehaviour {
 	void Update ()
     {
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
-        Destroy(this.gameObject, 1);
+        Destroy(gameObject, 1);
 	}
 }

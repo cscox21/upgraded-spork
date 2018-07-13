@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 114730251375338040}
   - component: {fileID: 114035831580078128}
   - component: {fileID: 212532682504004388}
+  - component: {fileID: 114576942010425256}
   m_Layer: 11
   m_Name: Player One_Updated
   m_TagString: Player
@@ -151,13 +152,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1418202426326052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: -1.47, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4677362531195978}
-  - {fileID: 4155814484187214}
   - {fileID: 4872207739158250}
+  - {fileID: 4155814484187214}
   - {fileID: 4975340570877616}
+  - {fileID: 4677362531195978}
   - {fileID: 4908204017873650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -200,7 +201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4063910902201376}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4737313624812994
 Transform:
@@ -227,7 +228,7 @@ Transform:
   m_Children:
   - {fileID: 4082881334010390}
   m_Father: {fileID: 4063910902201376}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4908204017873650
 Transform:
@@ -253,7 +254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4063910902201376}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50939751716103582
 Rigidbody2D:
@@ -378,8 +379,7 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294965243
-  bulletTrailPrefab: {fileID: 4789666104616434, guid: 08f6e3b848ff5554f9b9cb83440713aa,
-    type: 2}
+  projectile: {fileID: 4608920814759944, guid: f802100dc64e4f84393629e337277e22, type: 2}
   muzzleFlashPrefab: {fileID: 4399553238456392, guid: a7ab1d1e6410fe54491be46c5b3874d7,
     type: 2}
   effectSpawnRate: 10
@@ -396,6 +396,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+--- !u!114 &114576942010425256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418202426326052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21132ce67dd923479b6e3c8e7365f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats:
+    Health: 100
 --- !u!114 &114730251375338040
 MonoBehaviour:
   m_ObjectHideFlags: 1

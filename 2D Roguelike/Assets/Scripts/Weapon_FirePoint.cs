@@ -8,7 +8,7 @@ public class Weapon_FirePoint : MonoBehaviour
     public float Damage = 10;
     public LayerMask whatToHit;
 
-    public Transform bulletTrailPrefab;
+    public Transform projectile;
     public Transform muzzleFlashPrefab;
     float timeToSpawnEffect = 0;
     public float effectSpawnRate = 10;
@@ -64,7 +64,7 @@ public class Weapon_FirePoint : MonoBehaviour
     }
     void Effect()
     {
-        Instantiate(bulletTrailPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(projectile, firePoint.position, firePoint.rotation);
         Transform clone = Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
         clone.parent = firePoint;
         float size = Random.Range(0.6f, 0.9f);

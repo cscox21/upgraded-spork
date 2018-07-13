@@ -293,6 +293,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114035831580078128, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: extraJumps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114358553433064930, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: bulletTrailPrefab
+      value: 
+      objectReference: {fileID: 4608920814759944, guid: f802100dc64e4f84393629e337277e22,
+        type: 2}
+    - target: {fileID: 114358553433064930, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 4608920814759944, guid: f802100dc64e4f84393629e337277e22,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
   m_IsPrefabParent: 0

@@ -88,12 +88,12 @@ namespace UnitySampleAssets._2D
                     // ... flip the player.
                     Flip();
             }
+
             // If the player should jump...
             if (grounded && jump && anim.GetBool("Ground"))
             {
                 // Add a vertical force to the player.
                 grounded = false;
-                //anim.SetBool("Ground", false);
                 rb.AddForce(new Vector2(0f, jumpForce));
             }
         }
