@@ -34,7 +34,6 @@ public class Weapon_FirePoint : MonoBehaviour
             {
                 Shoot();  
             }
-
         }
         else
         {
