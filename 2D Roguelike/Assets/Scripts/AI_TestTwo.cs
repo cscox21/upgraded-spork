@@ -132,7 +132,7 @@ public class AI_TestTwo : MonoBehaviour
             //if the raycast hits the player, shoot projectiles
             if(hit.collider !=null && hit.collider.tag == "Player")
             {
-                Shoot();
+                //Shoot();
 
                 GameObject bossFireball = Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
                 if (!facingRight)
@@ -140,7 +140,7 @@ public class AI_TestTwo : MonoBehaviour
                     bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.left * fireballSpeed;
                 }
                 if (facingRight)
-                {
+                { 
                     bossFireball.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
                 }
                 yield return new WaitForSeconds(.8f);

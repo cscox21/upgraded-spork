@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 50911424661015740}
   - component: {fileID: 61553498608670566}
   - component: {fileID: 114764751391538264}
+  - component: {fileID: 114914585094379492}
   m_Layer: 0
   m_Name: BloodyZombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,9 +137,23 @@ MonoBehaviour:
   rb: {fileID: 50911424661015740}
   speed: 2.5
   fireballSpeed: 4
-  projectile: {fileID: 1980860982051532, guid: e03171aa676839f429748aef53e8230f, type: 2}
+  projectile: {fileID: 0}
   fireLocation:
   - {fileID: 4331691731594574}
+--- !u!114 &114914585094379492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847740469874844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0095585623242459ba3d45c7e2271d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 100
+  enemyCurrentHealth: 0
+  scoreValue: 20
 --- !u!212 &212065776804446682
 SpriteRenderer:
   m_ObjectHideFlags: 1

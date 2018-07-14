@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114024384100814278}
   m_Layer: 0
   m_Name: Fighter
-  m_TagString: enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   - {fileID: 4841586298428442}
   headHeight: -1
   fireballSpeed: 2
+  stalledAttack: 0
 --- !u!212 &212026445871441216
 SpriteRenderer:
   m_ObjectHideFlags: 1
