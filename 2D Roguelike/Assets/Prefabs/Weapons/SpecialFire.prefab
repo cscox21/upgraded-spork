@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58039000146894542}
   - component: {fileID: 50224972361229138}
   - component: {fileID: 114546386401419990}
+  - component: {fileID: 114054399349612058}
   m_Layer: 0
   m_Name: specialFire
   m_TagString: Untagged
@@ -78,6 +79,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.278
+--- !u!114 &114054399349612058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1683732182089400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d832d7281137524f83f65313ecc2d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 10
+  damageBurst: {fileID: 1607515771890146, guid: 01ad59d9a83778648a0c495b7d335e7d,
+    type: 2}
 --- !u!114 &114546386401419990
 MonoBehaviour:
   m_ObjectHideFlags: 1

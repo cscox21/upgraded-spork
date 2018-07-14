@@ -4,29 +4,50 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [System.Serializable]
-    public class PlayerStats
+    public int playerMaxHealth; //starting health of enemy
+    public int playerCurrentHealth; //current health of enemy
+
+    //[System.Serializable]
+    //public class PlayerStats
+    //{
+        //public int Health = 100;
+    //}
+
+    private void Start()
     {
-        public int Health = 100;
+        playerCurrentHealth = playerMaxHealth;
     }
 
-    public PlayerStats playerStats = new PlayerStats();
+    //public PlayerStats playerStats = new PlayerStats();
 
     void Update()
     {
-        if(transform.position.y <= -30)
+        if (playerCurrentHealth <= 0)
         {
-            DamagePlayer(999999);
+            Destroy(gameObject);
+        }
+
+        if (transform.position.y <= -30)
+        {
+            HurtPlayer(999999);
         }
     }
 
-    public void DamagePlayer(int damage)
+    //public void DamagePlayer(int damage)
+    //{
+        //playerStats.Health -= damage;
+        //if(playerStats.Health <= 0f)
+        //{
+            //GameController.KillPlayer(this);
+        //}
+    //}
+
+    public void HurtPlayer(int damageToGive)
     {
-        playerStats.Health -= damage;
-        if(playerStats.Health <= 0f)
-        {
-            GameController.KillPlayer(this);
-        }
+        playerCurrentHealth -= damageToGive;
     }
-
+    public void MaxHealth()
+    {
+        playerCurrentHealth = playerMaxHealth;
+    }
 }
