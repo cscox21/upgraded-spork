@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50588527313929786}
   - component: {fileID: 95053017547589722}
   - component: {fileID: 114686802897581060}
+  - component: {fileID: 114488268243688744}
   m_Layer: 0
   m_Name: BossFireBall
   m_TagString: Deadly
@@ -96,6 +97,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114488268243688744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1697667054417610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d832d7281137524f83f65313ecc2d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 30
 --- !u!114 &114686802897581060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a7aa919e0893b46844e2a9fa9850b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 1655497380269036, guid: 194212122999a3843ab2dfc54a58a6a7, type: 2}
 --- !u!212 &212481955287619834
 SpriteRenderer:
   m_ObjectHideFlags: 1

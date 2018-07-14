@@ -13,5 +13,9 @@ public class HurtPlayer : MonoBehaviour {
             other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }

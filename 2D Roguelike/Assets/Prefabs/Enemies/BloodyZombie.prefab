@@ -23,14 +23,14 @@ GameObject:
   - component: {fileID: 50911424661015740}
   - component: {fileID: 61553498608670566}
   - component: {fileID: 114764751391538264}
-  - component: {fileID: 114914585094379492}
+  - component: {fileID: 114520637648031728}
   m_Layer: 0
   m_Name: BloodyZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1871953097590792
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1847740469874844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.11, y: 1.6, z: 0}
+  m_LocalPosition: {x: 27.87, y: 1.7, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4331691731594574}
@@ -118,6 +118,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &114520637648031728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847740469874844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0095585623242459ba3d45c7e2271d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 50
+  enemyCurrentHealth: 0
+  scoreValue: 5
 --- !u!114 &114764751391538264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,23 +151,9 @@ MonoBehaviour:
   rb: {fileID: 50911424661015740}
   speed: 2.5
   fireballSpeed: 4
-  projectile: {fileID: 0}
+  projectile: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d, type: 2}
   fireLocation:
   - {fileID: 4331691731594574}
---- !u!114 &114914585094379492
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847740469874844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d0095585623242459ba3d45c7e2271d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMaxHealth: 100
-  enemyCurrentHealth: 0
-  scoreValue: 20
 --- !u!212 &212065776804446682
 SpriteRenderer:
   m_ObjectHideFlags: 1

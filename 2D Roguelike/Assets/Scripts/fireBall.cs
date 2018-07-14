@@ -10,6 +10,7 @@ public class fireBall : MonoBehaviour {
     Player target;
     Vector2 moveDirection;
     bool facingRight = false;
+    public GameObject explosion;
 
 
 	// Use this for initialization
@@ -31,6 +32,7 @@ public class fireBall : MonoBehaviour {
     {
         if(collision.gameObject.tag =="Player")
         {
+            Instantiate(explosion, transform.position, transform.rotation);
             Debug.Log("Hit");
             Destroy(gameObject);
         }
