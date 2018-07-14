@@ -21,7 +21,7 @@ public class HurtEnemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag =="Enemy")
+        if(other.gameObject.tag =="enemy")
         {
             other.gameObject.GetComponent<Enemy_Health>().HurtEnemy(damageToGive);
             Instantiate(damageBurst, transform.position, transform.rotation);

@@ -15,8 +15,8 @@ public class WeaponPickup : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        weaponHere = weapons[Random.Range(0, weapons.Length)];
-        GetComponent<SpriteRenderer>().sprite = weaponHere.GetComponent<SpriteRenderer>().sprite;
+        weaponHere = weapons[Random.Range(0, weapons.Length)]; //randomly picks different weapons
+        GetComponent<SpriteRenderer>().sprite = weaponHere.GetComponent<SpriteRenderer>().sprite; //shows image of weapon about to be picked up
 	}
 	
 	// Update is called once per frame

@@ -80,8 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 2
   weapons:
-  - {fileID: 1687583846920640, guid: d6f9fd253e5a0164ca674f5f0f05f533, type: 2}
-  - {fileID: 1040680008177210, guid: 995399d881abe34449e05bcc21caca83, type: 2}
+  - {fileID: 1525084075177668, guid: eb42c5db214110c4ba06e21849e1217b, type: 2}
+  - {fileID: 1310670615525972, guid: a1ed4376e9b66e843857e97dc338cacc, type: 2}
   weaponHere: {fileID: 0}
 --- !u!212 &212383400038571130
 SpriteRenderer:

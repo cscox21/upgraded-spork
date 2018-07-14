@@ -214,7 +214,7 @@ public class StrongEnemy : MonoBehaviour {
     void SpecialShoot()
     {
         stalledAttack--;
-        if (Time.time > nextSpecialFire && stalledAttack == 0f)
+        if (Time.time > nextSpecialFire && stalledAttack <= 0f)
         {
             Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
             Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
