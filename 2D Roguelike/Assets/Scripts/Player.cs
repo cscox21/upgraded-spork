@@ -6,11 +6,10 @@ public class Player : MonoBehaviour
 {
     public int playerMaxHealth; //starting health of enemy
     public int playerCurrentHealth; //current health of enemy
-
     //[System.Serializable]
     //public class PlayerStats
     //{
-        //public int Health = 100;
+    //public int Health = 100;
     //}
 
     private void Start()
@@ -35,11 +34,11 @@ public class Player : MonoBehaviour
 
     //public void DamagePlayer(int damage)
     //{
-        //playerStats.Health -= damage;
-        //if(playerStats.Health <= 0f)
-        //{
-            //GameController.KillPlayer(this);
-        //}
+    //playerStats.Health -= damage;
+    //if(playerStats.Health <= 0f)
+    //{
+    //GameController.KillPlayer(this);
+    //}
     //}
 
     public void HurtPlayer(int damageToGive)
