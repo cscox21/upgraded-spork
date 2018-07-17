@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController gc;
 
-    private void Start()
+    void Awake()
     {
         if(gc == null)
         {

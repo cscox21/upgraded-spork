@@ -502,6 +502,11 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 193604066}
+    - target: {fileID: 114576942010425256, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: flashColour.a
+      value: 0.291
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
   m_IsPrefabParent: 0
