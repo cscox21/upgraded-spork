@@ -26,28 +26,39 @@ public class StrongEnemy : MonoBehaviour {
     public GameObject powerProjectile; //reference to the GameObject powerProjectile (the enemy's 2nd type of attack)
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
     public float headHeight;
-    public float fireballSpeed;
-    float fireRate;
-    float specialFireRate;
-    float nextFire;
-    float nextSpecialFire;
-    public float stalledAttack;
-    
 
+    float nextBasicAttack;
+    float basicAttackRate;
+
+    float nextSecondAttack; 
+    float secondAttackRate; 
+    float secondAttackWaitTime; //<---this is the amount of time we wait until the first instantiation of SecondAttack
+
+    float thirdAttack;
+    float thirdAttackRate;
+    float thirdStalledAttack; //<---this is the amount of time we wait until the first instantiation of ThirdAttack 
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); 
+    }
 
     // Use this for initialization
     void Start ()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        
         turning = false;
         ChangeState(CurrentState);
         anim.SetBool("Walking", false);
-        fireRate = 1f;
-        specialFireRate = 2.5f;
-        nextFire = Time.time;
-        nextSpecialFire = Time.time;
-        stalledAttack = 2.5f;
+        basicAttackRate = 1f;
+        secondAttackRate = 2.5f;
+        nextBasicAttack = Time.time;
+        nextSecondAttack = Time.time;
+        secondAttackWaitTime = 2.5f;
+        thirdAttack = Time.time;
+        thirdAttackRate = 2f;
+        thirdStalledAttack = 2f;
     }
 
     public IEnumerator Idle()
@@ -93,8 +104,8 @@ public class StrongEnemy : MonoBehaviour {
             anim.SetBool("Walking", true);
 
             if (transform.position.x == patrolpoints[currentPoint].position.x)
-            {
-                //Debug.Log("The X's transform position is equal to the patrol points's current point");
+            {                
+                Debug.Log("The X's transform position is equal to the patrol points's current point");
                 currentPoint++;
                 anim.SetBool("Walking", false);
                 yield return new WaitForSeconds(timeStill);
@@ -144,7 +155,6 @@ public class StrongEnemy : MonoBehaviour {
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.blue);
             RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, -sight);
             RaycastHit2D rightHit = Physics2D.Raycast(transform.position + Vector3.up * headHeight, transform.right, sight);
-            Debug.Log("Attacking the player");
 
             //if the raycast hits the player, shoot projectiles
             if (hit.collider != null && hit.collider.tag == "Player")
@@ -152,7 +162,8 @@ public class StrongEnemy : MonoBehaviour {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
                 Shoot();
-                SpecialShoot();
+                SecondAttack();
+                ThirdAttack();
                 anim.SetBool("Attacking", false);
             }
 
@@ -161,7 +172,8 @@ public class StrongEnemy : MonoBehaviour {
                 anim.SetBool("Attacking", true);
                 yield return new WaitForSeconds(1f);
                 Shoot();
-                SpecialShoot();
+                SecondAttack();
+                ThirdAttack();
                 anim.SetBool("Attacking", false);
             }
             //If cannot see player or player out of range, change state to Move
@@ -202,26 +214,35 @@ public class StrongEnemy : MonoBehaviour {
         }
     }
 
-    void Shoot()
+    void Shoot() //firstShootingAttack()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextBasicAttack)
         {
             Instantiate(projectile, fireLocation[0].position, Quaternion.identity);
-            nextFire = Time.time + fireRate;
+            nextBasicAttack = Time.time + basicAttackRate;
         }
       
     }
-    void SpecialShoot()
+    void SecondAttack()
     {
-        stalledAttack--;
-        if (Time.time > nextSpecialFire && stalledAttack <= 0f)
+        secondAttackWaitTime--;
+        if (Time.time > nextSecondAttack && secondAttackWaitTime <= 0f)
         {
             Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
             Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
             Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-            nextSpecialFire = Time.time + specialFireRate; 
+            nextSecondAttack = Time.time + secondAttackRate;
         }
+    }
 
+    void ThirdAttack()
+    {
+        thirdStalledAttack--;
+        if (Time.time > thirdAttack && thirdStalledAttack <= 0f)
+        {
+            Instantiate(powerProjectile, fireLocation[2].position, Quaternion.identity);
+            thirdAttack = Time.time + thirdAttackRate;
+        }
     }
 
     private void FixedUpdate()
