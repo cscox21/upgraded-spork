@@ -23,7 +23,8 @@ public class StrongEnemy : MonoBehaviour {
     bool turning = false; //whether the enemy is turning
     [SerializeField]
     public GameObject projectile; //reference to the GameObject projectile
-    public GameObject powerProjectile; //reference to the GameObject powerProjectile (the enemy's 2nd type of attack)
+    public GameObject secondProjectile; //reference to the GameObject powerProjectile (the enemy's 2nd type of attack)
+    public GameObject thirdProjectile;
     public Transform[] fireLocation;  //reference to the location of where projectiles are instantiated from
     public float headHeight;
 
@@ -228,9 +229,9 @@ public class StrongEnemy : MonoBehaviour {
         secondAttackWaitTime--;
         if (Time.time > nextSecondAttack && secondAttackWaitTime <= 0f)
         {
-            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
-            Instantiate(powerProjectile, fireLocation[1].position, Quaternion.identity);
+            Instantiate(secondProjectile, fireLocation[1].position, Quaternion.identity);
+            Instantiate(secondProjectile, fireLocation[1].position, Quaternion.identity);
+            Instantiate(secondProjectile, fireLocation[1].position, Quaternion.identity);
             nextSecondAttack = Time.time + secondAttackRate;
         }
     }
@@ -240,7 +241,7 @@ public class StrongEnemy : MonoBehaviour {
         thirdStalledAttack--;
         if (Time.time > thirdAttack && thirdStalledAttack <= 0f)
         {
-            Instantiate(powerProjectile, fireLocation[2].position, Quaternion.identity);
+            Instantiate(thirdProjectile, fireLocation[2].position, Quaternion.identity);
             thirdAttack = Time.time + thirdAttackRate;
         }
     }
