@@ -242,6 +242,8 @@ public class StrongEnemy : MonoBehaviour {
         if (Time.time > thirdAttack && thirdStalledAttack <= 0f)
         {
             Instantiate(thirdProjectile, fireLocation[2].position, Quaternion.identity);
+            Instantiate(thirdProjectile, fireLocation[3].position, Quaternion.identity);
+            Instantiate(thirdProjectile, fireLocation[4].position, Quaternion.identity);
             thirdAttack = Time.time + thirdAttackRate;
         }
     }

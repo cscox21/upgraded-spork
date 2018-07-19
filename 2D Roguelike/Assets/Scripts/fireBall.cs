@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class fireBall : MonoBehaviour {
 
-    float moveSpeed = 4f;
-
+    public float moveSpeed = 4f;
+    //public float fireBallSpeed = 7f;
     Rigidbody2D rb;
     Player target;
     Vector2 moveDirection;
     bool facingRight = false;
     public GameObject explosion;
 
-
-	// Use this for initialization
-	void Start ()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
+    }
+    // Use this for initialization
+    void Start ()
+    {        
         moveDirection = (target.transform.position - transform.position).normalized* moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
 
         if (target.transform.position.x > transform.position.x)
         {

@@ -12,11 +12,15 @@ public class EnemyFireBall : MonoBehaviour {
     public float fireBallSpeed = 2f;
 
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
+    }
+    // Use this for initialization
+    void Start()
+    {
+        
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * fireBallSpeed;
         Destroy(gameObject, 3f);
