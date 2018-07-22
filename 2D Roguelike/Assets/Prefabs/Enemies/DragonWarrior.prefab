@@ -49,6 +49,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1176174993939622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4064304965376024}
+  m_Layer: 0
+  m_Name: Pos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1376095218839270
 GameObject:
   m_ObjectHideFlags: 1
@@ -94,6 +109,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1811618538895010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4165873998773158}
+  m_Layer: 0
+  m_Name: Pos5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1882654849851030
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +139,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1967729126713154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4428747019731536}
+  m_Layer: 0
+  m_Name: Pos4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4012332125191636
 Transform:
   m_ObjectHideFlags: 1
@@ -116,15 +161,44 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531068161515234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.07, y: 3, z: 0}
+  m_LocalPosition: {x: 17.2, y: 3, z: 0}
   m_LocalScale: {x: 0.5564042, y: 0.5156875, z: 1}
   m_Children:
   - {fileID: 4968375639928024}
   - {fileID: 4261653624351828}
   - {fileID: 4562087963714174}
+  - {fileID: 4064304965376024}
+  - {fileID: 4428747019731536}
+  - {fileID: 4165873998773158}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4064304965376024
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176174993939622}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -15.1, y: 20.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4012332125191636}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!4 &4165873998773158
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811618538895010}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -4.8, y: 20.72, z: 0}
+  m_LocalScale: {x: 1.0000052, y: 0.999993, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4012332125191636}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4261653624351828
 Transform:
   m_ObjectHideFlags: 1
@@ -138,6 +212,19 @@ Transform:
   m_Father: {fileID: 4012332125191636}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4428747019731536
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967729126713154}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -9.21, y: 20.72, z: 0}
+  m_LocalScale: {x: 1.0000052, y: 0.999993, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4012332125191636}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4562087963714174
 Transform:
   m_ObjectHideFlags: 1
@@ -317,14 +404,17 @@ MonoBehaviour:
   sideJumpForce: 500
   rb: {fileID: 50245834268835550}
   projectile: {fileID: 1697667054417610, guid: 105bf08e01a531846a8972dfe93b94c4, type: 2}
-  powerProjectile: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d,
+  secondProjectile: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d,
+    type: 2}
+  thirdProjectile: {fileID: 1050616437761730, guid: b5dc21c3d429dae4aa79e9e62a491e8a,
     type: 2}
   fireLocation:
   - {fileID: 4804324132182210}
   - {fileID: 4841586298428442}
+  - {fileID: 4064304965376024}
+  - {fileID: 4428747019731536}
+  - {fileID: 4165873998773158}
   headHeight: -1
-  fireballSpeed: 2
-  stalledAttack: 2.5
 --- !u!114 &114835886941695772
 MonoBehaviour:
   m_ObjectHideFlags: 1
