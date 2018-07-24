@@ -31,7 +31,7 @@ public class BackNForth : MonoBehaviour {
     private void Move()
     {
         transformA.localPosition = Vector3.MoveTowards(transformA.localPosition, nextPos, speed * Time.deltaTime);
-        if(Vector3.Distance(transformA.localPosition, nextPos)<=0.1)
+        if(Vector3.Distance(transformA.localPosition, nextPos) <= 0.1)
         {
             ChangeDestination();
         }
