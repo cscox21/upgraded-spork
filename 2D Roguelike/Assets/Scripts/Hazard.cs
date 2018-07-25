@@ -8,7 +8,9 @@ public class Hazard : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+            Player playerScript = other.gameObject.GetComponent<Player>();
+            playerScript.SetInvincible();
+            //Destroy(other.gameObject);
 
         }
     }

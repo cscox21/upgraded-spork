@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.3f);
     public float flashSpeed = 5f;
 
+    public float invincibleTime = 3.0f;
+    bool isInvincible = false;
+
     private void Start()
     {
         playerCurrentHealth = playerMaxHealth;
@@ -46,7 +49,25 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void HurtPlayer(int damageToGive)
+    public void SetInvincible()
+    {
+        isInvincible = true;
+        Debug.Log("We are invincible now!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        CancelInvoke("SetDamageable"); // in case the method has already been invoked
+        Invoke("SetDamageable", invincibleTime);
+    }
+
+    void SetDamageable()
+    {
+        isInvincible = false;
+    }
+
+    //if (!isInvincible)
+    //{
+        //playerCurrentHealth -= 10;
+    //}
+
+public void HurtPlayer(int damageToGive)
     {
         Debug.Log("hurt the player with " + damageToGive + " damage in hitpoints");
         damaged = true;
