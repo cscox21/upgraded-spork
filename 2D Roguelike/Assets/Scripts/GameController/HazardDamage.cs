@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class HazardDamage : MonoBehaviour
 {
-    Rigidbody2D rb;
+    Player player;
+    //Rigidbody2D rb;
     public int damageToGive;
-    public float bounceHeight = 400f;
 
-    void Awake()
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Player has hit the spikes and will take damage and fly up");
             other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
-            rb.AddForce(other.transform.up * bounceHeight);
+            StartCoroutine(player.Knockback(.5f, 25f, player.transform.position));
         }
     }
+
 }

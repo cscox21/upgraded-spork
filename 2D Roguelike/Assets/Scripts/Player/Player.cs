@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class Player : MonoBehaviour
 
     public float invincibleTime = 1f;
     public bool isInvincible = false;
+    Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerCurrentHealth = playerMaxHealth;
     }
 
@@ -62,12 +65,7 @@ public class Player : MonoBehaviour
         isInvincible = false;
     }
 
-    //if(!isInvincible)
-    //{
-        //playerCurrentHealth -= 10;
-    //}
-
-public void HurtPlayer(int damageToGive)
+    public void HurtPlayer(int damageToGive)
     {
         Debug.Log("hurt the player with " + damageToGive + " damage in hitpoints");
         damaged = true;
@@ -82,5 +80,16 @@ public void HurtPlayer(int damageToGive)
         playerCurrentHealth = playerMaxHealth;
     }
 
+    public IEnumerator Knockback(float knockDuration, float knockBackPower, Vector3 knockBackDirection)
+    {
+        float timer = 0f;
+
+        while(knockDuration > timer)
+        {
+            timer += Time.deltaTime;
+            rb.AddForce(new Vector3(knockBackDirection.x * -100, knockBackDirection.y * knockBackPower, transform.position.z));   
+        }
+        yield return 0;
+    }
     
 }
