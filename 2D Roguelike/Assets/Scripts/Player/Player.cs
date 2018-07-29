@@ -69,10 +69,14 @@ public class Player : MonoBehaviour
     {
         Debug.Log("hurt the player with " + damageToGive + " damage in hitpoints");
         damaged = true;
-        if (damaged == true ) //&& !isInvincible == true
+        if (damaged == true && !isInvincible == true)
         {
             playerCurrentHealth -= damageToGive;
-        } 
+        }
+        if(damaged == true && isInvincible == true)
+        {
+            playerCurrentHealth -= damageToGive;
+        }
     }
     public void MaxHealth()
     {
