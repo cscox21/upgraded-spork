@@ -22,7 +22,7 @@ public class Hazard : MonoBehaviour {
             Player playerScript = other.gameObject.GetComponent<Player>();
             playerScript.SetInvincible();
             Debug.Log("Player has hit the spikes and will take damage and fly up");
-            //other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
+            other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
             StartCoroutine(player.Knockback(.6f, 25f, player.transform.localPosition));
         }
     }
