@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
         {
             playerCurrentHealth -= damageToGive;
         } 
-
     }
     public void MaxHealth()
     {
@@ -86,10 +85,9 @@ public class Player : MonoBehaviour
 
         while(knockDuration > timer)
         {
-            timer += Time.deltaTime;
-            rb.AddForce(new Vector3(knockBackDirection.x * -100, knockBackDirection.y * knockBackPower, transform.position.z));   
+           timer += Time.deltaTime;
+           rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));   
         }
         yield return 0;
     }
-    
 }
