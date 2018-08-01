@@ -12,13 +12,22 @@ public class ZombiePatrol : MonoBehaviour {
     public float sight = 3f;
     Animator anim;
     public float force;
-	// Use this for initialization
-	void Start ()
+
+    public GameObject projectile;
+    public Transform firePos;
+
+    float nextBasicAttack;
+    float basicAttackRate;
+
+    // Use this for initialization
+    void Start ()
     {
         anim = GetComponent<Animator>();
         StartCoroutine("Patrol");
+        basicAttackRate = 1f;
+        nextBasicAttack = Time.time;
         anim.SetBool("Walking", true);
-
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -48,6 +57,7 @@ public class ZombiePatrol : MonoBehaviour {
             }
 
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(patrolpoints[currentPoint].position.x, transform.position.y), speed);
+            Shoot();
 
             if (transform.position.x < patrolpoints[currentPoint].position.x)
                 transform.localScale = new Vector3(-1, 1, 1);
@@ -57,6 +67,14 @@ public class ZombiePatrol : MonoBehaviour {
         }  
     }
 
+    void Shoot()
+    {
+        if (Time.time > nextBasicAttack)
+        {
+            Instantiate(projectile, firePos.position, Quaternion.identity);
+            nextBasicAttack = Time.time + basicAttackRate;
+        }
+    }
     //void OnDrawGizmos()
     //{
         //Gizmos.color = Color.red;

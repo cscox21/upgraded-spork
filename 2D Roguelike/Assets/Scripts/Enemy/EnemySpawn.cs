@@ -8,12 +8,6 @@ public class EnemySpawn : MonoBehaviour {
     public Transform enemyPos;
     float spawnRate = 3.0f;
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         InvokeRepeating("EnemySpawner", 0.5f, spawnRate);
