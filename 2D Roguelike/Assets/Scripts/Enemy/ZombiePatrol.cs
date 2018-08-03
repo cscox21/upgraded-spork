@@ -17,14 +17,14 @@ public class ZombiePatrol : MonoBehaviour {
     public Transform firePos;
 
     float nextBasicAttack;
-    float basicAttackRate;
+    public float basicAttackRate =.25f;
 
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
         StartCoroutine("Patrol");
-        basicAttackRate = 1f;
+        //basicAttackRate = .3f;
         nextBasicAttack = Time.time;
         anim.SetBool("Walking", true);
         

@@ -19,11 +19,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4310352237684696}
+  - component: {fileID: 50377089474510506}
+  - component: {fileID: 58761746524540182}
   - component: {fileID: 212153916712762616}
   - component: {fileID: 114462509166269102}
   - component: {fileID: 114836331138598754}
-  - component: {fileID: 50377089474510506}
-  - component: {fileID: 58761746524540182}
+  - component: {fileID: 114840934624384234}
   m_Layer: 0
   m_Name: TestSprite_Fireball
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022584239249604}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 7.38324, y: 11.663826, z: 0}
+  m_LocalPosition: {x: 6.6143136, y: 7.873605, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,9 +77,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.053058058}
+  m_Offset: {x: -3.7161375e-11, y: -0.00031173226}
   serializedVersion: 2
-  m_Radius: 0.25356394
+  m_Radius: 0.08599601
 --- !u!114 &114462509166269102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8837dd65ac6838438e5673e2e7efeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114840934624384234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022584239249604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d832d7281137524f83f65313ecc2d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 3
 --- !u!212 &212153916712762616
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,8 +150,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 175240c40b9ac7c4c923f0450fed33e2, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 137b4a9a05d271d4d9060ef26c9e05a7, type: 3}
+  m_Color: {r: 1, g: 0.015686274, b: 0.11815872, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
