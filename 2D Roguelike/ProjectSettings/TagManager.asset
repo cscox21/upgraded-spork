@@ -30,7 +30,7 @@ TagManager:
   - Obstacle
   - Player
   - Enemy
-  - 
+  - Background
   - 
   - 
   - 
@@ -50,11 +50,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2788197861
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Floor
     uniqueID: 3131993583
