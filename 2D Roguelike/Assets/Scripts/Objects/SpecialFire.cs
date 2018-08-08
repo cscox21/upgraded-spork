@@ -15,6 +15,7 @@ public class SpecialFire : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
 
+
         if (target.transform.position.x < transform.position.x)
         {
             rb.AddForce(transform.up * yPower);
@@ -25,6 +26,7 @@ public class SpecialFire : MonoBehaviour {
             rb.AddForce(transform.up * yPower);
             rb.AddForce(transform.right * xPower);
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

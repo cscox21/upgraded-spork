@@ -111,8 +111,13 @@ public class AI_TestTwo : MonoBehaviour
                 Debug.Log("We are turning the enemy's direction around");
                 yield return new WaitForSeconds(.5f);
                 turning = true;
+                if(turning)
+                {
+                    yield return new WaitForSeconds(.5f);
+                    ChangeState(EnemyActionType.Move);
+                    turning = false;
+                }
                 //ChangeState(EnemyActionType.Move);  // <---unsure if needed, appears to do nothing
-                yield break;
             }
             yield return null;
             turning = false;

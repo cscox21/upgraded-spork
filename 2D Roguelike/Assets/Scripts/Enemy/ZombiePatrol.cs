@@ -11,7 +11,6 @@ public class ZombiePatrol : MonoBehaviour {
     public float timeStill = 1.2f;
     public float sight = 3f;
     Animator anim;
-    public float force;
 
     public GameObject projectile;
     public Transform firePos;
@@ -28,15 +27,6 @@ public class ZombiePatrol : MonoBehaviour {
         nextBasicAttack = Time.time;
         anim.SetBool("Walking", true);
         
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        { 
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("Level_01");
-        }
     }
 
     IEnumerator Patrol()

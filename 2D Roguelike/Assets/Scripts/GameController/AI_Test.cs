@@ -40,7 +40,7 @@ public class AI_Test : MonoBehaviour {
         dirRight = false;
         if (dirRight == false)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * speed);
             turning = true;
             Debug.Log("Moving Left");
         }
@@ -65,7 +65,7 @@ public class AI_Test : MonoBehaviour {
         dirRight = true;
         if (dirRight)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed);
             turning = false;
             Debug.Log("Moving Right");
         }
@@ -171,5 +171,7 @@ public class AI_Test : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.left * sight);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + transform.localScale.x * Vector3.left * dodgingSight);
     }
 }

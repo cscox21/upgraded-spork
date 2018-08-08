@@ -8,7 +8,6 @@ public class ArmRotation : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log("We are rotating the arm");
         //subtracting the position of the player from the mouse position.
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;   
         difference.Normalize();  //normailizing the vector. Meaning that all the sum of the vector will be equal to 1.
