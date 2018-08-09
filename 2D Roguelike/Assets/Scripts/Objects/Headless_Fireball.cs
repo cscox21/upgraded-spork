@@ -28,10 +28,6 @@ public class Headless_Fireball : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate()
-    {
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "ground")
@@ -41,7 +37,7 @@ public class Headless_Fireball : MonoBehaviour {
 
         if (collision.collider.tag == "Player")
         {
-            Debug.Log("SpecialFire Hit");
+            Debug.Log("Headless projectile Hit");
             Destroy(gameObject);
         }
     }

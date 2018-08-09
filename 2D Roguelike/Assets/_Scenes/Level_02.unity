@@ -125,7 +125,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos2
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -201,7 +201,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos1
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1803,7 +1803,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos3
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1870,10 +1870,8 @@ GameObject:
   - component: {fileID: 1664834521}
   - component: {fileID: 1664834528}
   - component: {fileID: 1664834527}
-  - component: {fileID: 1664834526}
   - component: {fileID: 1664834525}
   - component: {fileID: 1664834524}
-  - component: {fileID: 1664834523}
   - component: {fileID: 1664834522}
   m_Layer: 9
   m_Name: LichKing
@@ -1927,28 +1925,7 @@ MonoBehaviour:
   speed: 0.1
   timeStill: 2
   sight: 3
-  projectile: {fileID: 1022584239249604, guid: 078a4b623b4995f4f895658f965a6ba0, type: 2}
-  basicAttackRate: 0.4
---- !u!114 &1664834523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114454416674174578, guid: 4e51a78f1b457ee4782583567d7df670,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1664834520}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcdff70094b72194d864665a1482e428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolpoints:
-  - {fileID: 423762043}
-  - {fileID: 1260107939}
-  speed: 0.1
-  timeStill: 1.2
-  sight: 3
-  projectile: {fileID: 1205557933490434, guid: f8122f72fd4bc4a47a9dd64935080555, type: 2}
-  firePos: {fileID: 0}
+  projectile: {fileID: 1580311168138692, guid: aebb59e94b168d4479bbdc2a598f7cf5, type: 2}
   basicAttackRate: 0.4
 --- !u!95 &1664834524
 Animator:
@@ -1990,27 +1967,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1664834526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114829187226109132, guid: 4e51a78f1b457ee4782583567d7df670,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1664834520}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22fad1f9945ef724b940e70d74b53fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  sight: 5
-  dodgingSight: 2
-  fireLocation:
-  - {fileID: 0}
-  projectile: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d, type: 2}
-  fireballSpeed: 3
-  jumpForce: 30
-  rb: {fileID: 1664834525}
 --- !u!61 &1664834527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2199,7 +2155,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos4
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2330,7 +2286,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos5
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2365,7 +2321,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos6
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
