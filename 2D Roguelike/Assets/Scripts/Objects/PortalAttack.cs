@@ -10,6 +10,10 @@ public class PortalAttack : MonoBehaviour {
     public float basicAttackRate = 1f;
     public Transform firePos;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     // Use this for initialization
     void Start ()
     {
@@ -23,19 +27,24 @@ public class PortalAttack : MonoBehaviour {
         
         while (true)
         {
+            yield return new WaitForSeconds(3f);
             anim.SetBool("isAttacking", true);
-            yield return new WaitForSeconds(basicAttackRate);
-            
+            yield return new WaitForSeconds(1f);
             Shoot();
             Destroy(gameObject);
-            yield break;
+            yield return null;
         }
     }
 
     void Shoot()
     {
+        //if (Time.time > nextBasicAttack)
+        //{
             Debug.Log("Shooting the portal projetiles right now");
             Instantiate(portProjectile, firePos.position, Quaternion.identity);
+            //nextBasicAttack = Time.time + basicAttackRate;
+        //}
+        
         
     }
     
