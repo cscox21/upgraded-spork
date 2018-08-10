@@ -38,14 +38,8 @@ public class PortalAttack : MonoBehaviour {
 
     void Shoot()
     {
-        //if (Time.time > nextBasicAttack)
-        //{
             Debug.Log("Shooting the portal projetiles right now");
             Instantiate(portProjectile, firePos.position, Quaternion.identity);
-            //nextBasicAttack = Time.time + basicAttackRate;
-        //}
-        
-        
     }
     
 }
