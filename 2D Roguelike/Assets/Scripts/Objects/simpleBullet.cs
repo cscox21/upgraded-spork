@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class simpleBullet : MonoBehaviour
 {
-
     public float moveSpeed = 30f;
 
     // Update is called once per frame

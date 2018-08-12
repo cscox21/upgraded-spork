@@ -37,8 +37,7 @@ public class PortalAttack : MonoBehaviour {
     }
 
     void Shoot()
-    {
-            Debug.Log("Shooting the portal projetiles right now");
+    { 
             Instantiate(portProjectile, firePos.position, Quaternion.identity);
     }
     
