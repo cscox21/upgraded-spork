@@ -6,19 +6,25 @@ public class LichFireBall : MonoBehaviour
 {
     Player target;
     Rigidbody2D rb;
+    float speed = 10f;
 
     void Start()
     {
-        float xPower = Random.Range(150f, 300f);
-        float yPower = Random.Range(125f, 225f);
+        float xPower = Random.Range(-300f, 300f);
+        float yPower = Random.Range(350f, 400f);
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
 
             rb.AddForce(transform.up * yPower);
             rb.AddForce(transform.right * -xPower);
+    }
 
+    private void Update()
+    {
+        transform.Rotate(0, 0, speed);
 
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
