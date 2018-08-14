@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos5
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -52,7 +52,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos6
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97,7 +97,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos2
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -112,7 +112,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos3
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -126,10 +126,8 @@ GameObject:
   - component: {fileID: 4034151255264324}
   - component: {fileID: 212557399215188186}
   - component: {fileID: 61782647137487492}
-  - component: {fileID: 114829187226109132}
   - component: {fileID: 50279071622091824}
   - component: {fileID: 95163718400064564}
-  - component: {fileID: 114454416674174578}
   - component: {fileID: 114276326417923574}
   m_Layer: 9
   m_Name: LichKing
@@ -149,7 +147,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos1
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -164,7 +162,7 @@ GameObject:
   m_Layer: 9
   m_Name: firePos4
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -194,7 +192,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659365369879752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8100014, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8100014, y: -0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034151255264324}
@@ -236,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191030947248852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.380001, y: 0, z: 0}
+  m_LocalPosition: {x: 5.380001, y: -0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034151255264324}
@@ -249,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1800803502999812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.59, y: 0, z: 0}
+  m_LocalPosition: {x: -5.59, y: -0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034151255264324}
@@ -262,7 +260,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039915309272790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.290001, y: 0, z: 0}
+  m_LocalPosition: {x: 3.290001, y: -0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034151255264324}
@@ -275,7 +273,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886925134187488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3699989, y: 0, z: 0}
+  m_LocalPosition: {x: 1.3699989, y: -0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034151255264324}
@@ -288,7 +286,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552153581191930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5999985, y: 0, z: 0}
+  m_LocalPosition: {x: -3.5999985, y: -0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034151255264324}
@@ -384,52 +382,18 @@ MonoBehaviour:
   patrolpoints:
   - {fileID: 4968214767514858}
   - {fileID: 4202098028769550}
-  firePos: {fileID: 4078755074769698}
+  firePos:
+  - {fileID: 4514909149971002}
+  - {fileID: 4835125130433706}
+  - {fileID: 4078755074769698}
+  - {fileID: 4814560005195352}
+  - {fileID: 4728715347251412}
+  - {fileID: 4449665510405520}
   speed: 0.1
   timeStill: 2
   sight: 3
-  projectile: {fileID: 1996185720255290, guid: f802100dc64e4f84393629e337277e22, type: 2}
+  projectile: {fileID: 1580311168138692, guid: aebb59e94b168d4479bbdc2a598f7cf5, type: 2}
   basicAttackRate: 0.4
---- !u!114 &114454416674174578
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1788819661539798}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcdff70094b72194d864665a1482e428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolpoints:
-  - {fileID: 4968214767514858}
-  - {fileID: 4202098028769550}
-  speed: 0.1
-  timeStill: 1.2
-  sight: 3
-  projectile: {fileID: 1205557933490434, guid: f8122f72fd4bc4a47a9dd64935080555, type: 2}
-  firePos: {fileID: 0}
-  basicAttackRate: 0.4
---- !u!114 &114829187226109132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1788819661539798}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22fad1f9945ef724b940e70d74b53fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  sight: 5
-  dodgingSight: 2
-  fireLocation:
-  - {fileID: 0}
-  projectile: {fileID: 1683732182089400, guid: 520f744b0a548ca49b82ff175ca9625d, type: 2}
-  fireballSpeed: 3
-  jumpForce: 30
-  rb: {fileID: 50279071622091824}
 --- !u!212 &212557399215188186
 SpriteRenderer:
   m_ObjectHideFlags: 1

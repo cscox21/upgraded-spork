@@ -26,7 +26,7 @@ public class TurretShooter : MonoBehaviour {
         while(true)
         {
             yield return new WaitForSeconds(delay);
-            GameObject clone = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject clone = Instantiate(projectile, transform.position, Quaternion.identity);
             clone.GetComponent<Rigidbody2D>().velocity = -transform.right * speedFactor;
         }
     }

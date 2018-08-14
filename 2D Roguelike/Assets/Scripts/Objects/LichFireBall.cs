@@ -8,10 +8,10 @@ public class LichFireBall : MonoBehaviour
     Rigidbody2D rb;
     float speed = 10f;
 
-    public float basicAttackRate = .25f;
-    float nextBasicAttack;
     public GameObject projectile;
     public Transform firePos;
+    public float delay;
+    public float moveSpeed;
 
     void Start()
     {
@@ -19,17 +19,16 @@ public class LichFireBall : MonoBehaviour
         float yPower = Random.Range(350f, 400f);
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
-        nextBasicAttack = Time.time;
 
         rb.AddForce(transform.up * yPower);
-            rb.AddForce(transform.right * -xPower);
+        rb.AddForce(transform.right * -xPower);
+        StartCoroutine(Shoots());
     }
 
     private void Update()
     {
         transform.Rotate(0, 0, speed);
-        LaunchProjectiles();
-
+        
     }
 
 
@@ -47,13 +46,15 @@ public class LichFireBall : MonoBehaviour
         }
     }
 
-    void LaunchProjectiles()
+    IEnumerator Shoots()
     {
-        if (Time.time > nextBasicAttack)
+
+        while (true)
         {
-            Instantiate(projectile, firePos.position, Quaternion.identity);
-            nextBasicAttack = Time.time + basicAttackRate;
-        }
+            yield return new WaitForSeconds(delay);
+            GameObject clone = Instantiate(projectile, firePos.position, Quaternion.identity);
+            clone.GetComponent<Rigidbody2D>().velocity = -transform.right * moveSpeed;
+        }       
     }
 }
 
