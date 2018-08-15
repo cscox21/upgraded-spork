@@ -6,15 +6,20 @@ public class BloodZom_Attack : MonoBehaviour {
 
     Player target;
     Rigidbody2D rb;
-    
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        target = FindObjectOfType<Player>();
+    }
 
     void Start()
     {
+        
         float xPower = Random.Range(300f, 450f);
         float yPower = Random.Range(125f, 250f);
 
-        rb = GetComponent<Rigidbody2D>();
-        target = FindObjectOfType<Player>();
+        
 
         
         if (target.transform.position.x > transform.position.x)
