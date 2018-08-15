@@ -10,22 +10,22 @@ public class BloodZom_Attack : MonoBehaviour {
 
     void Start()
     {
-        float xPower = Random.Range(150f, 300f);
-        float yPower = Random.Range(125f, 225f);
+        float xPower = Random.Range(300f, 450f);
+        float yPower = Random.Range(125f, 250f);
 
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
 
         
-        if (target.transform.position.x < transform.position.x)
+        if (target.transform.position.x > transform.position.x)
         {
             rb.AddForce(transform.up * yPower);
-            rb.AddForce(transform.right * -xPower);
+            rb.AddForce(transform.right * xPower);
         }
         else
         {
             rb.AddForce(transform.up * yPower);
-            rb.AddForce(transform.right * xPower);
+            rb.AddForce(transform.right * -xPower);
         }
 
     }
