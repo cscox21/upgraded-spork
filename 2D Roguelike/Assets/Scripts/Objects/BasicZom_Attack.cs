@@ -9,7 +9,6 @@ public class BasicZom_Attack : MonoBehaviour {
 
     private void Awake()
     {
-        //transform.Rotate(0, 0, 90f);
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Player>();
     }
@@ -17,12 +16,8 @@ public class BasicZom_Attack : MonoBehaviour {
 
     void Start()
     {
-        
         float xPower = Random.Range(300f, 450f);
-        float yPower = Random.Range(125f, 250f);
-
-        
-
+        float yPower = Random.Range(300f, 350f);
 
         if (target.transform.position.x > transform.position.x)
         {
@@ -39,14 +34,9 @@ public class BasicZom_Attack : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "ground")
-        {
-            Destroy(gameObject);
-        }
 
         if (collision.collider.tag == "Player")
         {
-            Debug.Log("SpecialFire Hit");
             Destroy(gameObject);
         }
     }

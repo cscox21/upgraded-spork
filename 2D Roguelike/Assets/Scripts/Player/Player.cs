@@ -16,10 +16,16 @@ public class Player : MonoBehaviour
     public bool isInvincible = false;
     Rigidbody2D rb;
 
+    public Slider healthbar;
+    private void Awake()
+    {
+        healthbar.value = CalculateHealth();
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCurrentHealth = playerMaxHealth;
+        
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -69,18 +75,26 @@ public class Player : MonoBehaviour
     {
         Debug.Log("hurt the player with " + damageToGive + " damage in hitpoints");
         damaged = true;
+        
         if (damaged == true && !isInvincible == true)
         {
             playerCurrentHealth -= damageToGive;
+            healthbar.value = CalculateHealth();
         }
         if(damaged == true && isInvincible == true)
         {
             playerCurrentHealth -= damageToGive;
+            healthbar.value = CalculateHealth();
         }
     }
     public void MaxHealth()
     {
         playerCurrentHealth = playerMaxHealth;
+    }
+
+    float CalculateHealth()
+    {
+        return playerCurrentHealth / playerMaxHealth;
     }
 
     public IEnumerator Knockback(float knockDuration, float knockBackPower, Vector3 knockBackDirection)
