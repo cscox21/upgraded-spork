@@ -31,9 +31,7 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-        sr[0].enabled = true;
-        sr[1].enabled = true;
-        sr[2].enabled = true;
+
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -129,7 +127,6 @@ public class Player : MonoBehaviour
         {
             timer += Time.deltaTime;
             rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
-            //InvokeRepeating("invulnFlash", 5, knockDuration);
 
             for (var n = 0; n < 5; n++)
             {
@@ -149,10 +146,4 @@ public class Player : MonoBehaviour
         }   
         yield return 0;
     }
-
-    public void invulnFlash()
-    {
-        sr[1].enabled = false;
-    }
-
 }
