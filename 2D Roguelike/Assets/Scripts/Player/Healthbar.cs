@@ -13,6 +13,10 @@ public class Healthbar : MonoBehaviour {
 
     private float mCurrentPercent;
 
+    private void Awake()
+    {
+        mCurrentValue = GetComponent<Player>().playerCurrentHealth;
+    }
 
     public void SetHealth(int health)
     {
@@ -26,7 +30,7 @@ public class Healthbar : MonoBehaviour {
             else
             {
                 mCurrentValue = health;
-                mCurrentPercent = (float)mCurrentValue / (float)(Max - Min);
+                mCurrentPercent = mCurrentValue / (Max - Min);
             }
 
             TxtHealth.text = string.Format("{0} %", Mathf.RoundToInt(mCurrentPercent * 100));
@@ -46,7 +50,11 @@ public class Healthbar : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        SetHealth(72);	
+        SetHealth(Max);	
 	}
 
+    void Update()
+    {
+        //SetHealth(
+    }
 }

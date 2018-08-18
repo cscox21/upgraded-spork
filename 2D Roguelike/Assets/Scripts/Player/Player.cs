@@ -17,15 +17,15 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     public Slider healthbar;
+
     private void Awake()
     {
-        healthbar.value = CalculateHealth();
+        healthbar.value = 100;
+        playerCurrentHealth = playerMaxHealth;
     }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerCurrentHealth = playerMaxHealth;
-        
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
         if (playerCurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
 
         if (transform.position.y <= -30)
@@ -73,28 +73,33 @@ public class Player : MonoBehaviour
 
     public void HurtPlayer(int damageToGive)
     {
-        Debug.Log("hurt the player with " + damageToGive + " damage in hitpoints");
+        Debug.Log("Hurt the player with " + damageToGive + " damage in hitpoints");
         damaged = true;
-        
+
         if (damaged == true && !isInvincible == true)
         {
             playerCurrentHealth -= damageToGive;
-            healthbar.value = CalculateHealth();
+            CalculateHealth();
+            //healthbar.value = playerCurrentHealth;
+
         }
         if(damaged == true && isInvincible == true)
         {
             playerCurrentHealth -= damageToGive;
-            healthbar.value = CalculateHealth();
+            CalculateHealth();
+            //healthbar.value = playerCurrentHealth;
         }
     }
-    public void MaxHealth()
-    {
-        playerCurrentHealth = playerMaxHealth;
-    }
 
+    //used to have a calculate health function, get rid of
     float CalculateHealth()
     {
-        return playerCurrentHealth / playerMaxHealth;
+        return healthbar.value = playerCurrentHealth;
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     public IEnumerator Knockback(float knockDuration, float knockBackPower, Vector3 knockBackDirection)
