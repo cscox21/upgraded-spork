@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.3f);
     public float flashSpeed = 5f;
 
-    public float invincibleTime = 1f;
+    public float invincibleTime = 1.5f;
     public bool isInvincible = false;
     Rigidbody2D rb;
 
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         //reset the damaged flag.
-        damaged = false;
+        damaged = false; 
         
 
         if (playerCurrentHealth <= 0)
@@ -69,26 +69,33 @@ public class Player : MonoBehaviour
 
     void SetDamageable()
     {
+        Debug.Log("We are not longer invincible and will take damage");
         isInvincible = false;
     }
 
     public void HurtPlayer(int damageToGive)
     {
-        Debug.Log("Hurt the player with " + damageToGive + " damage in hitpoints");
+        //Debug.Log("Hurt the player with " + damageToGive + " damage in hitpoints");
         damaged = true;
 
         if (damaged == true && !isInvincible == true)
         {
+            Debug.Log("One of the enemies has hurt the player");
             playerCurrentHealth -= damageToGive;
             CalculateHealth();
-            //healthbar.value = playerCurrentHealth;
 
         }
         if(damaged == true && isInvincible == true)
         {
+            Debug.Log("One of the spikes has hurt the player");
             playerCurrentHealth -= damageToGive;
             CalculateHealth();
-            //healthbar.value = playerCurrentHealth;
+
+            if (isInvincible)
+            {
+                Debug.Log("Player has just hit the spikes and should be invincible for " + invincibleTime + " seconds");
+                
+            }
         }
     }
 
