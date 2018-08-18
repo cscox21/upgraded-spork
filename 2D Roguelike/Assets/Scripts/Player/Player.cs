@@ -115,6 +115,29 @@ public class Player : MonoBehaviour
         TxtHealth.text = string.Empty;
     }
 
+    public IEnumerator InvulnFlash()
+    {
+        for (var n = 0; n < 5; n++)
+        {
+
+            sr[0].enabled = true;
+            sr[1].enabled = true;
+            sr[2].enabled = true;
+
+            yield return new WaitForSeconds(.1f);
+
+            sr[0].enabled = false;
+            sr[1].enabled = false;
+            sr[2].enabled = false;
+            yield return new WaitForSeconds(.1f);
+
+        }
+        sr[0].enabled = true;
+        sr[1].enabled = true;
+        sr[2].enabled = true;
+        yield break;
+    }
+
     public IEnumerator Knockback(float knockDuration, float knockBackPower, Vector3 knockBackDirection)
     {
         float timer = 0f;
@@ -124,28 +147,8 @@ public class Player : MonoBehaviour
             Debug.Log("Knockback");
             timer += Time.deltaTime;
             rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
+            StartCoroutine(InvulnFlash());
 
-            
-            //for (var n = 0; n < 5; n++)
-            //{
-
-                sr[0].enabled = true;
-                sr[1].enabled = true;
-                sr[2].enabled = true;
-
-                //yield return new WaitForSeconds(.1f);
-
-                sr[0].enabled = false;
-                sr[1].enabled = false;
-                sr[2].enabled = false;
-                //yield return new WaitForSeconds(.1f);
-            //
-            sr[0].enabled = true;
-            sr[1].enabled = true;
-            sr[2].enabled = true;
-            
-            //yield break;
-            
         }
 
         yield return 0;
