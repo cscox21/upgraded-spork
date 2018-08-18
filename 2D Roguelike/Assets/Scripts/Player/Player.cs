@@ -9,15 +9,18 @@ public class Player : MonoBehaviour
     public int playerCurrentHealth; //current health of enemy
     bool damaged;
     public Image damageImage;
-    public Color flashColour = new Color(1f, 0f, 0f, 0.3f);
+    public Color flashColor = new Color(1f, 0f, 0f, 0.3f);
     public float flashSpeed = 5f;
 
     public float invincibleTime = 1.5f;
     public bool isInvincible = false;
     Rigidbody2D rb;
+    SpriteRenderer sr;
 
     public Slider healthbar;
     public Text TxtHealth;
+
+    public Color invulnColor;
 
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -39,12 +43,13 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("if Damaged...Set Flash color");
                 //...set the color of the damageImage to the flash color.
-                damageImage.color = flashColour;
+                damageImage.color = flashColor;
+                
+                
             }
             //otherwise...
             else
             {
-
                 //...transition the color back to clear
                 damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             }
@@ -90,20 +95,14 @@ public class Player : MonoBehaviour
             CalculateHealth();
 
         }
-        /*
+        
         if (damaged == true && isInvincible == true)
         {
             Debug.Log("One of the spikes has hurt the player");
-            playerCurrentHealth -= damageToGive;
-            CalculateHealth();
+            sr.color = invulnColor;
 
-            if (isInvincible)
-            {
-                Debug.Log("Player has just hit the spikes and should be invincible for " + invincibleTime + " seconds");
-                
-            }
         }
-        */
+        
     }
 
     //used to have a calculate health function, get rid of

@@ -20,21 +20,10 @@ public class Hazard : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             Player playerScript = other.gameObject.GetComponent<Player>();
+            other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
             playerScript.SetInvincible();
             //Debug.Log("Player has hit the spikes and will take damage and fly up");
-            other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
             StartCoroutine(player.Knockback(.6f, 25f, player.transform.localPosition));
         }
     }
-
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            Player playerScript = other.gameObject.GetComponent<Player>();
-            playerScript.SetInvincible();
-
-        }
-    }
-    */
 }
