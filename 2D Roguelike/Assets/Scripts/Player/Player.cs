@@ -33,16 +33,21 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (damaged)
+        if (!isInvincible)
         {
-            //...set the color of the damageImage to the flash color.
-            damageImage.color = flashColour;
-        }
-        //otherwise...
-        else
-        {
-            //...transition the color back to clear
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            if (damaged)
+            {
+                Debug.Log("if Damaged...Set Flash color");
+                //...set the color of the damageImage to the flash color.
+                damageImage.color = flashColour;
+            }
+            //otherwise...
+            else
+            {
+
+                //...transition the color back to clear
+                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            }
         }
         //reset the damaged flag.
         damaged = false; 
@@ -85,7 +90,8 @@ public class Player : MonoBehaviour
             CalculateHealth();
 
         }
-        if(damaged == true && isInvincible == true)
+        /*
+        if (damaged == true && isInvincible == true)
         {
             Debug.Log("One of the spikes has hurt the player");
             playerCurrentHealth -= damageToGive;
@@ -97,6 +103,7 @@ public class Player : MonoBehaviour
                 
             }
         }
+        */
     }
 
     //used to have a calculate health function, get rid of

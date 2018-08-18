@@ -24,7 +24,6 @@ public class Hazard : MonoBehaviour {
             //Debug.Log("Player has hit the spikes and will take damage and fly up");
             other.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
             StartCoroutine(player.Knockback(.6f, 25f, player.transform.localPosition));
-
         }
     }
 
