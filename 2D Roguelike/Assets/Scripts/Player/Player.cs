@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public float invincibleTime = 1.5f;
     public bool isInvincible = false;
     Rigidbody2D rb;
-    public SpriteRenderer sr;
+    public SpriteRenderer[] sr;
 
     public Slider healthbar;
     public Text TxtHealth;
@@ -26,11 +26,14 @@ public class Player : MonoBehaviour
     {
         healthbar.value = 100;
         playerCurrentHealth = playerMaxHealth;
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentsInChildren<SpriteRenderer>();
     }
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        sr[0].enabled = true;
+        sr[1].enabled = true;
+        sr[2].enabled = true;
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -100,9 +103,7 @@ public class Player : MonoBehaviour
         if (damaged == true && isInvincible == true)
         {
             Debug.Log("One of the spikes has hurt the player");
-            StartCoroutine(InvulnFlash());
 
-            
         }
         
     }
@@ -126,22 +127,32 @@ public class Player : MonoBehaviour
 
         while(knockDuration > timer)
         {
-           timer += Time.deltaTime;
-           rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
-           
-        }
+            timer += Time.deltaTime;
+            rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
+            //InvokeRepeating("invulnFlash", 5, knockDuration);
+
+            for (var n = 0; n < 5; n++)
+            {
+                sr[0].enabled = true;
+                sr[1].enabled = true;
+                sr[2].enabled = true;
+                yield return new WaitForSeconds(.1f);
+                sr[0].enabled = false;
+                sr[1].enabled = false;
+                sr[2].enabled = false;
+                yield return new WaitForSeconds(.1f);
+            }
+            sr[0].enabled = true;
+            sr[1].enabled = true;
+            sr[2].enabled = true;
+            yield break;
+        }   
         yield return 0;
     }
-    
-    public IEnumerator InvulnFlash()
+
+    public void invulnFlash()
     {
-        while(isInvincible)
-        {
-            Debug.Log("Trying to flash b/c we are invincible");
-            sr.color = new Color(230, 210, 210, 160);
-        }
-        yield return null;
-        //yield return sr.color = invulnColor;
+        sr[1].enabled = false;
     }
-    
+
 }
