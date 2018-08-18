@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public float invincibleTime = 1.5f;
     public bool isInvincible = false;
     Rigidbody2D rb;
-    SpriteRenderer sr;
+    public SpriteRenderer sr;
 
     public Slider healthbar;
     public Text TxtHealth;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("One of the spikes has hurt the player");
             StartCoroutine(InvulnFlash());
+
             
         }
         
@@ -131,15 +132,16 @@ public class Player : MonoBehaviour
         }
         yield return 0;
     }
-
+    
     public IEnumerator InvulnFlash()
     {
         while(isInvincible)
         {
             Debug.Log("Trying to flash b/c we are invincible");
-            //sr.color = new Color(230, 210, 210, 160);
+            sr.color = new Color(230, 210, 210, 160);
         }
         yield return null;
         //yield return sr.color = invulnColor;
     }
+    
 }
