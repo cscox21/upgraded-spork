@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
             {
                 //...transition the color back to clear
                 damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                //sr.color = Color.Lerp(sr.color, Color.clear, flashSpeed * Time.deltaTime);
             }
         }
         //reset the damaged flag.
@@ -72,7 +73,6 @@ public class Player : MonoBehaviour
     public void SetInvincible()
     {
         isInvincible = true;
-        Debug.Log("We are invincible now!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         CancelInvoke("SetDamageable"); // in case the method has already been invoked
         Invoke("SetDamageable", invincibleTime);
     }
@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     public void HurtPlayer(int damageToGive)
     {
         //Debug.Log("Hurt the player with " + damageToGive + " damage in hitpoints");
+        
         damaged = true;
 
         if (damaged == true && !isInvincible == true)
@@ -99,8 +100,8 @@ public class Player : MonoBehaviour
         if (damaged == true && isInvincible == true)
         {
             Debug.Log("One of the spikes has hurt the player");
-            sr.color = invulnColor;
-
+            StartCoroutine(InvulnFlash());
+            
         }
         
     }
@@ -125,8 +126,20 @@ public class Player : MonoBehaviour
         while(knockDuration > timer)
         {
            timer += Time.deltaTime;
-           rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));   
+           rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
+           
         }
         yield return 0;
+    }
+
+    public IEnumerator InvulnFlash()
+    {
+        while(isInvincible)
+        {
+            Debug.Log("Trying to flash b/c we are invincible");
+            //sr.color = new Color(230, 210, 210, 160);
+        }
+        yield return null;
+        //yield return sr.color = invulnColor;
     }
 }
