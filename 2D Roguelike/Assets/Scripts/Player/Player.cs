@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public Slider healthbar;
     public Text TxtHealth;
 
-    public Color invulnColor;
 
     private void Awake()
     {
@@ -31,7 +30,7 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-
+        
     }
 
     //public PlayerStats playerStats = new PlayerStats();
@@ -42,11 +41,8 @@ public class Player : MonoBehaviour
         {
             if (damaged)
             {
-                Debug.Log("if Damaged...Set Flash color");
                 //...set the color of the damageImage to the flash color.
                 damageImage.color = flashColor;
-                
-                
             }
             //otherwise...
             else
@@ -80,7 +76,6 @@ public class Player : MonoBehaviour
 
     void SetDamageable()
     {
-        Debug.Log("We are not longer invincible and will take damage");
         isInvincible = false;
     }
 
@@ -92,7 +87,7 @@ public class Player : MonoBehaviour
 
         if (damaged == true && !isInvincible == true)
         {
-            Debug.Log("One of the enemies has hurt the player");
+            //One of the enemies has hurt the player
             playerCurrentHealth -= damageToGive;
             CalculateHealth();
 
@@ -117,33 +112,43 @@ public class Player : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        TxtHealth.text = string.Empty;
     }
 
     public IEnumerator Knockback(float knockDuration, float knockBackPower, Vector3 knockBackDirection)
     {
         float timer = 0f;
 
-        while(knockDuration > timer)
+        while (knockDuration > timer)
         {
+            Debug.Log("Knockback");
             timer += Time.deltaTime;
             rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
 
-            for (var n = 0; n < 5; n++)
-            {
+            
+            //for (var n = 0; n < 5; n++)
+            //{
+
                 sr[0].enabled = true;
                 sr[1].enabled = true;
                 sr[2].enabled = true;
-                yield return new WaitForSeconds(.1f);
+
+                //yield return new WaitForSeconds(.1f);
+
                 sr[0].enabled = false;
                 sr[1].enabled = false;
                 sr[2].enabled = false;
-                yield return new WaitForSeconds(.1f);
-            }
+                //yield return new WaitForSeconds(.1f);
+            //
             sr[0].enabled = true;
             sr[1].enabled = true;
             sr[2].enabled = true;
-            yield break;
-        }   
+            
+            //yield break;
+            
+        }
+
         yield return 0;
+        
     }
 }
