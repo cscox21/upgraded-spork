@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     public Slider healthbar;
+    public Text TxtHealth;
 
     private void Awake()
     {
@@ -94,7 +95,9 @@ public class Player : MonoBehaviour
     //used to have a calculate health function, get rid of
     float CalculateHealth()
     {
+        TxtHealth.text = string.Format("{0} %", Mathf.RoundToInt(playerCurrentHealth));
         return healthbar.value = playerCurrentHealth;
+        
     }
 
     public void Die()
