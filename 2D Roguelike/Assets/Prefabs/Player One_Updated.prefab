@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 114372315146225796}
   - component: {fileID: 114730251375338040}
   - component: {fileID: 114035831580078128}
-  - component: {fileID: 212532682504004388}
   - component: {fileID: 114576942010425256}
   m_Layer: 11
   m_Name: Player One_Updated
@@ -471,10 +470,14 @@ MonoBehaviour:
   playerMaxHealth: 100
   playerCurrentHealth: 0
   damageImage: {fileID: 0}
-  flashColour: {r: 1, g: 0, b: 0, a: 0.30588236}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.3}
   flashSpeed: 5
-  invincibleTime: 10
+  invincibleTime: 1.5
   isInvincible: 0
+  sr:
+  - {fileID: 212988458411169202}
+  - {fileID: 212813093260058328}
+  - {fileID: 212051216900143472}
   healthbar: {fileID: 0}
   TxtHealth: {fileID: 0}
 --- !u!114 &114730251375338040
@@ -552,52 +555,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!212 &212532682504004388
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1418202426326052}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.6875, y: 1.4375}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!212 &212735899697522844
