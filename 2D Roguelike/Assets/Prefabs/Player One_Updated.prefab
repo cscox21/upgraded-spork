@@ -469,7 +469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 100
   playerCurrentHealth: 100
-  damageImage: {fileID: 0}
+  damageImage: {fileID: 114783417970759560, guid: f4a2ae6c5e69c8f4f8adb8b4163962f2,
+    type: 2}
   flashColor: {r: 1, g: 0, b: 0, a: 0.3}
   flashSpeed: 5
   invincibleTime: 1.5
@@ -478,8 +479,10 @@ MonoBehaviour:
   - {fileID: 212988458411169202}
   - {fileID: 212813093260058328}
   - {fileID: 212051216900143472}
-  healthbar: {fileID: 0}
-  TxtHealth: {fileID: 0}
+  healthbar: {fileID: 114314122793726272, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4,
+    type: 2}
+  TxtHealth: {fileID: 114061717398815932, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4,
+    type: 2}
 --- !u!114 &114730251375338040
 MonoBehaviour:
   m_ObjectHideFlags: 1
