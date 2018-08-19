@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController gc;
 
-    void Awake()
+    void Start()
     {
         if(gc == null)
         {
@@ -22,15 +22,32 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("TODO: Add waiting for spawn sound");
         yield return new WaitForSeconds(spawnDelay);
-    
+        RespawnPlayer();
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+        //FindPlayer();
         Debug.Log("TODO: Add Spawn Particles");
     }
 
     public static void KillPlayer(Player player)
     {
+        Debug.Log("Kill player, need to respawn now");
         Destroy(player.gameObject);
         gc.StartCoroutine(gc.RespawnPlayer());
     }
-
+    /*
+    public void RespawnPlayer(Player player)
+    {
+        player.enabled = true;
+        player.playerCurrentHealth = player.playerMaxHealth;
+        
+    }
+    */
+    /*void FindPlayer()
+    {
+        GameObject searchResult = GameObject.FindGameObjectWithTag("Player");
+        if (searchResult != null)
+        playerPrefab = searchResult.transform;
+        
+    }    
+    */
 }

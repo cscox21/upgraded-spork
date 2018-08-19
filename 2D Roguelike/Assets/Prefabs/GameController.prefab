@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4645962883599006}
   - component: {fileID: 114234805746083712}
+  - component: {fileID: 114916568373788114}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GC
@@ -49,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542983245228980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.013015, y: 12.7, z: 0.4140625}
+  m_LocalPosition: {x: -1.52, y: 8.4, z: 0.4140625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4917158652444200}
@@ -80,6 +81,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3b2e0e6b0283b4eb4c3b3d41bceb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 1418202426326052, guid: 82d8784186626f641989c6ea9ad89a95,
+    type: 2}
   spawnPoint: {fileID: 4917158652444200}
   spawnDelay: 2
+--- !u!114 &114916568373788114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542983245228980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff7feb8e6b71664aa0ba0a8e2f3051c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}

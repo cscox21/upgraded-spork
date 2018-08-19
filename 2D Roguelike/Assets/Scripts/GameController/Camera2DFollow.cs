@@ -72,7 +72,7 @@ namespace UnitySampleAssets._2D
             {
                 GameObject searchResult = GameObject.FindGameObjectWithTag("Player");
                 if (searchResult != null)
-                    target = searchResult.transform;
+                target = searchResult.transform;
                 nextTimeToSearch = Time.time + 0.5f;
             }
         }

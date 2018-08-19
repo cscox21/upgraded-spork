@@ -22,15 +22,20 @@ public class Player : MonoBehaviour
     float nextSpikeAttack;
     float spikeAttackRate;
 
-
     private void Awake()
     {
-        healthbar.value = 100;
-        playerCurrentHealth = playerMaxHealth;
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponentsInChildren<SpriteRenderer>();
+        
         spikeAttackRate = 1.5f;
         nextSpikeAttack = Time.time;
+        
+    }
+
+    private void Start()
+    {
+        playerCurrentHealth = playerMaxHealth;
+        healthbar.value = playerCurrentHealth;
+        sr = GetComponentsInChildren<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
     //public PlayerStats playerStats = new PlayerStats();
 
@@ -47,7 +52,7 @@ public class Player : MonoBehaviour
 
         if (playerCurrentHealth <= 0)
         {
-            Die();
+            Die(); 
         }
 
         if (transform.position.y <= -30)
@@ -104,7 +109,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         HurtPlayer(playerCurrentHealth);
-        Destroy(gameObject);
+        GameController.KillPlayer(this);
     }
 
     public void DamageFlash()

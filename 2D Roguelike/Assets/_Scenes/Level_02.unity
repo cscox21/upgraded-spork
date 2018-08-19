@@ -231,23 +231,6 @@ Transform:
   m_Father: {fileID: 1019860162}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &145018196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1542983245228980, guid: 156739954f54cef46961f83053453352,
-    type: 2}
-  m_PrefabInternal: {fileID: 382878266}
---- !u!114 &145018199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145018196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff7feb8e6b71664aa0ba0a8e2f3051c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
 --- !u!1 &145084381
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +387,7 @@ RectTransform:
   - {fileID: 1796676180}
   - {fileID: 931953594}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -551,11 +534,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114783417970759560, guid: f4a2ae6c5e69c8f4f8adb8b4163962f2,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a2ae6c5e69c8f4f8adb8b4163962f2, type: 2}
   m_IsPrefabAsset: 0
@@ -568,11 +546,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4645962883599006, guid: 156739954f54cef46961f83053453352, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.013015
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 4645962883599006, guid: 156739954f54cef46961f83053453352, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.1191664
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 4645962883599006, guid: 156739954f54cef46961f83053453352, type: 2}
       propertyPath: m_LocalPosition.z
@@ -602,14 +580,14 @@ Prefab:
         type: 2}
       propertyPath: playerPrefab
       value: 
-      objectReference: {fileID: 355860880}
-    - target: {fileID: 114689973586048522, guid: 156739954f54cef46961f83053453352,
+      objectReference: {fileID: 4063910902201376, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+    - target: {fileID: 114234805746083712, guid: 156739954f54cef46961f83053453352,
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 355860880}
-    m_RemovedComponents:
-    - {fileID: 114689973586048522, guid: 156739954f54cef46961f83053453352, type: 2}
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156739954f54cef46961f83053453352, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &398586821
@@ -769,7 +747,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4063910902201376, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114576942010425256, guid: 82d8784186626f641989c6ea9ad89a95,
         type: 2}
@@ -1329,7 +1307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4937050183591508, guid: 5dd49b735c0baad468678422c4b05485, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd49b735c0baad468678422c4b05485, type: 2}
@@ -2365,25 +2343,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224745210892412734, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 114061717398815932, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4,
         type: 2}
       propertyPath: m_Text
-      value: Full HP
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061717398815932, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061717398815932, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4,
-        type: 2}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
+      value: 100/100 HP
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8f6e0da8c029a4ea5d74e1e3d6f0c4, type: 2}
