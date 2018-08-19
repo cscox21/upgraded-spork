@@ -119,9 +119,11 @@ public class Player : MonoBehaviour
     
     public IEnumerator SpikeDamageFlash()
     {
-        while(true)
+        
+        for (float timer = 0f; timer <1.5f ; timer++)
         {
             damageImage.color = flashColor;
+            
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             yield return new WaitForSeconds(1.5f);
         }

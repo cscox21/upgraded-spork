@@ -94,7 +94,7 @@ public class StrongEnemy : MonoBehaviour {
 
     public IEnumerator Patrol()
     {
-        while (true)
+        while (CurrentState == EnemyActionType.Patrol)
         {
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * -sight, Color.green);
             Debug.DrawRay(transform.position + Vector3.up * headHeight, transform.right * sight, Color.blue);
