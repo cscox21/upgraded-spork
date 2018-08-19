@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
 
         //reset the damaged flag.
         damaged = false; 
-        
 
         if (playerCurrentHealth <= 0)
         {
@@ -67,7 +66,6 @@ public class Player : MonoBehaviour
         
         if(Time.time> nextSpikeAttack)
         {
-            //SetDamageable();
             nextSpikeAttack = Time.time + spikeAttackRate;
             Invoke("SetDamageable", invincibleTime);
         }

@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public static GameController gc;
+    //public Transform playerPrefab;
+    //public Transform spawnPoint;
+    public float spawnDelay = 2;
 
-    void Start()
+    void Awake()
     {
         if(gc == null)
         {
@@ -14,40 +18,25 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public Transform playerPrefab;
-    public Transform spawnPoint;
-    public int spawnDelay = 2;
+    public void EndGame()
+    {
+        Debug.Log("GAME OVER");
+    }
 
     public IEnumerator RespawnPlayer()
     {
-        Debug.Log("TODO: Add waiting for spawn sound");
+        //Debug.Log("TODO: Add waiting for spawn sound");
         yield return new WaitForSeconds(spawnDelay);
-        RespawnPlayer();
-        Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-        //FindPlayer();
-        Debug.Log("TODO: Add Spawn Particles");
+        gc.EndGame();
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        //Debug.Log("TODO: Add Spawn Particles");
     }
 
     public static void KillPlayer(Player player)
     {
-        Debug.Log("Kill player, need to respawn now");
         Destroy(player.gameObject);
         gc.StartCoroutine(gc.RespawnPlayer());
     }
-    /*
-    public void RespawnPlayer(Player player)
-    {
-        player.enabled = true;
-        player.playerCurrentHealth = player.playerMaxHealth;
-        
-    }
-    */
-    /*void FindPlayer()
-    {
-        GameObject searchResult = GameObject.FindGameObjectWithTag("Player");
-        if (searchResult != null)
-        playerPrefab = searchResult.transform;
-        
-    }    
-    */
+
 }
