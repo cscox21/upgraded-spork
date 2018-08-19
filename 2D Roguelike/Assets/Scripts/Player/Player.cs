@@ -144,18 +144,21 @@ public class Player : MonoBehaviour
             sr[0].enabled = true;
             sr[1].enabled = true;
             sr[2].enabled = true;
+            sr[3].enabled = true;
 
             yield return new WaitForSeconds(.1f);
 
             sr[0].enabled = false;
             sr[1].enabled = false;
             sr[2].enabled = false;
+            sr[3].enabled = false;
             yield return new WaitForSeconds(.1f);
 
         }
         sr[0].enabled = true;
         sr[1].enabled = true;
         sr[2].enabled = true;
+        sr[3].enabled = true;
         yield break;
     }
 
