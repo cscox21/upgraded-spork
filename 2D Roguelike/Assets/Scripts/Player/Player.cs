@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentsInChildren<SpriteRenderer>();
         spikeAttackRate = 1.5f;
-        nextSpikeAttack = Time.deltaTime;
+        nextSpikeAttack = Time.time;
     }
     private void Start()
     {
@@ -65,16 +65,13 @@ public class Player : MonoBehaviour
     {
         isInvincible = true;
         
-        if(Time.deltaTime > nextSpikeAttack)
+        if(Time.time> nextSpikeAttack)
         {
             SetDamageable();
-            if (Time.time>nextSpikeAttack)
-            {
-                nextSpikeAttack = Time.time + spikeAttackRate;
-                SetDamageable();
-            }
-            
+            nextSpikeAttack = Time.time + spikeAttackRate;
+            isInvincible = false;
         }
+        
         //CancelInvoke("SetDamageable"); // in case the method has already been invoked
         //Invoke("SetDamageable",  invincibleTime);
     }
