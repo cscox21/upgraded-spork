@@ -35,19 +35,12 @@ public class BasicZom_Attack : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "ground")
         {
             Instantiate(explosion, transform.position, transform.rotation);
             Debug.Log("Hit");
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "ground")
-        {
-            Instantiate(explosion, transform.position, transform.rotation);
-            Debug.Log("Hit the ground");
-            Destroy(gameObject);
-        }
-
     }
 }
 
