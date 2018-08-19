@@ -14,12 +14,6 @@ public class TurretShooter : MonoBehaviour {
     {
         StartCoroutine(Shoots());
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     IEnumerator Shoots()
     {

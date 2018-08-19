@@ -28,13 +28,6 @@ public class RainingFireBall : MonoBehaviour
             Debug.Log("Hit");
             Destroy(gameObject);
         }
-        //if (collision.gameObject.tag == "ground")
-        //{
-            //Instantiate(explosion, transform.position, transform.rotation);
-            //Debug.Log("Hit the ground");
-            //Destroy(gameObject);
-        //}
-
     }
 
 }

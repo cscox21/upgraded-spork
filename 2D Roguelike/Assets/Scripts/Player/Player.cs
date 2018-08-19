@@ -32,11 +32,6 @@ public class Player : MonoBehaviour
         spikeAttackRate = 1.5f;
         nextSpikeAttack = Time.time;
     }
-    private void Start()
-    {
-        
-    }
-
     //public PlayerStats playerStats = new PlayerStats();
 
     void Update()
@@ -71,9 +66,6 @@ public class Player : MonoBehaviour
             nextSpikeAttack = Time.time + spikeAttackRate;
             Invoke("SetDamageable", invincibleTime);
         }
-        
-        //CancelInvoke("SetDamageable"); // in case the method has already been invoked
-        //Invoke("SetDamageable",  invincibleTime);
     }
 
     public void SetDamageable()
@@ -103,7 +95,8 @@ public class Player : MonoBehaviour
     //used to have a calculate health function, get rid of
     float CalculateHealth()
     {
-        TxtHealth.text = string.Format("{0} %", Mathf.RoundToInt(playerCurrentHealth));
+        TxtHealth.text = playerCurrentHealth + "/" + playerMaxHealth + " HP";
+        //use as the second argument to the Format function above--> Mathf.RoundToInt(playerCurrentHealth));
         return healthbar.value = playerCurrentHealth;
         
     }
