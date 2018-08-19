@@ -26,6 +26,10 @@ public class SpecialFire : MonoBehaviour {
             rb.AddForce(transform.up * yPower);
             rb.AddForce(transform.right * xPower);
         }
+        if(target ==null)
+        {
+            return;
+        }
         
     }
 
