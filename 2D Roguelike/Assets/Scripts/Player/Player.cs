@@ -37,20 +37,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!isInvincible)
+        if(!isInvincible)
         {
-            if (damaged)
-            {
-                //...set the color of the damageImage to the flash color.
-                damageImage.color = flashColor;
-            }
-            //otherwise...
-            else
-            {
-                //...transition the color back to clear
-                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-                //sr.color = Color.Lerp(sr.color, Color.clear, flashSpeed * Time.deltaTime);
-            }
+            DamageFlash();
+        }
+        if(isInvincible)
+        {
+            DamageFlash();
+            damaged = false;
         }
         //reset the damaged flag.
         damaged = false; 
@@ -63,7 +57,7 @@ public class Player : MonoBehaviour
 
         if (transform.position.y <= -30)
         {
-            HurtPlayer(999999);
+            HurtPlayer(playerCurrentHealth);
         }
     }
 
@@ -87,18 +81,15 @@ public class Player : MonoBehaviour
 
         if (damaged == true && !isInvincible == true)
         {
-            //One of the enemies has hurt the player
             playerCurrentHealth -= damageToGive;
             CalculateHealth();
 
         }
         
-        if (damaged == true && isInvincible == true)
-        {
-            Debug.Log("One of the spikes has hurt the player");
-
-        }
-        
+        //if (damaged == true && isInvincible == true)
+        //{
+            //Debug.Log("One of the spikes has hurt the player");
+        //}
     }
 
     //used to have a calculate health function, get rid of
@@ -111,8 +102,24 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        HurtPlayer(playerCurrentHealth);
         Destroy(gameObject);
-        TxtHealth.text = string.Empty;
+    }
+
+    public void DamageFlash()
+    {
+        if (damaged)
+        {
+            //...set the color of the damageImage to the flash color.
+            damageImage.color = flashColor;
+
+        }
+        //otherwise...
+        else
+        {
+            //...transition the color back to clear
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
     }
 
     public IEnumerator InvulnFlash()
@@ -141,14 +148,13 @@ public class Player : MonoBehaviour
     public IEnumerator Knockback(float knockDuration, float knockBackPower, Vector3 knockBackDirection)
     {
         float timer = 0f;
+        //float xKnockBackPower = 150f;
 
         while (knockDuration > timer)
         {
-            Debug.Log("Knockback");
             timer += Time.deltaTime;
             rb.AddForce(new Vector3(knockBackDirection.x, knockBackDirection.y + knockBackPower, transform.localPosition.z));
             StartCoroutine(InvulnFlash());
-
         }
 
         yield return 0;
