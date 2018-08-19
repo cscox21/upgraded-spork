@@ -67,9 +67,9 @@ public class Player : MonoBehaviour
         
         if(Time.time> nextSpikeAttack)
         {
-            SetDamageable();
+            //SetDamageable();
             nextSpikeAttack = Time.time + spikeAttackRate;
-            isInvincible = false;
+            Invoke("SetDamageable", invincibleTime);
         }
         
         //CancelInvoke("SetDamageable"); // in case the method has already been invoked
