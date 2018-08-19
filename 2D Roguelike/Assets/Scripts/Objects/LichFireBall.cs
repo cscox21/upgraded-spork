@@ -12,6 +12,7 @@ public class LichFireBall : MonoBehaviour
     public Transform firePos;
     public float delay;
     public float moveSpeed;
+    public GameObject explosion;
 
     void Start()
     {
@@ -32,16 +33,11 @@ public class LichFireBall : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.tag == "ground")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "ground")
         {
-            Destroy(gameObject);
-        }
-
-        if (collision.collider.tag == "Player")
-        {
-            Debug.Log("SpecialFire Hit");
+            Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d946a89de8333947b391f67b50d5321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1607515771890146, guid: 01ad59d9a83778648a0c495b7d335e7d, type: 2}
+  explosion: {fileID: 1972061414231774, guid: b1c560cde355dfa449d445b7bffe3aff, type: 2}
 --- !u!212 &212292566624412250
 SpriteRenderer:
   m_ObjectHideFlags: 1

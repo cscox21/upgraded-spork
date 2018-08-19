@@ -135,6 +135,7 @@ MonoBehaviour:
   firePos: {fileID: 4017170243179662}
   delay: 0.4
   moveSpeed: 8
+  explosion: {fileID: 1666795686771632, guid: 297eab24f6cb04b4fae00ec1fc19a9c6, type: 2}
 --- !u!212 &212363544638738448
 SpriteRenderer:
   m_ObjectHideFlags: 1
