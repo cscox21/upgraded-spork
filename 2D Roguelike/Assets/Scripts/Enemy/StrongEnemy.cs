@@ -53,9 +53,9 @@ public class StrongEnemy : MonoBehaviour {
         ChangeState(CurrentState);
         anim.SetBool("Walking", false);
         basicAttackRate = 1f;
-        secondAttackRate = 2.5f;
         nextBasicAttack = Time.time;
         nextSecondAttack = Time.time;
+        secondAttackRate = 2.5f;
         secondAttackWaitTime = 2.5f;
         thirdAttack = Time.time;
         thirdAttackRate = 2f;

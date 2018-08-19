@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     public Slider healthbar;
     public Text TxtHealth;
+    float nextSpikeAttack;
+    float spikeAttackRate;
 
 
     private void Awake()
@@ -27,6 +29,8 @@ public class Player : MonoBehaviour
         playerCurrentHealth = playerMaxHealth;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentsInChildren<SpriteRenderer>();
+        spikeAttackRate = 1.5f;
+        nextSpikeAttack = Time.deltaTime;
     }
     private void Start()
     {
@@ -60,11 +64,22 @@ public class Player : MonoBehaviour
     public void SetInvincible()
     {
         isInvincible = true;
-        CancelInvoke("SetDamageable"); // in case the method has already been invoked
-        Invoke("SetDamageable", invincibleTime);
+        
+        if(Time.deltaTime > nextSpikeAttack)
+        {
+            SetDamageable();
+            if (Time.time>nextSpikeAttack)
+            {
+                nextSpikeAttack = Time.time + spikeAttackRate;
+                SetDamageable();
+            }
+            
+        }
+        //CancelInvoke("SetDamageable"); // in case the method has already been invoked
+        //Invoke("SetDamageable",  invincibleTime);
     }
 
-    void SetDamageable()
+    public void SetDamageable()
     {
         isInvincible = false;
     }
@@ -119,11 +134,9 @@ public class Player : MonoBehaviour
     
     public IEnumerator SpikeDamageFlash()
     {
-        
         for (float timer = 0f; timer <1.5f ; timer++)
         {
             damageImage.color = flashColor;
-            
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             yield return new WaitForSeconds(1.5f);
         }
