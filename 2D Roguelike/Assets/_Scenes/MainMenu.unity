@@ -1819,6 +1819,7 @@ GameObject:
   - component: {fileID: 1063171735}
   - component: {fileID: 1063171734}
   - component: {fileID: 1063171733}
+  - component: {fileID: 1063171737}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1843,7 +1844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -210.3, y: 283.49}
+  m_AnchoredPosition: {x: -210.3, y: 176.88}
   m_SizeDelta: {x: 333.5, y: 130.4}
   m_Pivot: {x: 0.5000001, y: 0}
 --- !u!114 &1063171733
@@ -1879,7 +1880,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.7058824}
@@ -1950,6 +1951,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1063171731}
   m_CullTransparentMesh: 0
+--- !u!95 &1063171737
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063171731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a638f841005982040bc0ed2b4c5895bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1069115937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,7 +3498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 210.3, y: 283.49}
+  m_AnchoredPosition: {x: 210.3, y: 176.88}
   m_SizeDelta: {x: 333.5, y: 130.4}
   m_Pivot: {x: 0.5000001, y: 0}
 --- !u!114 &1748019294
@@ -4002,7 +4021,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
