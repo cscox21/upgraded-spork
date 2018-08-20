@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 50194868790691272}
   - component: {fileID: 114933534509837152}
   - component: {fileID: 114715892128189700}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Basic_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4468024558254058}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4728715347251412}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4449665510405520}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835125130433706}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4078755074769698}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 95163718400064564}
   - component: {fileID: 114276326417923574}
   - component: {fileID: 114340313032666388}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: LichKing
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4514909149971002}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4814560005195352}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: firePos4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4841586298428442}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: FirePos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 50245834268835550}
   - component: {fileID: 114024384100814278}
   - component: {fileID: 114835886941695772}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Fighter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064304965376024}
   - component: {fileID: 114652642674642690}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Pos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4804324132182210}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4927999456727518}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4165873998773158}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Pos5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4014581384789768}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4428747019731536}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Pos4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
