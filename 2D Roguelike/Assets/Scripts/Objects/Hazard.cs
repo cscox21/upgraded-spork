@@ -9,10 +9,24 @@ public class Hazard : MonoBehaviour {
 
     public int damageToGive;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
+    }
+
+    /*void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+    }*/
+
+    private void Update()
+    {
+        if(player ==null)
+        {
+            return;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

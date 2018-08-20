@@ -1884,7 +1884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -210.3, y: 176.88}
+  m_AnchoredPosition: {x: -210.3, y: 278.77}
   m_SizeDelta: {x: 333.5, y: 130.4}
   m_Pivot: {x: 0.5000001, y: 0}
 --- !u!114 &1063171733
@@ -2506,7 +2506,6 @@ GameObject:
   - component: {fileID: 1289649361}
   - component: {fileID: 1289649362}
   - component: {fileID: 1289649360}
-  - component: {fileID: 1289649359}
   m_Layer: 0
   m_Name: 3Spikes
   m_TagString: Untagged
@@ -2528,19 +2527,6 @@ Transform:
   m_Father: {fileID: 857755321}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289649359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114887198397659404, guid: 24eff1e868c0d964d8fc5211e9f9420a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1289649357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f6cecda2869ba4da7c57777d91631e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageToGive: 20
 --- !u!61 &1289649360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3044,7 +3030,9 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61461689008200374, guid: 59105e6adee59d24581fdb0aa20cc3f6, type: 2}
+    - {fileID: 114843545470260350, guid: 59105e6adee59d24581fdb0aa20cc3f6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 59105e6adee59d24581fdb0aa20cc3f6, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1439651726
@@ -3539,7 +3527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 210.3, y: 176.88}
+  m_AnchoredPosition: {x: 210.3, y: 278.77}
   m_SizeDelta: {x: 333.5, y: 130.4}
   m_Pivot: {x: 0.5000001, y: 0}
 --- !u!114 &1748019294
