@@ -668,6 +668,11 @@ Prefab:
       propertyPath: spawnSoundName
       value: GraveyardMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 114234805746083712, guid: 156739954f54cef46961f83053453352,
+        type: 2}
+      propertyPath: startMusic
+      value: GraveyardMusic
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156739954f54cef46961f83053453352, type: 2}
   m_IsPrefabAsset: 0
@@ -1025,6 +1030,16 @@ Prefab:
       propertyPath: shotSoundName
       value: PistolShot
       objectReference: {fileID: 0}
+    - target: {fileID: 114576942010425256, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: dying
+      value: Dying
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576942010425256, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: dyingSound
+      value: Dying
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
   m_IsPrefabAsset: 0
@@ -1265,6 +1280,12 @@ MonoBehaviour:
     randPitch: 0
   - name: PistolShot
     clip: {fileID: 8300000, guid: 4f97d3079e0ab8345bcdbdce26a27d7b, type: 3}
+    volume: 0.555
+    pitch: 1
+    randVolume: 0.102
+    randPitch: 0.252
+  - name: Dying
+    clip: {fileID: 8300000, guid: efc3303775d2ad54db2c7972468c907b, type: 3}
     volume: 0.555
     pitch: 1
     randVolume: 0.102

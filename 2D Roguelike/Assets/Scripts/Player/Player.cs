@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     float nextSpikeAttack;
     float spikeAttackRate;
 
+    private AudioManager audioManager;
+    public string dyingSound;
+
     private void Awake()
     {
         
@@ -36,6 +39,12 @@ public class Player : MonoBehaviour
         healthbar.value = playerCurrentHealth;
         sr = GetComponentsInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        //caching
+        audioManager = AudioManager.instance;       
+        if (audioManager == null)
+        {
+            Debug.LogError("FREAK OUT! No AudioManager found in the scene.");
+        }
     }
     //public PlayerStats playerStats = new PlayerStats();
 
@@ -107,6 +116,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         HurtPlayer(playerCurrentHealth);
+        audioManager.PlaySound(dyingSound);
         GameController.KillPlayer(this);
     }
 

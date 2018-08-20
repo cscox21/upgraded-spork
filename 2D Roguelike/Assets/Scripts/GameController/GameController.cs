@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
     public static GameController gc;
 
     public float spawnDelay = 2;
-    public string spawnSoundName;
+    public string startMusic;
+    
 
 
     [SerializeField]
@@ -29,7 +30,7 @@ public class GameController : MonoBehaviour
     {
         //caching
         audioManager = AudioManager.instance;
-        audioManager.PlaySound(spawnSoundName);
+        audioManager.PlaySound(startMusic);
         if (audioManager == null)
         {
             Debug.LogError("FREAK OUT! No AudioManager found in the scene.");
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour
 
     public static void KillPlayer(Player player)
     {
+        
         Destroy(player.gameObject);
         gc.StartCoroutine(gc.RespawnPlayer());
     }
