@@ -8,14 +8,30 @@ public class GameController : MonoBehaviour
     public static GameController gc;
 
     public float spawnDelay = 2;
+    public string spawnSoundName;
+
+
     [SerializeField]
     private GameObject gameOverUI;
+
+    //cache
+    private AudioManager audioManager;
 
     void Awake()
     {
         if(gc == null)
         {
             gc = GameObject.FindGameObjectWithTag("GC").GetComponent<GameController>();
+        }
+    }
+
+    private void Start()
+    {
+        //caching
+        audioManager = AudioManager.instance;
+        if(audioManager == null)
+        {
+            Debug.LogError("FREAK OUT! No AudioManager found in the scene.");
         }
     }
 
@@ -27,6 +43,7 @@ public class GameController : MonoBehaviour
 
     public IEnumerator RespawnPlayer()
     {
+        audioManager.PlaySound(spawnSoundName);
         //Debug.Log("TODO: Add waiting for spawn sound");
         yield return new WaitForSeconds(spawnDelay);
         gc.EndGame();
