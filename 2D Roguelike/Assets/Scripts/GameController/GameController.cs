@@ -9,9 +9,6 @@ public class GameController : MonoBehaviour
 
     public float spawnDelay = 2;
     public string startMusic;
-    
-
-
     [SerializeField]
     private GameObject gameOverUI;
 
@@ -28,13 +25,15 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        
         //caching
         audioManager = AudioManager.instance;
-        audioManager.PlaySound(startMusic);
+        
         if (audioManager == null)
         {
             Debug.LogError("FREAK OUT! No AudioManager found in the scene.");
         }
+        audioManager.PlaySound(startMusic);
     }
 
     public void EndGame()
@@ -46,7 +45,7 @@ public class GameController : MonoBehaviour
     public IEnumerator RespawnPlayer()
     {
         
-        //Debug.Log("TODO: Add waiting for spawn sound");
+        //Debug.Log("TODO: Death music or sound goes here
         yield return new WaitForSeconds(spawnDelay);
         gc.EndGame();
         //int scene = SceneManager.GetActiveScene().buildIndex;

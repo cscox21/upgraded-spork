@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     private AudioManager audioManager;
     public string dyingSound;
+    public string hurtSound;
 
     private void Awake()
     {
@@ -93,6 +94,7 @@ public class Player : MonoBehaviour
 
         if (damaged == true && !isInvincible == true)
         {
+            audioManager.PlaySound(hurtSound);
             playerCurrentHealth -= damageToGive;
             CalculateHealth();
         }
@@ -107,6 +109,7 @@ public class Player : MonoBehaviour
     //used to have a calculate health function, get rid of
     float CalculateHealth()
     {
+        
         TxtHealth.text = playerCurrentHealth + "/" + playerMaxHealth + " HP";
         //use as the second argument to the Format function above--> Mathf.RoundToInt(playerCurrentHealth));
         return healthbar.value = playerCurrentHealth;

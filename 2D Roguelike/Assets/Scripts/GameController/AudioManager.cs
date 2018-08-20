@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource (_go.AddComponent<AudioSource>());
         }
 
-        //PlaySound("GraveyardMusic");
+        PlaySound("GraveyardMusic");
         //Can get rid of later and put somewhere else
     }
 

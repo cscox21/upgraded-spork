@@ -1040,6 +1040,11 @@ Prefab:
       propertyPath: dyingSound
       value: Dying
       objectReference: {fileID: 0}
+    - target: {fileID: 114576942010425256, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: hurtSound
+      value: HurtPlayer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
   m_IsPrefabAsset: 0
@@ -1290,6 +1295,12 @@ MonoBehaviour:
     pitch: 1
     randVolume: 0.102
     randPitch: 0.252
+  - name: HurtPlayer
+    clip: {fileID: 8300000, guid: 114514a3b3697484ebaa08f7fbf842d3, type: 3}
+    volume: 0.555
+    pitch: 1
+    randVolume: 0.102
+    randPitch: 0.277
 --- !u!4 &733728735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610141227753608, guid: 59105e6adee59d24581fdb0aa20cc3f6,
