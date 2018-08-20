@@ -663,6 +663,11 @@ Prefab:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 1555303891}
+    - target: {fileID: 114234805746083712, guid: 156739954f54cef46961f83053453352,
+        type: 2}
+      propertyPath: spawnSoundName
+      value: GraveyardMusic
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156739954f54cef46961f83053453352, type: 2}
   m_IsPrefabAsset: 0
@@ -1015,6 +1020,11 @@ Prefab:
       propertyPath: m_Name
       value: PlayerOne_Updated
       objectReference: {fileID: 0}
+    - target: {fileID: 114358553433064930, guid: 82d8784186626f641989c6ea9ad89a95,
+        type: 2}
+      propertyPath: shotSoundName
+      value: PistolShot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
   m_IsPrefabAsset: 0
@@ -1249,10 +1259,16 @@ MonoBehaviour:
   sounds:
   - name: GraveyardMusic
     clip: {fileID: 8300000, guid: 2d75080d0851d4613ada1117d91ee417, type: 3}
-    volume: 0.7
+    volume: 0.35
     pitch: 1
-    randVolume: 0.1
-    randPitch: 0.1
+    randVolume: 0
+    randPitch: 0
+  - name: PistolShot
+    clip: {fileID: 8300000, guid: 4f97d3079e0ab8345bcdbdce26a27d7b, type: 3}
+    volume: 0.555
+    pitch: 1
+    randVolume: 0.102
+    randPitch: 0.252
 --- !u!4 &733728735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610141227753608, guid: 59105e6adee59d24581fdb0aa20cc3f6,

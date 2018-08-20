@@ -29,7 +29,8 @@ public class GameController : MonoBehaviour
     {
         //caching
         audioManager = AudioManager.instance;
-        if(audioManager == null)
+        audioManager.PlaySound(spawnSoundName);
+        if (audioManager == null)
         {
             Debug.LogError("FREAK OUT! No AudioManager found in the scene.");
         }
@@ -43,7 +44,7 @@ public class GameController : MonoBehaviour
 
     public IEnumerator RespawnPlayer()
     {
-        audioManager.PlaySound(spawnSoundName);
+        
         //Debug.Log("TODO: Add waiting for spawn sound");
         yield return new WaitForSeconds(spawnDelay);
         gc.EndGame();

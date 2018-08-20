@@ -16,12 +16,26 @@ public class Weapon_FirePoint : MonoBehaviour
     float timeToFire = 0;
     Transform firePoint;
 
+    public string shotSoundName;
+    private AudioManager audioManager;
+
     private void Awake()
     {
         firePoint = transform.Find("FirePoint");
         if(firePoint ==null)
         {
             Debug.LogError("No FirePoint?");
+        }
+    }
+
+    private void Start()
+    {
+        //caching
+        audioManager = AudioManager.instance;
+        
+        if (audioManager == null)
+        {
+            Debug.LogError("FREAK OUT! No AudioManager found in the scene.");
         }
     }
 
@@ -39,6 +53,7 @@ public class Weapon_FirePoint : MonoBehaviour
         {
             if(Input.GetButton("Fire1") && Time.time > timeToFire)
             {
+
                 timeToFire = Time.time + 1 / fireRate;
                 Shoot(); 
             }
@@ -54,15 +69,16 @@ public class Weapon_FirePoint : MonoBehaviour
             Effect();
             timeToSpawnEffect = Time.time + 1 /effectSpawnRate;
         }
-        Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.cyan);
+        //Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.cyan);
         if(hit.collider!=null)
         {
-            Debug.DrawLine(firePointPosition, hit.point, Color.red);
+            //Debug.DrawLine(firePointPosition, hit.point, Color.red);
             //Debug.Log("We hit " + hit.collider.name + " and did " + Damage + " damage.");
         }
     }
     void Effect()
     {
+        audioManager.PlaySound(shotSoundName);
         Instantiate(projectile, firePoint.position, firePoint.rotation);
         Transform clone = Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
         clone.parent = firePoint;
