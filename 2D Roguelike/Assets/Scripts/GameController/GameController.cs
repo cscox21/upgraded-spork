@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     public string startMusic;
     [SerializeField]
     private GameObject gameOverUI;
+    [SerializeField]
+    private GameObject victoryUI;
 
     //cache
     private AudioManager audioManager;
@@ -36,6 +38,14 @@ public class GameController : MonoBehaviour
         audioManager.PlaySound(startMusic);
     }
 
+    private void Update()
+    {
+        if(Input.GetButtonDown("Fire2"))
+        {
+            NextLevel();
+        }
+    }
+
     public void EndGame()
     {
         Debug.Log("GAME OVER");
@@ -58,6 +68,11 @@ public class GameController : MonoBehaviour
         
         Destroy(player.gameObject);
         gc.StartCoroutine(gc.RespawnPlayer());
+    }
+
+    public void NextLevel()
+    {
+        victoryUI.SetActive(true);
     }
 
 }
