@@ -26,6 +26,11 @@ namespace UnitySampleAssets._2D
 
         Transform playerGraphics;   // Reference to the graphics so we can change direction
 
+        public float enemyKnockback;
+        public float knockbackLength;
+        public float knockbackCount;
+        public bool knockFromRight;
+
         private void Awake()
         {
             // Setting up references.
@@ -76,8 +81,20 @@ namespace UnitySampleAssets._2D
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 anim.SetFloat("Speed", Mathf.Abs(move));
 
-                // Move the character
-                rb.velocity = new Vector2(move*maxSpeed, rb.velocity.y);
+
+                if (knockbackCount <= 0)
+                {
+                    // Move the character
+                    rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
+                }
+                else
+                {
+                    if(knockFromRight)
+                        rb.velocity = new Vector2(-enemyKnockback, enemyKnockback);
+                    if(!knockFromRight)
+                        rb.velocity = new Vector2(enemyKnockback, enemyKnockback);
+                    knockbackCount -= Time.deltaTime;
+                }
 
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !facingRight)

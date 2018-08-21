@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114768880233138484}
   - component: {fileID: 95874120124699330}
   - component: {fileID: 114714096566657356}
+  - component: {fileID: 114876799466349194}
   m_Layer: 12
   m_Name: Headless_Zombie
   m_TagString: Enemy
@@ -238,7 +239,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &61463109883943642
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -248,7 +249,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.031410217, y: 0.015705109}
@@ -318,6 +319,18 @@ MonoBehaviour:
   enemyMaxHealth: 30
   enemyCurrentHealth: 0
   scoreValue: 5
+--- !u!114 &114876799466349194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071354634555326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11858c3f3b536ba418dc2e6e4080a824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 10
 --- !u!212 &212914921162493538
 SpriteRenderer:
   m_ObjectHideFlags: 1

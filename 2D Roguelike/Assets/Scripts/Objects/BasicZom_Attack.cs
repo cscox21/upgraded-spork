@@ -38,7 +38,6 @@ public class BasicZom_Attack : MonoBehaviour {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "ground")
         {
             Instantiate(explosion, transform.position, transform.rotation);
-            Debug.Log("Hit");
             Destroy(gameObject);
         }
     }

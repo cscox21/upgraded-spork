@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 61865074138274602}
   - component: {fileID: 114139098047792286}
   - component: {fileID: 114558392843431232}
+  - component: {fileID: 114637400161763374}
   m_Layer: 9
   m_Name: BloodyZombie
   m_TagString: Enemy
@@ -180,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &61865074138274602
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -190,7 +191,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -259,6 +260,18 @@ MonoBehaviour:
   firePos: {fileID: 4799338083026634}
   basicAttackRate: 0.6
   headHeight: 0
+--- !u!114 &114637400161763374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625493174569392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11858c3f3b536ba418dc2e6e4080a824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 10
 --- !u!212 &212287365964531712
 SpriteRenderer:
   m_ObjectHideFlags: 1

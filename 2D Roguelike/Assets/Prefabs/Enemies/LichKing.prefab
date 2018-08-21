@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 95163718400064564}
   - component: {fileID: 114276326417923574}
   - component: {fileID: 114340313032666388}
+  - component: {fileID: 114919972422894322}
   m_Layer: 12
   m_Name: LichKing
   m_TagString: Enemy
@@ -325,7 +326,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &61782647137487492
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -335,7 +336,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.040537834, y: 0.08710766}
@@ -409,6 +410,18 @@ MonoBehaviour:
   enemyMaxHealth: 150
   enemyCurrentHealth: 150
   scoreValue: 45
+--- !u!114 &114919972422894322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788819661539798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11858c3f3b536ba418dc2e6e4080a824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 10
 --- !u!212 &212557399215188186
 SpriteRenderer:
   m_ObjectHideFlags: 1
