@@ -7,10 +7,15 @@ public class TravelNewArea : MonoBehaviour {
     public GameObject spwn1, spwn2;
     CameraSwitch camSwitch;
 
-	// Use this for initialization
-	void Start ()
+    private void Awake()
     {
         camSwitch = GetComponent<CameraSwitch>();
+        //camSwitch = FindObjectOfType<CameraSwitch>().GetComponent<CameraSwitch>();
+    }
+    // Use this for initialization
+    void Start ()
+    {
+        //camSwitch = GetComponent<CameraSwitch>();
         spwn1 = gameObject;
 	}
 
@@ -18,8 +23,10 @@ public class TravelNewArea : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
+            camSwitch.switchCamera();
             trig.gameObject.transform.position = spwn2.gameObject.transform.position;
-            camSwitch.ShowBossLevel();
+            
         }
     }
+
 }

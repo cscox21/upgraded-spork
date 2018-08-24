@@ -26,6 +26,9 @@ public class Headless_Fireball : MonoBehaviour {
             rb.AddForce(transform.up * yPower);
             rb.AddForce(transform.right * xPower);
         }
+
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,5 +43,6 @@ public class Headless_Fireball : MonoBehaviour {
             Debug.Log("Headless projectile Hit");
             Destroy(gameObject);
         }
+
     }
 }
