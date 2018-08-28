@@ -8,8 +8,8 @@ public class CameraSwitch : MonoBehaviour
     public GameObject mainLevelCam;
     public GameObject bossCam;
 
-    AudioListener mainCamAL;
-    AudioListener bossCamAL;
+    //public AudioListener mainCamAL;
+    //public AudioListener bossCamAL;
     public TravelNewArea tna;
 
     //TravelNewArea tna;
@@ -21,10 +21,10 @@ public class CameraSwitch : MonoBehaviour
 
     private void Start()
     {
-        mainCamAL = mainLevelCam.GetComponent<AudioListener>();
-        bossCamAL = mainLevelCam.GetComponent<AudioListener>();
+        //mainCamAL = mainLevelCam.GetComponent<AudioListener>();
+        //bossCamAL = mainLevelCam.GetComponent<AudioListener>();
         cameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));
-        //switchCamera();
+        
     }
 
     private void Update()
@@ -38,6 +38,7 @@ public class CameraSwitch : MonoBehaviour
         if(tna.canSwitchCam ==true)
         {
             switchCamera();
+            tna.canSwitchCam = false;
 
         }
             
@@ -69,16 +70,16 @@ public class CameraSwitch : MonoBehaviour
         if(camPosition ==0)
         {
             mainLevelCam.SetActive(true);
-            mainCamAL.enabled = true;
-            bossCamAL.enabled = false;
+            //mainCamAL.enabled = true;
+            //bossCamAL.enabled = false;
             bossCam.SetActive(false);
         }
 
         if (camPosition == 1)
         {
             bossCam.SetActive(true);
-            bossCamAL.enabled = true;
-            mainCamAL.enabled = false;
+            //bossCamAL.enabled = true;
+            //mainCamAL.enabled = false;
             mainLevelCam.SetActive(false);
             
         }
