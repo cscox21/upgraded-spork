@@ -61,11 +61,16 @@ public class Weapon_FirePoint : MonoBehaviour
 	}
     void Shoot()
     {
+        GetWorldPositionOnPlane(gameObject.transform.position, 0f);
+        
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         //Vector2 mousePosition2 = new Vector2(Camera.current.ScreenToWorldPoint(Input.mousePosition).x, Camera.current.ScreenToWorldPoint(Input.mousePosition).y);
+        
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
+        
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, whatToHit);
-        if(Time.time >= timeToSpawnEffect)
+        
+        if (Time.time >= timeToSpawnEffect)
         {
             Effect();
             timeToSpawnEffect = Time.time + 1 /effectSpawnRate;
@@ -86,5 +91,14 @@ public class Weapon_FirePoint : MonoBehaviour
         float size = Random.Range(0.6f, 0.9f);
         clone.localScale = new Vector3(size, size, size);
         Destroy(clone.gameObject, .02f);
+    }
+
+    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, z));
+        float distance;
+        xy.Raycast(ray, out distance);
+        return ray.GetPoint(distance);
     }
 }
