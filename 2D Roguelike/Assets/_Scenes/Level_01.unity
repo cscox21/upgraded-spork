@@ -1111,6 +1111,10 @@ Prefab:
       propertyPath: lookAheadReturnSpeed
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1606670686964454, guid: 8532028a7649ba440b4e31839ea9ca0c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8532028a7649ba440b4e31839ea9ca0c, type: 2}
   m_IsPrefabAsset: 0

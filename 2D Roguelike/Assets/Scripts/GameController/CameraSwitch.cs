@@ -11,27 +11,37 @@ public class CameraSwitch : MonoBehaviour
     AudioListener mainCamAL;
     AudioListener bossCamAL;
 
-    
+    TravelNewArea tna;
+
+    void Awake()
+    {
+        tna = GetComponent<TravelNewArea>();
+    }
+
     private void Start()
     {
         mainCamAL = mainLevelCam.GetComponent<AudioListener>();
         bossCamAL = mainLevelCam.GetComponent<AudioListener>();
         cameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));
+        //switchCamera();
     }
 
     private void Update()
     {
-        switchCamera();
+        /*
+        if (canSwitchCam == true)
+        {
+
+            switchCamera();
+        }
+        */
     }
 
 
     public void switchCamera()
     {
-        if(Input.GetKeyDown(KeyCode.C))
-        {
-            cameraChangeCounter();
-        }
-        
+        cameraChangeCounter();
+
     }
 
     void cameraChangeCounter()

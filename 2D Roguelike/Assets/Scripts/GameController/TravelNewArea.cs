@@ -6,9 +6,12 @@ public class TravelNewArea : MonoBehaviour {
 
     public GameObject spwn1, spwn2;
     CameraSwitch camSwitch;
+    //Player player;
+    bool canSwitchCam = false;
 
     private void Awake()
     {
+        //player = FindObjectOfType<Player>();
         camSwitch = GetComponent<CameraSwitch>();
         //camSwitch = FindObjectOfType<CameraSwitch>().GetComponent<CameraSwitch>();
     }
@@ -19,10 +22,12 @@ public class TravelNewArea : MonoBehaviour {
         spwn1 = gameObject;
 	}
 
-    void OnTriggerStay2D(Collider2D trig)
+    public void OnTriggerStay2D(Collider2D trig)
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
+            //canSwitchCam = true;
+            //Debug.Log("canSwitchCam is true");
             camSwitch.switchCamera();
             trig.gameObject.transform.position = spwn2.gameObject.transform.position;
             
