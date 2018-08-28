@@ -10,12 +10,13 @@ public class CameraSwitch : MonoBehaviour
 
     AudioListener mainCamAL;
     AudioListener bossCamAL;
+    public TravelNewArea tna;
 
-    TravelNewArea tna;
+    //TravelNewArea tna;
 
     void Awake()
     {
-        tna = GetComponent<TravelNewArea>();
+        //tna = GetComponent<TravelNewArea>();
     }
 
     private void Start()
@@ -28,13 +29,18 @@ public class CameraSwitch : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (canSwitchCam == true)
+        
+        //if(Input.GetKeyDown(KeyCode.C))
+        //{
+            //switchCamera();
+        //}
+        
+        if(tna.canSwitchCam ==true)
         {
-
             switchCamera();
+
         }
-        */
+            
     }
 
 

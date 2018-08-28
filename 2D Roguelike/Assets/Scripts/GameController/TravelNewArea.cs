@@ -7,12 +7,12 @@ public class TravelNewArea : MonoBehaviour {
     public GameObject spwn1, spwn2;
     CameraSwitch camSwitch;
     //Player player;
-    bool canSwitchCam = false;
+    public bool canSwitchCam = false;
 
     private void Awake()
     {
         //player = FindObjectOfType<Player>();
-        camSwitch = GetComponent<CameraSwitch>();
+        camSwitch = GameObject.FindGameObjectWithTag("GC").GetComponent<CameraSwitch>();
         //camSwitch = FindObjectOfType<CameraSwitch>().GetComponent<CameraSwitch>();
     }
     // Use this for initialization
@@ -26,12 +26,13 @@ public class TravelNewArea : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            //canSwitchCam = true;
-            //Debug.Log("canSwitchCam is true");
-            camSwitch.switchCamera();
+            canSwitchCam = true;
+            Debug.Log("canSwitchCam is true");
+            //camSwitch.switchCamera();
             trig.gameObject.transform.position = spwn2.gameObject.transform.position;
-            
+            //canSwitchCam = false;
         }
+        
     }
 
 }

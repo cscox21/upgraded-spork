@@ -73,7 +73,6 @@ public class StrongEnemy : MonoBehaviour {
         {
             RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, obstacleSight);
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.localScale.x * Vector2.right, sight);
-            Debug.Log("We are in the Idle state");
             ElapsedTime += Time.deltaTime;
 
             if (ElapsedTime >= WaitTime)

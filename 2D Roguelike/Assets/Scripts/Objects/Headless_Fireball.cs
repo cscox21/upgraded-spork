@@ -20,11 +20,13 @@ public class Headless_Fireball : MonoBehaviour {
         {
             rb.AddForce(transform.up * yPower);
             rb.AddForce(transform.right * -xPower);
+
         }
         else
         {
             rb.AddForce(transform.up * yPower);
             rb.AddForce(transform.right * xPower);
+
         }
 
 
