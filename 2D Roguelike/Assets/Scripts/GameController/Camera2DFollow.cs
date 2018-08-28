@@ -13,7 +13,8 @@ namespace UnitySampleAssets._2D
         public float lookAheadMoveThreshold = 0.1f;
 
         public float yPosRestriction = -1;
-        public float xPosRestriction = 1;
+        public float minXPosRestriction = 1;
+        public float maxXPosRestriction = 200;
 
         private float offsetZ;
         private Vector3 lastTargetPosition;
@@ -57,7 +58,7 @@ namespace UnitySampleAssets._2D
             Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward*offsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
 
-            newPos = new Vector3 (Mathf.Clamp(newPos.x, xPosRestriction, Mathf.Infinity), Mathf.Clamp(newPos.y, yPosRestriction, Mathf.Infinity), newPos.z);
+            newPos = new Vector3 (Mathf.Clamp(newPos.x, minXPosRestriction, maxXPosRestriction), Mathf.Clamp(newPos.y, yPosRestriction, Mathf.Infinity), newPos.z);
 
             newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y, -1, Mathf.Infinity), newPos.z);
 
