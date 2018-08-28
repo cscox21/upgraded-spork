@@ -12,10 +12,10 @@ public class CameraSwitch : MonoBehaviour
     //public AudioListener bossCamAL;
     public TravelNewArea tna;
 
-    //TravelNewArea tna;
 
     void Awake()
     {
+        
         //tna = GetComponent<TravelNewArea>();
     }
 
@@ -23,8 +23,8 @@ public class CameraSwitch : MonoBehaviour
     {
         //mainCamAL = mainLevelCam.GetComponent<AudioListener>();
         //bossCamAL = mainLevelCam.GetComponent<AudioListener>();
-        cameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));
-        
+        //cameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));
+        cameraPositionChange(0);
     }
 
     private void Update()
