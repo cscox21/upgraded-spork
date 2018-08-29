@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class ArmRotation : MonoBehaviour {
 
-
     public int rotationOffset = 90;
-    public TravelNewArea tna;
-    public Camera bossCam;
 
     void Update ()
     {
         //subtracting the position of the player from the mouse position.
-        
-        //Vector3 difference = Camera.current.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         difference.Normalize();  //normailizing the vector. Meaning that all the sum of the vector will be equal to 1.

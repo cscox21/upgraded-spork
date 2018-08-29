@@ -61,11 +61,17 @@ public class Weapon_FirePoint : MonoBehaviour
 	}
     void Shoot()
     {
-
+        /*
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        Debug.Log(Camera.main.ScreenToWorldPoint(mousePos));
+        */
         Vector2 mousePosition = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, whatToHit);
-
+        Debug.Log(Camera.main.ScreenToWorldPoint(mousePosition));
+        
         if (Time.time >= timeToSpawnEffect)
         {
             Effect();
@@ -76,7 +82,9 @@ public class Weapon_FirePoint : MonoBehaviour
         {
             //Debug.DrawLine(firePointPosition, hit.point, Color.red);
             //Debug.Log("We hit " + hit.collider.name + " and did " + Damage + " damage.");
+            
         }
+        
     }
     void Effect()
     {
