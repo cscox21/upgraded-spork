@@ -381,7 +381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4063910902201376, guid: 82d8784186626f641989c6ea9ad89a95, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114576942010425256, guid: 82d8784186626f641989c6ea9ad89a95,
         type: 2}
@@ -653,7 +653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4645962883599006, guid: 156739954f54cef46961f83053453352, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114234805746083712, guid: 156739954f54cef46961f83053453352,
         type: 2}
@@ -681,30 +681,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: GraveyardMusic
+    clip: {fileID: 8300000, guid: 2d75080d0851d4613ada1117d91ee417, type: 3}
+    volume: 0.35
+    pitch: 1
     randVolume: 0
     randPitch: 0
+  - name: PistolShot
+    clip: {fileID: 8300000, guid: 4f97d3079e0ab8345bcdbdce26a27d7b, type: 3}
+    volume: 0.555
+    pitch: 1
+    randVolume: 0.102
+    randPitch: 0.252
+  - name: Dying
+    clip: {fileID: 8300000, guid: efc3303775d2ad54db2c7972468c907b, type: 3}
+    volume: 0.555
+    pitch: 1
+    randVolume: 0.102
+    randPitch: 0.252
   - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    randVolume: 0
-    randPitch: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    randVolume: 0
-    randPitch: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    randVolume: 0
-    randPitch: 0
+    clip: {fileID: 8300000, guid: 114514a3b3697484ebaa08f7fbf842d3, type: 3}
+    volume: 0.555
+    pitch: 1
+    randVolume: 0.102
+    randPitch: 0.277
 --- !u!1001 &1832541068
 Prefab:
   m_ObjectHideFlags: 0
@@ -742,7 +742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4744760334686670, guid: 8532028a7649ba440b4e31839ea9ca0c, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114676229097647280, guid: 8532028a7649ba440b4e31839ea9ca0c,
         type: 2}
@@ -940,7 +940,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4012332125191636, guid: 8595f29dc35b6884a8530e74b067d513, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8595f29dc35b6884a8530e74b067d513, type: 2}
