@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TravelNewArea : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class TravelNewArea : MonoBehaviour {
 
     private void Awake()
     {
-        camSwitch = GameObject.FindGameObjectWithTag("GC").GetComponent<CameraSwitch>();
+        //camSwitch = GameObject.FindGameObjectWithTag("GC").GetComponent<CameraSwitch>();
     }
     // Use this for initialization
     void Start ()
@@ -22,9 +23,13 @@ public class TravelNewArea : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
-            canSwitchCam = true;
-            Debug.Log("canSwitchCam is true");
-            trig.gameObject.transform.position = spwn2.gameObject.transform.position;
+            Debug.Log("Go to Boss level 1");
+            int scene = SceneManager.GetActiveScene().buildIndex-2;
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+
+            //canSwitchCam = true;
+            
+            //trig.gameObject.transform.position = spwn2.gameObject.transform.position;
         }
         
     }
