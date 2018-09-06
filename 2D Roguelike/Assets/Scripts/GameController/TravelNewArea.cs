@@ -24,7 +24,7 @@ public class TravelNewArea : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("Go to Boss level 1");
-            int scene = SceneManager.GetActiveScene().buildIndex-2;
+            int scene = SceneManager.GetActiveScene().buildIndex +1;
             SceneManager.LoadScene(scene, LoadSceneMode.Single);
 
             //canSwitchCam = true;
