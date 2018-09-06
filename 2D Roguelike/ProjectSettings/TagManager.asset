@@ -16,6 +16,7 @@ TagManager:
   - Dangerous
   - Bomb
   - GC
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
