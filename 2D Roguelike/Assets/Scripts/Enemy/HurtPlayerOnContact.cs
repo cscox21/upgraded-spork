@@ -5,8 +5,13 @@ namespace UnitySampleAssets._2D
 { 
     public class HurtPlayerOnContact : MonoBehaviour
     {
-
+        Player player;
         public int damageToGive;
+
+        private void Awake()
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -14,6 +19,11 @@ namespace UnitySampleAssets._2D
             {
                 Debug.Log("Hit enemy need to be knocked back and take damage");
                 collision.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
+
+                Player playerScript = collision.gameObject.GetComponent<Player>();
+                StartCoroutine(playerScript.Knockback(0f, 25f, playerScript.transform.localPosition));
+                playerScript.SetInvincible();
+                
 
                 var player = collision.GetComponent<PlatformerCharacter2D>();
                 player.knockbackCount = player.knockbackLength;
