@@ -4,41 +4,37 @@ using UnityEngine;
 
 public class BackNForth : MonoBehaviour {
 
-    private Vector3 posA;
-    private Vector3 posB;
-    private Vector3 nextPos;
+    public GameObject movingFirePos;
 
-    [SerializeField]
-    private float speed;
+    public float moveSpeed;
 
-    [SerializeField]
-    private Transform transformA;
-    [SerializeField]
-    private Transform transformB;
+    private Transform currentPoint;
 
-    private void Start()
+    public Transform[] points;
+
+    public int pointSelection;
+
+    // Use this for initialization
+    void Start()
     {
-        posA = transformA.localPosition;
-        posB = transformB.localPosition;
-        nextPos = posB;
+        currentPoint = points[pointSelection];
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        Move();
-    }
+        movingFirePos.transform.position = Vector3.MoveTowards(movingFirePos.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
 
-    private void Move()
-    {
-        transformA.localPosition = Vector3.MoveTowards(transformA.localPosition, nextPos, speed * Time.deltaTime);
-        if(Vector3.Distance(transformA.localPosition, nextPos) <= 0.1)
+        if (movingFirePos.transform.position == currentPoint.position)
         {
-            ChangeDestination();
-        }
-    }
+            pointSelection++;
 
-    private void ChangeDestination()
-    {
-        nextPos = nextPos != posA ? posA : posB;
+            if (pointSelection == points.Length)
+            {
+                pointSelection = 0;
+            }
+
+            currentPoint = points[pointSelection];
+        }
     }
 }

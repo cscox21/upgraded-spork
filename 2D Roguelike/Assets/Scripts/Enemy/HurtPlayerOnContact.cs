@@ -23,7 +23,6 @@ namespace UnitySampleAssets._2D
                 Player playerScript = collision.gameObject.GetComponent<Player>();
                 StartCoroutine(playerScript.InvulnFlash());
                 playerScript.SetInvincible();
-                
 
                 var player = collision.GetComponent<PlatformerCharacter2D>();
                 player.knockbackCount = player.knockbackLength;
