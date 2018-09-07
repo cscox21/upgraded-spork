@@ -21,7 +21,7 @@ namespace UnitySampleAssets._2D
                 collision.gameObject.GetComponent<Player>().HurtPlayer(damageToGive);
 
                 Player playerScript = collision.gameObject.GetComponent<Player>();
-                StartCoroutine(playerScript.Knockback(0f, 25f, playerScript.transform.localPosition));
+                StartCoroutine(playerScript.InvulnFlash());
                 playerScript.SetInvincible();
                 
 
