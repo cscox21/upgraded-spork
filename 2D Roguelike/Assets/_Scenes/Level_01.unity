@@ -2166,20 +2166,6 @@ MonoBehaviour:
     pitch: 1
     randVolume: 0.102
     randPitch: 0.277
---- !u!114 &710667305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 710667300}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac17a319010c234c9d09868564c16b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainLevelCam: {fileID: 1442843091}
-  bossCam: {fileID: 1968792277}
-  tna: {fileID: 1378470141}
 --- !u!4 &722650126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4263436021085568, guid: 0a5cdc5b92f728b4cbb735a8104af6db,
@@ -4514,11 +4500,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4263436021085568, guid: 0a5cdc5b92f728b4cbb735a8104af6db,
     type: 2}
   m_PrefabInternal: {fileID: 891391595}
---- !u!1 &1442843091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1606670686964454, guid: 8532028a7649ba440b4e31839ea9ca0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 398586821}
 --- !u!1 &1463562728
 GameObject:
   m_ObjectHideFlags: 0
