@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 [System.Serializable]
 public class Sound
@@ -17,6 +19,8 @@ public class Sound
     public float randPitch = 0.1f;
 
     private AudioSource source;
+
+
 
     public void SetSource(AudioSource _source)
     {
@@ -53,6 +57,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+
         for (int i = 0; i <sounds.Length; i++)
         {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
@@ -61,7 +66,10 @@ public class AudioManager : MonoBehaviour
         }
 
         PlaySound("GraveyardMusic");
+        PlaySound("BossMusic");
+
         //Can get rid of later and put somewhere else
+
     }
 
     public void PlaySound(string _name)
