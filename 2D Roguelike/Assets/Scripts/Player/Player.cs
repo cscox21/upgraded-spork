@@ -64,6 +64,9 @@ public class Player : MonoBehaviour
             Die(); 
         }
 
+        if (playerCurrentHealth > playerMaxHealth)
+            playerCurrentHealth = playerMaxHealth;
+
         if (transform.position.y <= -30)
         {
             HurtPlayer(playerCurrentHealth);
@@ -109,11 +112,9 @@ public class Player : MonoBehaviour
     //used to have a calculate health function, get rid of
     float CalculateHealth()
     {
-        
         TxtHealth.text = playerCurrentHealth + "/" + playerMaxHealth + " HP";
         //use as the second argument to the Format function above--> Mathf.RoundToInt(playerCurrentHealth));
         return healthbar.value = playerCurrentHealth;
-        
     }
 
     public void Die()

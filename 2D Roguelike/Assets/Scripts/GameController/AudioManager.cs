@@ -32,6 +32,11 @@ public class Sound
         source.volume = volume * (1 +Random.Range(-randVolume/2f, randVolume/2f));
         source.pitch = pitch *(1 + Random.Range(-randPitch / 2f, randPitch / 2f)); ;
         source.Play();
+
+        if(volume == 0f)
+        {
+            return;
+        }
     }
 }
 
